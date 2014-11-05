@@ -163,9 +163,3 @@ class Game(object):
 
             pygame.display.update((menu.title.img_rect, again.img_rect, quit.img_rect))
             self.clock.tick(self.FPS)
-
-
-if __name__ == '__main__':
-    game = Game()
-    game.start()
-

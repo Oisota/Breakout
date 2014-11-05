@@ -1,6 +1,6 @@
 Breakout 
 
-Derek Morey 
+Author: Derek Morey 
 
 Description: A simple breakout clone. Run game by changing into
             the game directory and running "python3 run.py".
