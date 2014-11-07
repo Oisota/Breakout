@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 
+#This file is used to make a distribution of
+#the game using distutils. 
+
 from distutils.core import setup
 
 setup(name='Breakout',

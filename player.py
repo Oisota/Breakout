@@ -1,12 +1,16 @@
 #!/usr/bin/python
 
 import sys
+from colors import *
 import pygame
 from pygame.locals import *
 
+
 class Player(object):
     
-    def __init__(self, name, score):
+    def __init__(self,DISPLAY_SIZE, display, name, score):
+        self.DISPLAY_SIZE = DISPLAY_SIZE
+        self.display = display
         self.name = ''
         self.score = 0
         self.alive = True
@@ -14,7 +18,9 @@ class Player(object):
         self.paused = False
         self.pressed = ''
         self.mouse_pos = (0,0)
-                
+        self.font = pygame.font.Font(None, 40)
+        self.score_rect = None
+
     
     def getInput(self):
         #event handling loop
@@ -47,6 +53,13 @@ class Player(object):
                 self.pressed = ''
             elif event.type == MOUSEMOTION:
                 self.mouse_pos = event.pos
+
+
+    def draw_score(self):
+        text = self.font.render(str(self.score), True, BLACK)
+        self.score_rect = text.get_rect()
+        self.score_rect.center = (self.DISPLAY_SIZE[0]-75, self.DISPLAY_SIZE[1]-25)
+        self.display.blit(text, self.score_rect)
 
 
     def reset(self):

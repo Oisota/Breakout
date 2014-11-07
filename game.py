@@ -33,7 +33,7 @@ class Game(object):
         self.background.convert()
 
         #initialize game objects
-        self.player = Player('Derek', 0)
+        self.player = Player(self.DISPLAY_SIZE, self.display, 'Derek', 0)
         self.paddle = Paddle(self.DISPLAY_SIZE, self.display, self.player)
         self.ball = Ball(self.DISPLAY_SIZE, self.display, self.paddle, self.player)
         self.bricks = BrickManager(self.DISPLAY_SIZE, self.display, self.ball, self.player)
@@ -66,15 +66,16 @@ class Game(object):
             self.paddle.draw()   #draw the ball, paddle, bricks
             self.ball.draw()
             self.bricks.draw()
+            self.player.draw_score()
             
             self.paddle.update()  #update ball, paddle, bricks
             self.ball.update() 
             self.bricks.update()
             
-            pygame.display.update((self.ball.draw_rect, self.paddle.draw_rect))
+            pygame.display.update((self.ball.draw_rect, self.paddle.draw_rect, self.player.score_rect))
             self.clock.tick(self.FPS)
 
-
+        #check if player has won/lost 
         if self.player.won:
             self.win()
         elif not self.player.won:
@@ -112,7 +113,7 @@ class Game(object):
 
 
     def win(self):
-        #consturct menu
+        #construct menu
         menu = Menu(self.DISPLAY_SIZE, self.display, self.player) 
         menu.addTitle(self.DISPLAY_SIZE[0]/2, 100, 'You Won!')
         again = menu.addButton(self.DISPLAY_SIZE[0]/2, 200, 'Retry')
@@ -125,6 +126,7 @@ class Game(object):
         while True:
             self.player.getInput()
             self.display.blit(self.background, (0,0))
+            self.player.draw_score()
             menu.draw()
             menu.update()
 
@@ -134,12 +136,12 @@ class Game(object):
                 pygame.quit()
                 sys.exit()
 
-            pygame.display.update((menu.title.img_rect, again.img_rect, quit.img_rect))
+            pygame.display.update((menu.title.img_rect, again.img_rect, quit.img_rect, self.player.score_rect))
             self.clock.tick(self.FPS)
 
 
     def lose(self):
-        #consturct menu
+        #construct menu
         menu = Menu(self.DISPLAY_SIZE, self.display, self.player) 
         menu.addTitle(self.DISPLAY_SIZE[0]/2, 100, 'You Lost')
         again = menu.addButton(self.DISPLAY_SIZE[0]/2, 200, 'Retry')
@@ -152,6 +154,7 @@ class Game(object):
         while True:
             self.player.getInput()
             self.display.blit(self.background, (0,0))
+            self.player.draw_score()
             menu.draw()
             menu.update()
 
@@ -161,5 +164,5 @@ class Game(object):
                 pygame.quit()
                 sys.exit()
 
-            pygame.display.update((menu.title.img_rect, again.img_rect, quit.img_rect))
+            pygame.display.update((menu.title.img_rect, again.img_rect, quit.img_rect, self.player.score_rect))
             self.clock.tick(self.FPS)
