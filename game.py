@@ -21,7 +21,7 @@ class Game(object):
     def __init__(self):
     
         self.GAME_NAME    = "Breakout"  #name of the game 
-        self.FPS          = 45          #frames per second limit
+        self.FPS          = 40          #frames per second limit
         self.DISPLAY_SIZE = (800,600)   #size of the display
 
         self.display = pygame.display.set_mode(self.DISPLAY_SIZE)

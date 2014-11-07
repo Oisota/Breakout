@@ -78,6 +78,7 @@ class BrickManager(object):
             brick.update()
             if brick.hit:
                 self.delBrick(brick)
+                self.player.score += 1
     
         if not self.bricks:
             self.player.won = True
