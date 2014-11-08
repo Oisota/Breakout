@@ -40,6 +40,8 @@ class Game(object):
 
 
     def run(self): 
+
+        pygame.mouse.set_visible(False) #make mouse invisible while playing the game
   
         self.player.reset()
         self.paddle.reset()
@@ -83,6 +85,9 @@ class Game(object):
 
 
     def start(self):
+
+        pygame.mouse.set_visible(True)
+
         #construct menu
         menu = Menu(self.DISPLAY_SIZE, self.display, self.player) 
         menu.addTitle(self.DISPLAY_SIZE[0]/2, 100, 'Breakout!')
@@ -113,6 +118,9 @@ class Game(object):
 
 
     def win(self):
+    
+        pygame.mouse.set_visible(True)
+
         #construct menu
         menu = Menu(self.DISPLAY_SIZE, self.display, self.player) 
         menu.addTitle(self.DISPLAY_SIZE[0]/2, 100, 'You Won!')
@@ -141,6 +149,9 @@ class Game(object):
 
 
     def lose(self):
+       
+        pygame.mouse.set_visible(True)
+
         #construct menu
         menu = Menu(self.DISPLAY_SIZE, self.display, self.player) 
         menu.addTitle(self.DISPLAY_SIZE[0]/2, 100, 'You Lost')

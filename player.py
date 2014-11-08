@@ -58,7 +58,7 @@ class Player(object):
     def draw_score(self):
         text = self.font.render(str(self.score), True, BLACK)
         self.score_rect = text.get_rect()
-        self.score_rect.center = (self.DISPLAY_SIZE[0]-75, self.DISPLAY_SIZE[1]-25)
+        self.score_rect.center = (self.DISPLAY_SIZE[0]-100, self.DISPLAY_SIZE[1]-25)
         self.display.blit(text, self.score_rect)
 
 
