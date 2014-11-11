@@ -13,8 +13,8 @@ class Ball(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.center = (random.randint(1,DISPLAY_SIZE[0]-35), 450)
         self.draw_rect = self.rect.inflate(150, 150)
-        self.x_speed = random.randint(6,9)
-        self.y_speed = -random.randint(6,9)
+        self.x_speed = random.randint(8,11)
+        self.y_speed = -random.randint(8,11)
         self.DISPLAY_SIZE = DISPLAY_SIZE
         self.display = display
         self.paddle = paddle 
