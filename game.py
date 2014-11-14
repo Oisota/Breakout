@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+import os
 import sys
 import time
 import pygame
@@ -28,7 +29,6 @@ class Game(object):
         pygame.display.set_caption(self.GAME_NAME)
         self.clock = pygame.time.Clock()
        
-        #load images
         self.background = pygame.image.load('Images/brickwall.png')
         self.background.convert()
 
@@ -36,7 +36,8 @@ class Game(object):
         self.player = Player(self.DISPLAY_SIZE, self.display, 'Derek', 0)
         self.paddle = Paddle(self.DISPLAY_SIZE, self.display, self.player)
         self.ball = Ball(self.DISPLAY_SIZE, self.display, self.paddle, self.player)
-        self.bricks = BrickManager(self.DISPLAY_SIZE, self.display, self.ball, self.player)
+        self.bricks = BrickManager(self.DISPLAY_SIZE, self.ball, self.player)
+        self.sprites = pygame.sprite.Group(self.paddle, self.ball)
 
 
     def run(self): 
@@ -50,9 +51,8 @@ class Game(object):
         self.bricks.fillDisplay() #place bricks
         
         self.display.blit(self.background, (0,0)) #blit background to the screen
-        self.paddle.draw()   #draw the ball, paddle, bricks
-        self.ball.draw()
-        self.bricks.draw()
+        self.bricks.draw(self.display)
+        self.sprites.draw(self.display)
         pygame.display.update()
 
         #main game loop
@@ -65,23 +65,25 @@ class Game(object):
 
             self.display.blit(self.background, (0,0)) #blit background to the screen
                         
-            self.paddle.draw()   #draw the ball, paddle, bricks
-            self.ball.draw()
-            self.bricks.draw()
+            self.bricks.draw(self.display)
+            self.sprites.draw(self.display)
             self.player.draw_score()
             
-            self.paddle.update()  #update ball, paddle, bricks
-            self.ball.update() 
-            self.bricks.update()
+            self.bricks.update(self.bricks)
+            self.sprites.update()
+        
+            if not self.bricks.sprites(): #check if all bricks are destroyed
+                self.player.won = True
+                self.player.alive = False 
             
             pygame.display.update((self.ball.draw_rect, self.paddle.draw_rect, self.player.score_rect))
             self.clock.tick(self.FPS)
 
         #check if player has won/lost 
         if self.player.won:
-            self.win()
+            self.end('You Win!')
         elif not self.player.won:
-            self.lose()
+            self.end('You Lose.')
 
 
     def start(self):
@@ -89,20 +91,20 @@ class Game(object):
         pygame.mouse.set_visible(True)
 
         #construct menu
-        menu = Menu(self.DISPLAY_SIZE, self.display, self.player) 
-        menu.addTitle(self.DISPLAY_SIZE[0]/2, 100, 'Breakout!')
+        menu = Menu(self.DISPLAY_SIZE, self.player) 
+        title = menu.addTitle(self.DISPLAY_SIZE[0]/2, 100, 'Breakout!')
         start = menu.addButton(self.DISPLAY_SIZE[0]/2, 200, 'Start')
         quit = menu.addButton(self.DISPLAY_SIZE[0]/2, 300, 'Quit')
         
         self.display.blit(self.background, (0,0))
-        menu.draw()
+        menu.draw(self.display)
         pygame.display.update()
 
         while self.player.alive:
             
             self.player.getInput() 
             self.display.blit(self.background, (0,0))
-            menu.draw()
+            menu.draw(self.display)
             menu.update()
 
             if start.pressed:
@@ -111,31 +113,29 @@ class Game(object):
                 pygame.quit()
                 sys.exit()
 
-            
-            #fix so that only buttons and title get updated
-            pygame.display.update((menu.title.img_rect, start.img_rect, quit.img_rect))
+            pygame.display.update(menu.rects)
             self.clock.tick(self.FPS)
 
 
-    def win(self):
+    def end(self, message):
     
         pygame.mouse.set_visible(True)
 
         #construct menu
-        menu = Menu(self.DISPLAY_SIZE, self.display, self.player) 
-        menu.addTitle(self.DISPLAY_SIZE[0]/2, 100, 'You Won!')
+        menu = Menu(self.DISPLAY_SIZE, self.player) 
+        title = menu.addTitle(self.DISPLAY_SIZE[0]/2, 100, message)
         again = menu.addButton(self.DISPLAY_SIZE[0]/2, 200, 'Retry')
         quit = menu.addButton(self.DISPLAY_SIZE[0]/2, 300, 'Quit')
         
         self.display.blit(self.background, (0,0))
-        menu.draw()
+        menu.draw(self.display)
         pygame.display.update()
 
         while True:
             self.player.getInput()
             self.display.blit(self.background, (0,0))
             self.player.draw_score()
-            menu.draw()
+            menu.draw(self.display)
             menu.update()
 
             if again.pressed:
@@ -144,36 +144,6 @@ class Game(object):
                 pygame.quit()
                 sys.exit()
 
-            pygame.display.update((menu.title.img_rect, again.img_rect, quit.img_rect, self.player.score_rect))
+            pygame.display.update(menu.rects)
             self.clock.tick(self.FPS)
-
-
-    def lose(self):
-       
-        pygame.mouse.set_visible(True)
-
-        #construct menu
-        menu = Menu(self.DISPLAY_SIZE, self.display, self.player) 
-        menu.addTitle(self.DISPLAY_SIZE[0]/2, 100, 'You Lost')
-        again = menu.addButton(self.DISPLAY_SIZE[0]/2, 200, 'Retry')
-        quit = menu.addButton(self.DISPLAY_SIZE[0]/2, 300, 'Quit')
-        
-        self.display.blit(self.background, (0,0))
-        menu.draw()
-        pygame.display.update()
-
-        while True:
-            self.player.getInput()
-            self.display.blit(self.background, (0,0))
-            self.player.draw_score()
-            menu.draw()
-            menu.update()
-
-            if again.pressed:
-                self.run()
-            elif quit.pressed:
-                pygame.quit()
-                sys.exit()
-
-            pygame.display.update((menu.title.img_rect, again.img_rect, quit.img_rect, self.player.score_rect))
             self.clock.tick(self.FPS)

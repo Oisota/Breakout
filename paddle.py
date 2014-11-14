@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+import os
 import pygame
 
 #paddle class definition
@@ -7,19 +8,15 @@ class Paddle(pygame.sprite.Sprite):
 
     def __init__(self, DISPLAY_SIZE, display, player):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.image.load('Images/paddle.png').convert()
-        self.rect = self.image.get_rect()
-        self.rect.center = (DISPLAY_SIZE[0] - 500, DISPLAY_SIZE[1]/2)
-        self.draw_rect = self.rect.inflate(120, 40)
-        self.speed = 14
         self.DISPLAY_SIZE = DISPLAY_SIZE
         self.display = display
         self.player = player
+        self.image = pygame.image.load('Images/paddle.png').convert()
+        self.rect = self.image.get_rect()
+        self.draw_rect = self.rect.inflate(120, 40)
+        self.reset()
+        self.speed = 14
    
-
-    def draw(self):
-        self.display.blit(self.image, self.rect)
-        
 
     def update(self):
         if self.player.pressed == 'right':

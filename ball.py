@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+import os
 import sys
 import random
 import pygame
@@ -9,27 +10,22 @@ class Ball(pygame.sprite.Sprite):
 
     def __init__(self, DISPLAY_SIZE, display, paddle, player):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.image.load('Images/ball.png').convert_alpha()
-        self.rect = self.image.get_rect()
-        self.rect.center = (random.randint(1,DISPLAY_SIZE[0]-35), 450)
-        self.draw_rect = self.rect.inflate(150, 150)
-        self.x_speed = random.randint(8,11)
-        self.y_speed = -random.randint(8,11)
         self.DISPLAY_SIZE = DISPLAY_SIZE
-        self.display = display
         self.paddle = paddle 
         self.player = player
+        self.image = pygame.image.load('Images/ball.png').convert_alpha()
+        self.rect = self.image.get_rect()
+        self.draw_rect = self.rect.inflate(150, 150)
+        self.reset()
         self.left_wall = pygame.Rect(0,0,1,DISPLAY_SIZE[1]) 
         self.right_wall = pygame.Rect(799,0,1,DISPLAY_SIZE[1])
         self.top_wall = pygame.Rect(0,0,DISPLAY_SIZE[0],1)
         self.bottom_wall = pygame.Rect(0,DISPLAY_SIZE[1]-50,DISPLAY_SIZE[0],1)       
         
         
-    def draw(self): 
-        self.display.blit(self.image, self.rect)
-  
-       
     def update(self):
+        #edit so the method takes a list of rects as a parameter and
+        #have the ball bounce off the rects.
         self.rect = self.rect.move(self.x_speed, self.y_speed)
         self.draw_rect.center = self.rect.center
         
@@ -46,6 +42,6 @@ class Ball(pygame.sprite.Sprite):
 
     def reset(self):
         self.rect.center = (random.randint(1, self.DISPLAY_SIZE[0]-35), 450)
-        self.x_speed = random.randint(4,7)
-        self.y_speed = -random.randint(4,7)
+        self.x_speed = random.randint(6,9)
+        self.y_speed = -random.randint(6,9)
 
