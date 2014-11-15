@@ -54,7 +54,8 @@ class Game(object):
         self.bricks.draw(self.display)
         self.sprites.draw(self.display)
         pygame.display.update()
-
+        pygame.time.wait(500)
+        
         #main game loop
         while self.player.alive:
             
@@ -78,6 +79,7 @@ class Game(object):
             
             pygame.display.update((self.ball.draw_rect, self.paddle.draw_rect, self.player.score_rect))
             self.clock.tick(self.FPS)
+            pygame.time.wait(5)
 
         #check if player has won/lost 
         if self.player.won:
@@ -123,7 +125,7 @@ class Game(object):
 
         #construct menu
         menu = Menu(self.DISPLAY_SIZE, self.player)       
-        title = menu.addTitle(self.DISPLAY_SIZE[0]/2, 100, 'Images/start.png') #need to make win/lose png's
+        title = menu.addTitle(self.DISPLAY_SIZE[0]/2, 100, image) 
         again = menu.addButton(self.DISPLAY_SIZE[0]/2, 200, 'Images/retry.png', 'Images/retry_pressed.png')
         quit = menu.addButton(self.DISPLAY_SIZE[0]/2, 300, 'Images/quit.png', 'Images/quit_pressed.png')
         

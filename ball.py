@@ -15,12 +15,12 @@ class Ball(pygame.sprite.Sprite):
         self.player = player
         self.image = pygame.image.load('Images/ball.png').convert_alpha()
         self.rect = self.image.get_rect()
-        self.draw_rect = self.rect.inflate(150, 150)
+        self.draw_rect = self.rect.inflate(160, 160)
         self.reset()
         self.left_wall = pygame.Rect(0,0,1,DISPLAY_SIZE[1]) 
         self.right_wall = pygame.Rect(799,0,1,DISPLAY_SIZE[1])
         self.top_wall = pygame.Rect(0,0,DISPLAY_SIZE[0],1)
-        self.bottom_wall = pygame.Rect(0,DISPLAY_SIZE[1]-50,DISPLAY_SIZE[0],1)       
+        self.bottom_wall = pygame.Rect(0,DISPLAY_SIZE[1]-40,DISPLAY_SIZE[0],1)       
         
         
     def update(self):

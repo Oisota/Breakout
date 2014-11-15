@@ -15,7 +15,7 @@ class Paddle(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.draw_rect = self.rect.inflate(120, 40)
         self.reset()
-        self.speed = 14
+        self.speed = 16
    
 
     def update(self):
