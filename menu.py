@@ -6,47 +6,40 @@ from colors import *
 
 class Button(pygame.sprite.Sprite):
 
-    def __init__(self, DISPLAY_SIZE, x, y, text, player):
+    def __init__(self, x, y, img1, img2, player):
         pygame.sprite.Sprite.__init__(self)
-        self.DISPLAY_SIZE = DISPLAY_SIZE 
         self.player = player
         self.pressed = False 
 
-        #load font
-        self.font_norm = pygame.font.Font(None, 60)
-        self.font_bold = pygame.font.Font(None, 60)
-        self.font_bold.set_bold(True)
-        #render text
-        self.text_norm = self.font_norm.render(text, True, BLACK)
-        self.text_bold = self.font_bold.render(text, True, BLACK)
-         
-        self.rect = self.text_norm.get_rect()
+        #load image
+        self.img_not_pressed = pygame.image.load(img1)
+        self.img_pressed = pygame.image.load(img2)
+        self.img_not_pressed  = pygame.transform.scale(self.img_not_pressed, (130,70))
+        self.img_pressed  = pygame.transform.scale(self.img_pressed, (130,70))
+        self.image = self.img_not_pressed
+        self.rect = self.image.get_rect()
         self.rect.center = (x,y)
-        self.image = self.text_norm
 
-
+        
     def update(self):
         if self.rect.collidepoint(self.player.mouse_pos):
-            self.image = self.text_bold
+            self.image = self.img_pressed
             
             if self.player.pressed == 'mouse 1':
                 self.pressed = True
             else:
                 self.pressed = False
         else:
-            self.image = self.text_norm
+            self.image = self.img_not_pressed
 
 
 class Title(pygame.sprite.Sprite):
 
-    def __init__(self, DISPLAY_SIZE, x, y, text):
+    def __init__(self, x, y, image):
         pygame.sprite.Sprite.__init__(self)
-        self.DISPLAY_SIZE = DISPLAY_SIZE
-
-        #load font/render text
-        self.font = pygame.font.Font(None, 80)
-        self.image = self.font.render(text, True, ORANGE)
-
+        #load image
+        self.image = pygame.image.load(image)
+        self.image = pygame.transform.scale(self.image, (200,80))
         self.rect = self.image.get_rect()
         self.rect.center = (x,y)
 
@@ -55,19 +48,6 @@ class Title(pygame.sprite.Sprite):
         pass
 
 
-class Block(pygame.sprite.Sprite):
-
-    def __init__(self, image, x, y, size):
-        pygame.sprite.Sprite.__init__(self)
-        #load image
-        self.image = pygame.image.load(image)
-        self.image = pygame.transform.scale(self.image, size)
-        self.rect = self.image.get_rect()
-        self.rect.center = (x,y)
-
-        
-#TO DO: make new menu buttons using GIMP instead of rendering
-#       text. 
 
 class Menu(pygame.sprite.Group):
 
@@ -78,19 +58,15 @@ class Menu(pygame.sprite.Group):
         self.rects = []
 
 
-    def addButton(self, x, y, text):
-        button_block = Block('Images/brick.png', x, y, (140,60))
-        button = Button(self.DISPLAY_SIZE, x, y, text, self.player)
-        self.add(button_block)
+    def addButton(self, x, y, img1, img2):
+        button = Button(x, y, img1, img2, self.player)
         self.add(button) 
-        self.rects.append(button_block.rect)
+        self.rects.append(button.rect)
         return button
    
     
-    def addTitle(self, x, y, text):
-        title_block = Block('Images/paddle.png', x, y, (300,80))
-        title = Title(self.DISPLAY_SIZE, x, y, text)
-        self.add(title_block)
+    def addTitle(self, x, y, image):
+        title = Title(x, y, image)
         self.add(title)
-        self.rects.append(title_block.rect)
+        self.rects.append(title.rect)
         return title

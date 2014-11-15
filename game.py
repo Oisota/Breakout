@@ -81,9 +81,9 @@ class Game(object):
 
         #check if player has won/lost 
         if self.player.won:
-            self.end('You Win!')
+            self.end('Images/win.png')
         elif not self.player.won:
-            self.end('You Lose.')
+            self.end('Images/lose.png')
 
 
     def start(self):
@@ -92,9 +92,9 @@ class Game(object):
 
         #construct menu
         menu = Menu(self.DISPLAY_SIZE, self.player) 
-        title = menu.addTitle(self.DISPLAY_SIZE[0]/2, 100, 'Breakout!')
-        start = menu.addButton(self.DISPLAY_SIZE[0]/2, 200, 'Start')
-        quit = menu.addButton(self.DISPLAY_SIZE[0]/2, 300, 'Quit')
+        title = menu.addTitle(self.DISPLAY_SIZE[0]/2, 100, 'Images/breakout.png') #need to make breakout.png
+        start = menu.addButton(self.DISPLAY_SIZE[0]/2, 200, 'Images/start.png', 'Images/start_pressed.png')
+        quit = menu.addButton(self.DISPLAY_SIZE[0]/2, 300, 'Images/quit.png', 'Images/quit_pressed.png')
         
         self.display.blit(self.background, (0,0))
         menu.draw(self.display)
@@ -117,15 +117,16 @@ class Game(object):
             self.clock.tick(self.FPS)
 
 
-    def end(self, message):
+    def end(self, image):
     
         pygame.mouse.set_visible(True)
 
         #construct menu
-        menu = Menu(self.DISPLAY_SIZE, self.player) 
-        title = menu.addTitle(self.DISPLAY_SIZE[0]/2, 100, message)
-        again = menu.addButton(self.DISPLAY_SIZE[0]/2, 200, 'Retry')
-        quit = menu.addButton(self.DISPLAY_SIZE[0]/2, 300, 'Quit')
+        menu = Menu(self.DISPLAY_SIZE, self.player)       
+        title = menu.addTitle(self.DISPLAY_SIZE[0]/2, 100, 'Images/start.png') #need to make win/lose png's
+        again = menu.addButton(self.DISPLAY_SIZE[0]/2, 200, 'Images/retry.png', 'Images/retry_pressed.png')
+        quit = menu.addButton(self.DISPLAY_SIZE[0]/2, 300, 'Images/quit.png', 'Images/quit_pressed.png')
+        
         
         self.display.blit(self.background, (0,0))
         menu.draw(self.display)
@@ -145,5 +146,4 @@ class Game(object):
                 sys.exit()
 
             pygame.display.update(menu.rects)
-            self.clock.tick(self.FPS)
             self.clock.tick(self.FPS)
