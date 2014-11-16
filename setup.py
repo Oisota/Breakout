@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
-#This file is used to make a distribution of
-#the game using distutils. 
+#This file is used to make a distribution of the game using distutils. 
 
 from distutils.core import setup
 
@@ -16,6 +15,7 @@ setup(name='Breakout',
                           this game for the sole purpose of educating myself about
                           python, pygame, and game development in general. Feel free 
                           to use or modify my code in any way.""",
+      download_url='https://github.com/Oisota/Breakout',
       py_modules=['run',
                   'game',
                   'menu',
@@ -28,6 +28,15 @@ setup(name='Breakout',
       data_files=['Images/ball.png',
                   'Images/brick.png',
                   'Images/paddle.png',
-                  'Images/brickwall.png'
+                  'Images/brickwall.png',
+                  'Images/breakout.png',
+                  'Images/lose.png',
+                  'Images/win.png',
+                  'Images/start.png',
+                  'Images/start_pressed.png',
+                  'Images/quit.png',
+                  'Images/quit_pressed.png',
+                  'Images/retry.png',
+                  'Images/retry_pressed.png'
                  ]
      )

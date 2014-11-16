@@ -2,4 +2,13 @@ include Images/ball.png
 include Images/brick.png
 include Images/paddle.png
 include Images/brickwall.png
+include Images/breakout.png
+include Images/lose.png
+include Images/win.png
+include Images/start.png
+include Images/start_pressed.png
+include Images/quit.png
+include Images/quit_pressed.png
+include Images/retry.png
+include Images/retry_pressed.png
 
