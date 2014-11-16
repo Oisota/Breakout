@@ -11,7 +11,6 @@ from paddle import Paddle
 from player import Player
 from brick import BrickManager
 from menu import Menu
-from colors import *
 
 #initialize pygame
 pygame.init()

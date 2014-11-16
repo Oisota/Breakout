@@ -12,13 +12,8 @@ class Player(object):
         self.DISPLAY_SIZE = DISPLAY_SIZE
         self.display = display
         self.name = ''
-        self.score = 0
-        self.alive = True
-        self.won = False
+        self.reset()
         self.paused = False
-        self.pressed = ''
-        self.mouse_pos = (0,0)
-        self.font = pygame.font.Font(None, 40)
         self.score_rect = None
 
     

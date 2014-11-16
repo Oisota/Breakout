@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 import pygame
-from colors import *
 
 class Button(pygame.sprite.Sprite):
 
