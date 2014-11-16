@@ -1,1 +1,2 @@
-recursive-include Images *.png
+recursive-include breakout/Images *.png
+include breakout/files/breakout.desktop

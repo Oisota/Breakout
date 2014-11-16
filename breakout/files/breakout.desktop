@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Name=Breakout
+Comment=A Breakout Clone
+Exec=/home/derek/Documents/Programming/Python/Breakout/run.py
+Icon=/home/derek/Documents/Programming/Python/Breakout/Images/ball.png
+Path=/home/derek/Document/Programming/Python/Breakout
+Terminal=false
+Type=Application
+Categories=Game;
+Keywords=breakout;game;pygame;python;
