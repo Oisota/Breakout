@@ -80,6 +80,7 @@ class Game(object):
             pygame.time.wait(5)
 
         #check if player has won/lost 
+        pygame.time.wait(300)
         if self.player.won:
             self.end('Images/win.png')
         elif not self.player.won:

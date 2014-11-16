@@ -15,6 +15,7 @@ class Player(object):
         self.reset()
         self.paused = False
         self.score_rect = None
+        self.font = pygame.font.Font(None, 40)
 
     
     def getInput(self):
