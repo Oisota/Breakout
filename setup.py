@@ -8,28 +8,32 @@ setup(name='Breakout',
       description='A remake of the classic aracade game',
       author='Derek Morey',
       author_email='dman6505@gmail.com',
-      url='none',
       license='GPL',
-      long_description="""This is a remake of the classic game Breakout. I made 
-                          this game for the sole purpose of educating myself about
-                          python, pygame, and game development in general. Feel free 
-                          to use or modify my code in any way.""",
+      url='https://github.com/Oisota/Breakout',
       download_url='https://github.com/Oisota/Breakout',
+      keywords=['breakout', 'game', 'pygame'],
+      platforms=['linux'],
       packages=['breakout'],
-      data_files=['breakout/Images/ball.png',
-                  'breakout/Images/brick.png',
-                  'breakout/Images/paddle.png',
-                  'breakout/Images/brickwall.png',
-                  'breakout/Images/breakout.png',
-                  'breakout/Images/lose.png',
-                  'breakout/Images/win.png',
-                  'breakout/Images/start.png',
-                  'breakout/Images/start_pressed.png',
-                  'breakout/Images/quit.png',
-                  'breakout/Images/quit_pressed.png',
-                  'breakout/Images/retry.png',
-                  'breakout/Images/retry_pressed.png',
-                  'breakout/files/breakout.desktop'
+      package_data={'breakout':['files/*.desktop','Images/*.png' ]},
+      classifiers=['Programming Language :: Python',
+                  'Programming Language :: Python :: 3',
+                  'Development Status :: 3 - Alpha',
+                  'Environment :: Other Environment',
+                  'Framework :: Pygame',
+                  'Intended Audience :: End Users/Desktop',
+                  'Intended Audience :: Developers',
+                  'Intended Audience :: Education',
+                  'License :: OSI Approved :: GNU General Public License (GPL)',
+                  'Natural Language :: English',
+                  'Operating System :: OS Independent',
+                  'Topic :: Games/Entertainment',
+                  'Topic :: Games/Entertainment :: Arcade'
                  ],
-     classifiers=[]
+     requires=['sys', 'os', 'random', 'pygame'],
+     long_description="""\
+Breakout
+--------
+This is a remake of the classic game Breakout. I made this game for the sole purpose of educating myself about 
+python, pygame, and game development in general. Feel free use or modify my code in any way.
+                       """,
      )
