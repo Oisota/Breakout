@@ -5,15 +5,14 @@ import pygame
 #paddle class definition
 class Paddle(pygame.sprite.Sprite):
 
-    def __init__(self, DISPLAY_SIZE, display, player):
+    def __init__(self, DISPLAY_SIZE, player):
         pygame.sprite.Sprite.__init__(self)
         self.DISPLAY_SIZE = DISPLAY_SIZE
-        self.display = display
         self.player = player
         self.image = pygame.image.load('Images/paddle.png').convert()
         self.rect = self.image.get_rect()
         self.draw_rect = self.rect.inflate(120, 40)
-        self.reset()
+        self.rect.center = (self.DISPLAY_SIZE[0]/2, self.DISPLAY_SIZE[1] - 75)
         self.speed = 16
    
 
@@ -28,7 +27,3 @@ class Paddle(pygame.sprite.Sprite):
             self.draw_rect.center = self.rect.center
             if self.rect.x < 0:
                 self.rect.x = 0
-
-
-    def reset(self):
-        self.rect.center = (self.DISPLAY_SIZE[0]/2, self.DISPLAY_SIZE[1] - 75)

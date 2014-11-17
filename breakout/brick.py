@@ -51,7 +51,3 @@ class BrickManager(pygame.sprite.Group):
         for x_pos in range(85,785,70):
             for y_pos in range(100,281,30):
                 self.addBrick(x_pos, y_pos)
-        
-
-    def reset(self):
-        self.empty()

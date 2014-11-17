@@ -30,60 +30,59 @@ class Game(object):
         self.background = pygame.image.load('Images/brickwall.png')
         self.background.convert()
 
-        #initialize game objects
-        self.player = Player(self.DISPLAY_SIZE, self.display, 'Derek', 0)
-        self.paddle = Paddle(self.DISPLAY_SIZE, self.display, self.player)
-        self.ball = Ball(self.DISPLAY_SIZE, self.display, self.paddle, self.player)
-        self.bricks = BrickManager(self.DISPLAY_SIZE, self.ball, self.player)
-        self.sprites = pygame.sprite.Group(self.paddle, self.ball)
-
 
     def run(self): #function that runs the game
 
         pygame.mouse.set_visible(False) #make mouse invisible while playing the game
-  
-        self.player.reset()
-        self.paddle.reset()
-        self.ball.reset()
-        self.bricks.reset()
-        self.bricks.fillDisplay() #place bricks
         
+        #initialize game objects 
+        player = Player(self.DISPLAY_SIZE, 'player1', 0)
+        paddle = Paddle(self.DISPLAY_SIZE, player)
+        ball = Ball(self.DISPLAY_SIZE, self.display, paddle, player)
+        bricks = BrickManager(self.DISPLAY_SIZE, ball, player)
+        sprites = pygame.sprite.Group(paddle, ball, player)
+  
+        bricks.fillDisplay() #place bricks
+        draw_rects = (ball.draw_rect, paddle.draw_rect, player.draw_rect) #list of rects to update
         self.display.blit(self.background, (0,0)) #blit background to the screen
-        self.bricks.draw(self.display)
-        self.sprites.draw(self.display)
+
+        bricks.draw(self.display)
+        sprites.draw(self.display)
+        
         pygame.display.update()
         pygame.time.wait(500)
         
         #main game loop
-        while self.player.alive:
+        while player.alive:
             
-            self.player.getInput() #get input from player
+            player.getInput() #get input from player
 
-            if self.player.paused:
+            if player.paused:
                 continue
 
             self.display.blit(self.background, (0,0)) #blit background to the screen
                         
-            self.bricks.draw(self.display)
-            self.sprites.draw(self.display)
-            self.player.draw_score()
+            #draw sprites
+            bricks.draw(self.display)
+            sprites.draw(self.display)
             
-            self.bricks.update(self.bricks)
-            self.sprites.update()
+            #update sprites
+            bricks.update(bricks)
+            sprites.update()
         
-            if not self.bricks.sprites(): #check if all bricks are destroyed
-                self.player.won = True
-                self.player.alive = False 
+            if not bricks.sprites(): #check if all bricks are destroyed
+                player.won = True
+                player.alive = False 
             
-            pygame.display.update((self.ball.draw_rect, self.paddle.draw_rect, self.player.score_rect))
+            pygame.display.update(draw_rects)
             self.clock.tick(self.FPS)
             pygame.time.wait(5)
 
         #check if player has won/lost 
         pygame.time.wait(300)
-        if self.player.won:
+        if player.won:
             self.end('Images/win.png')
-        elif not self.player.won:
+        elif not player.won:
             self.end('Images/lose.png')
 
 
@@ -91,8 +90,9 @@ class Game(object):
 
         pygame.mouse.set_visible(True)
 
+        player = Player(self.DISPLAY_SIZE, 'player1', 0)
         #construct menu
-        menu = Menu(self.DISPLAY_SIZE, self.player) 
+        menu = Menu(self.DISPLAY_SIZE, player) 
         title = menu.addTitle(self.DISPLAY_SIZE[0]/2, 100, 'Images/breakout.png') 
         start = menu.addButton(self.DISPLAY_SIZE[0]/2, 200, 'Images/start.png', 'Images/start_pressed.png')
         quit = menu.addButton(self.DISPLAY_SIZE[0]/2, 300, 'Images/quit.png', 'Images/quit_pressed.png')
@@ -101,9 +101,9 @@ class Game(object):
         menu.draw(self.display)
         pygame.display.update()
 
-        while self.player.alive:
+        while True:
             
-            self.player.getInput() 
+            player.getInput() 
             self.display.blit(self.background, (0,0))
             menu.draw(self.display)
             menu.update()
@@ -123,8 +123,9 @@ class Game(object):
     
         pygame.mouse.set_visible(True)
 
+        player = Player(self.DISPLAY_SIZE, 'player1', 0)
         #construct menu
-        menu = Menu(self.DISPLAY_SIZE, self.player)       
+        menu = Menu(self.DISPLAY_SIZE, player)       
         title = menu.addTitle(self.DISPLAY_SIZE[0]/2, 100, image) 
         again = menu.addButton(self.DISPLAY_SIZE[0]/2, 200, 'Images/retry.png', 'Images/retry_pressed.png')
         quit = menu.addButton(self.DISPLAY_SIZE[0]/2, 300, 'Images/quit.png', 'Images/quit_pressed.png')
@@ -134,9 +135,8 @@ class Game(object):
         pygame.display.update()
 
         while True:
-            self.player.getInput()
+            player.getInput()
             self.display.blit(self.background, (0,0))
-            self.player.draw_score()
             menu.draw(self.display)
             menu.update()
 

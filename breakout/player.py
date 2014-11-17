@@ -6,16 +6,23 @@ import pygame
 from pygame.locals import *
 
 
-class Player(object):
+class Player(pygame.sprite.Sprite):
     
-    def __init__(self,DISPLAY_SIZE, display, name, score):
+    def __init__(self,DISPLAY_SIZE, name, score):
+        pygame.sprite.Sprite.__init__(self)
         self.DISPLAY_SIZE = DISPLAY_SIZE
-        self.display = display
         self.name = ''
-        self.reset()
         self.paused = False
-        self.score_rect = None
+        self.score = score
+        self.alive = True
+        self.won = False
+        self.pressed = ''
+        self.mouse_pos = (0,0)
         self.font = pygame.font.Font(None, 40)
+        self.image = self.font.render(str(self.score), True, BLACK)
+        self.rect = self.image.get_rect()
+        self.rect.center = (self.DISPLAY_SIZE[0]-100, self.DISPLAY_SIZE[1]-25)
+        self.draw_rect = self.rect.inflate(40,10)
 
     
     def getInput(self):
@@ -51,16 +58,7 @@ class Player(object):
                 self.mouse_pos = event.pos
 
 
-    def draw_score(self):
-        text = self.font.render(str(self.score), True, BLACK)
-        self.score_rect = text.get_rect()
-        self.score_rect.center = (self.DISPLAY_SIZE[0]-100, self.DISPLAY_SIZE[1]-25)
-        self.display.blit(text, self.score_rect)
-
-
-    def reset(self):
-        self.score = 0
-        self.alive = True
-        self.won = False
-        self.pressed = ''
-        self.mouse_pos = (0,0)
+    def update(self):
+        self.image = self.font.render(str(self.score), True, BLACK)
+        self.rect = self.image.get_rect()
+        self.rect.center = (self.DISPLAY_SIZE[0]-100, self.DISPLAY_SIZE[1]-25)

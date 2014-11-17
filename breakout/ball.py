@@ -14,8 +14,10 @@ class Ball(pygame.sprite.Sprite):
         self.player = player
         self.image = pygame.image.load('Images/ball.png').convert_alpha()
         self.rect = self.image.get_rect()
-        self.draw_rect = self.rect.inflate(160, 160)
-        self.reset()
+        self.draw_rect = self.rect.inflate(170, 170)
+        self.rect.center = (random.randint(1, self.DISPLAY_SIZE[0]-35), 450)
+        self.x_speed = random.randint(6,9)
+        self.y_speed = -random.randint(6,9)
         self.left_wall = pygame.Rect(0,0,1,DISPLAY_SIZE[1]) 
         self.right_wall = pygame.Rect(799,0,1,DISPLAY_SIZE[1])
         self.top_wall = pygame.Rect(0,0,DISPLAY_SIZE[0],1)
@@ -37,10 +39,3 @@ class Ball(pygame.sprite.Sprite):
         elif self.rect.colliderect(self.bottom_wall):  #ball has missed paddle
             self.player.won = False
             self.player.alive = False 
-
-
-    def reset(self):
-        self.rect.center = (random.randint(1, self.DISPLAY_SIZE[0]-35), 450)
-        self.x_speed = random.randint(6,9)
-        self.y_speed = -random.randint(6,9)
-
