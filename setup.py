@@ -30,7 +30,7 @@ setup(name='Breakout',
                   'Topic :: Games/Entertainment :: Arcade'
                  ],
      requires=['sys', 'os', 'random', 'pygame'],
-     long_description="""\
+     long_description="""\n
 Breakout
 --------
 This is a remake of the classic game Breakout. I made this game for the sole purpose of educating myself about 
