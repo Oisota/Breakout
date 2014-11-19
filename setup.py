@@ -12,10 +12,12 @@ setup(
            license = 'GPL',
                url = 'https://github.com/Oisota/Breakout',
       download_url = 'https://github.com/Oisota/Breakout',
-          keywords = ['breakout', 'game', 'pygame'],
+          keywords = ['breakout', 'arcade', 'game', 'pygame', 'python'],
          platforms = ['linux'],
           packages = ['breakout'],
-      package_data = {'breakout':['files/*.desktop','Images/*.png' ]},
+      package_data = {'breakout':['files/*.desktop',
+                                  'Images/*.png', 
+                                  'Sounds/*.wav']},
           requires = ['sys', 'os', 'random', 'pygame'],
        classifiers = ['Programming Language :: Python',
                       'Programming Language :: Python :: 3',
@@ -33,7 +35,8 @@ setup(
   long_description = """\n
 Breakout
 --------
-This is a remake of the classic game Breakout. I made this game for the sole purpose of educating myself about 
-python, pygame, and game development in general. Feel free use or modify my code in any way."""
+This is a remake of the classic game Breakout. I made this game for the sole 
+purpose of educating myself about python, pygame, and game development in general. 
+Feel free use or modify my code in any way. \n"""
 
 )
