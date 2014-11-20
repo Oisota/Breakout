@@ -13,6 +13,7 @@ class Ball(pygame.sprite.Sprite):
         self.paddle = paddle 
         self.player = player
         self.image = pygame.image.load('Images/ball.png').convert_alpha()
+        self.sound = pygame.mixer.Sound('Sounds/blip.wav')
         self.rect = self.image.get_rect()
         self.draw_rect = self.rect.inflate(170, 170)
         self.rect.center = (random.randint(1, self.DISPLAY_SIZE[0]-35), 450)
@@ -32,10 +33,14 @@ class Ball(pygame.sprite.Sprite):
         
         if self.rect.colliderect(self.left_wall) or self.rect.colliderect(self.right_wall): #ball has hit side of screen
             self.x_speed = -self.x_speed 
+            self.sound.play()
         elif self.rect.colliderect(self.top_wall):     #ball has hit top of screen
             self.y_speed = -self.y_speed 
+            self.sound.play()
         elif self.rect.colliderect(self.paddle.rect):  #ball has hit paddle
             self.y_speed = -self.y_speed               #bounce ball up
+            self.sound.play()
         elif self.rect.colliderect(self.bottom_wall):  #ball has missed paddle
             self.player.won = False
             self.player.alive = False 
+            self.sound.play()

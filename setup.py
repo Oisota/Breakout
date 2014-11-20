@@ -13,7 +13,7 @@ setup(
                url = 'https://github.com/Oisota/Breakout',
       download_url = 'https://github.com/Oisota/Breakout',
           keywords = ['breakout', 'arcade', 'game', 'pygame', 'python'],
-         platforms = ['linux'],
+         platforms = ['linux', 'windows'],
           packages = ['breakout'],
       package_data = {'breakout':['files/*.desktop',
                                   'Images/*.png', 

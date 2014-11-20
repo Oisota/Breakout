@@ -16,19 +16,20 @@ class Brick(pygame.sprite.Sprite):
         
     def update(self, group):
         if self.rect.colliderect(self.ball.rect):
-                #tweak this
-                if self.ball.rect.x < self.rect.x:
-                    self.ball.x_speed = -self.ball.x_speed
-                    self.player.score += 5
-                    self.remove(group)
-                elif self.ball.rect.x < self.rect.x + self.rect.width:
-                    self.ball.y_speed = -self.ball.y_speed
-                    self.player.score += 5
-                    self.remove(group)
-                elif self.ball.rect.x + self.ball.rect.width > self.rect.x + self.rect.width:
-                    self.ball.x_speed = -self.ball.x_speed
-                    self.player.score += 5
-                    self.remove(group)
+            self.ball.sound.play()
+            #tweak this
+            if self.ball.rect.x < self.rect.x:
+                self.ball.x_speed = -self.ball.x_speed
+                self.player.score += 5
+                self.remove(group)
+            elif self.ball.rect.x < self.rect.x + self.rect.width:
+                self.ball.y_speed = -self.ball.y_speed
+                self.player.score += 5
+                self.remove(group)
+            elif self.ball.rect.x + self.ball.rect.width > self.rect.x + self.rect.width:
+                self.ball.x_speed = -self.ball.x_speed
+                self.player.score += 5
+                self.remove(group)
 
         
 
