@@ -8,6 +8,7 @@ class Button(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         self.player = player
         self.pressed = False 
+        self.sound = pygame.mixer.Sound('Sounds/blip.wav')
 
         #load image
         self.img_not_pressed = pygame.image.load(img1)
@@ -22,6 +23,7 @@ class Button(pygame.sprite.Sprite):
     def update(self):
         if self.rect.collidepoint(self.player.mouse_pos):
             self.image = self.img_pressed
+            #self.sound.play() #FIX: plays sound repeatedly when mouse over button
             
             if self.player.pressed == 'mouse 1':
                 self.pressed = True
