@@ -27,7 +27,7 @@ class Game(object):
         pygame.display.set_caption(self.GAME_NAME)
         self.clock = pygame.time.Clock()
        
-        self.background = pygame.image.load('Images/brickwall.png')
+        self.background = pygame.image.load('images/brickwall.png')
         self.background.convert()
 
 
@@ -81,9 +81,9 @@ class Game(object):
         #check if player has won/lost 
         pygame.time.wait(300)
         if player.won:
-            self.end('Images/win.png')
+            self.end('images/win.png')
         elif not player.won:
-            self.end('Images/lose.png')
+            self.end('images/lose.png')
 
 
     def start(self): #function displays the start screen
@@ -93,9 +93,9 @@ class Game(object):
         player = Player(self.DISPLAY_SIZE, 'player1', 0)
         #construct menu
         menu = Menu(self.DISPLAY_SIZE, player) 
-        title = menu.addTitle(self.DISPLAY_SIZE[0]/2, 100, 'Images/breakout.png') 
-        start = menu.addButton(self.DISPLAY_SIZE[0]/2, 200, 'Images/start.png', 'Images/start_pressed.png')
-        quit = menu.addButton(self.DISPLAY_SIZE[0]/2, 300, 'Images/quit.png', 'Images/quit_pressed.png')
+        title = menu.addTitle(self.DISPLAY_SIZE[0]/2, 100, 'images/breakout.png') 
+        start = menu.addButton(self.DISPLAY_SIZE[0]/2, 200, 'images/start.png', 'images/start_pressed.png')
+        quit = menu.addButton(self.DISPLAY_SIZE[0]/2, 300, 'images/quit.png', 'images/quit_pressed.png')
         
         self.display.blit(self.background, (0,0))
         menu.draw(self.display)
@@ -127,8 +127,8 @@ class Game(object):
         #construct menu
         menu = Menu(self.DISPLAY_SIZE, player)       
         title = menu.addTitle(self.DISPLAY_SIZE[0]/2, 100, image) 
-        again = menu.addButton(self.DISPLAY_SIZE[0]/2, 200, 'Images/retry.png', 'Images/retry_pressed.png')
-        quit = menu.addButton(self.DISPLAY_SIZE[0]/2, 300, 'Images/quit.png', 'Images/quit_pressed.png')
+        again = menu.addButton(self.DISPLAY_SIZE[0]/2, 200, 'images/retry.png', 'images/retry_pressed.png')
+        quit = menu.addButton(self.DISPLAY_SIZE[0]/2, 300, 'images/quit.png', 'images/quit_pressed.png')
         
         self.display.blit(self.background, (0,0))
         menu.draw(self.display)

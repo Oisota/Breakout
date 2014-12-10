@@ -7,7 +7,7 @@ class Brick(pygame.sprite.Sprite):
 
     def __init__(self, x, y, ball, player):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.image.load('Images/brick.png').convert()
+        self.image = pygame.image.load('images/brick.png').convert()
         self.rect = self.image.get_rect()
         self.rect.center = (x,y)
         self.ball = ball

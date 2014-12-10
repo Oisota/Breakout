@@ -12,8 +12,8 @@ class Ball(pygame.sprite.Sprite):
         self.DISPLAY_SIZE = DISPLAY_SIZE
         self.paddle = paddle 
         self.player = player
-        self.image = pygame.image.load('Images/ball.png').convert_alpha()
-        self.sound = pygame.mixer.Sound('Sounds/blip.wav')
+        self.image = pygame.image.load('images/ball.png').convert_alpha()
+        self.sound = pygame.mixer.Sound('sounds/blip.wav')
         self.rect = self.image.get_rect()
         self.draw_rect = self.rect.inflate(170, 170)
         self.rect.center = (random.randint(1, self.DISPLAY_SIZE[0]-35), 450)

@@ -9,7 +9,7 @@ class Paddle(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         self.DISPLAY_SIZE = DISPLAY_SIZE
         self.player = player
-        self.image = pygame.image.load('Images/paddle.png').convert()
+        self.image = pygame.image.load('images/paddle.png').convert()
         self.rect = self.image.get_rect()
         self.draw_rect = self.rect.inflate(120, 40)
         self.rect.center = (self.DISPLAY_SIZE[0]/2, self.DISPLAY_SIZE[1] - 75)

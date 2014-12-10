@@ -8,7 +8,7 @@ class Button(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         self.player = player
         self.pressed = False 
-        self.sound = pygame.mixer.Sound('Sounds/blip.wav')
+        self.sound = pygame.mixer.Sound('sounds/blip.wav')
 
         #load image
         self.img_not_pressed = pygame.image.load(img1)
