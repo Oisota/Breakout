@@ -7,7 +7,7 @@ import pygame
 #ball class definition
 class Ball(pygame.sprite.Sprite):
 
-    def __init__(self, DISPLAY_SIZE, display, paddle, player):
+    def __init__(self, DISPLAY_SIZE, paddle, player):
         pygame.sprite.Sprite.__init__(self)
         self.DISPLAY_SIZE = DISPLAY_SIZE
         self.paddle = paddle 

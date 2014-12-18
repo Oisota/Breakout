@@ -38,7 +38,7 @@ class Game(object):
         #initialize game objects 
         player = Player(self.DISPLAY_SIZE, 'player1', 0)
         paddle = Paddle(self.DISPLAY_SIZE, player)
-        ball = Ball(self.DISPLAY_SIZE, self.display, paddle, player)
+        ball = Ball(self.DISPLAY_SIZE, paddle, player)
         bricks = BrickManager(self.DISPLAY_SIZE, ball, player)
         sprites = pygame.sprite.Group(paddle, ball, player)
   
