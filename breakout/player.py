@@ -8,9 +8,9 @@ from pygame.locals import *
 
 class Player(pygame.sprite.Sprite):
     
-    def __init__(self,DISPLAY_SIZE, name, score):
+    def __init__(self,RES, name, score):
         pygame.sprite.Sprite.__init__(self)
-        self.DISPLAY_SIZE = DISPLAY_SIZE
+        self.RES = RES
         self.name = ''
         self.paused = False
         self.score = score
@@ -21,7 +21,7 @@ class Player(pygame.sprite.Sprite):
         self.font = pygame.font.Font(None, 40)
         self.image = self.font.render(str(self.score), True, BLACK)
         self.rect = self.image.get_rect()
-        self.rect.center = (self.DISPLAY_SIZE[0]-100, self.DISPLAY_SIZE[1]-25)
+        self.rect.center = (self.RES[0]-100, self.RES[1]-25)
         self.draw_rect = self.rect.inflate(40,10)
 
     
@@ -61,4 +61,4 @@ class Player(pygame.sprite.Sprite):
     def update(self):
         self.image = self.font.render(str(self.score), True, BLACK)
         self.rect = self.image.get_rect()
-        self.rect.center = (self.DISPLAY_SIZE[0]-100, self.DISPLAY_SIZE[1]-25)
+        self.rect.center = (self.RES[0]-100, self.RES[1]-25)

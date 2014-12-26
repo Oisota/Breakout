@@ -8,7 +8,7 @@ class Button(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         self.player = player
         self.pressed = False 
-        self.sound = pygame.mixer.Sound('sounds/blip.wav')
+        #self.sound = pygame.mixer.Sound('sounds/blip.wav')
 
         #load image
         self.img_not_pressed = pygame.image.load(img1)
@@ -26,7 +26,7 @@ class Button(pygame.sprite.Sprite):
             
             if self.player.pressed == 'mouse 1':
                 self.pressed = True
-                self.sound.play() 
+                #self.sound.play() 
             else:
                 self.pressed = False
         else:
@@ -52,9 +52,9 @@ class Title(pygame.sprite.Sprite):
 
 class Menu(pygame.sprite.Group):
 
-    def __init__(self, DISPLAY_SIZE, player):
+    def __init__(self, RES, player):
         pygame.sprite.Group.__init__(self)
-        self.DISPLAY_SIZE = DISPLAY_SIZE
+        self.RES = RES
         self.player = player
         self.rects = []
 

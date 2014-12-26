@@ -16,18 +16,18 @@ class Brick(pygame.sprite.Sprite):
         
     def update(self, group):
         if self.rect.colliderect(self.ball.rect):
-            self.ball.sound.play()
+            #self.ball.sound.play()
             #tweak this
             if self.ball.rect.x < self.rect.x:
-                self.ball.x_speed = -self.ball.x_speed
+                self.ball.x_vel = -self.ball.x_vel
                 self.player.score += 5
                 self.remove(group)
             elif self.ball.rect.x < self.rect.x + self.rect.width:
-                self.ball.y_speed = -self.ball.y_speed
+                self.ball.y_vel = -self.ball.y_vel
                 self.player.score += 5
                 self.remove(group)
             elif self.ball.rect.x + self.ball.rect.width > self.rect.x + self.rect.width:
-                self.ball.x_speed = -self.ball.x_speed
+                self.ball.x_vel = -self.ball.x_vel
                 self.player.score += 5
                 self.remove(group)
 
@@ -35,20 +35,20 @@ class Brick(pygame.sprite.Sprite):
 
 class BrickManager(pygame.sprite.Group):
 
-    def __init__(self, DISPLAY_SIZE, ball, player):
+    def __init__(self, RES, ball, player):
         pygame.sprite.Group.__init__(self)
-        self.DISPLAY_SIZE = DISPLAY_SIZE
+        self.RES = RES
         self.ball = ball
         self.player = player
         
         
-    def addBrick(self, x_pos, y_pos):
-        brick = Brick(x_pos, y_pos, self.ball, self.player)
+    def addBrick(self, x, y):
+        brick = Brick(x, y, self.ball, self.player)
         self.add(brick)
         
             
     def fillDisplay(self):
         #fix so bricks are placed based on screen resolution
-        for x_pos in range(85,785,70):
-            for y_pos in range(100,281,30):
-                self.addBrick(x_pos, y_pos)
+        for x in range(85,785,70):
+            for y in range(100,281,30):
+                self.addBrick(x, y)

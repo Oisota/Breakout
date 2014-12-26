@@ -19,11 +19,11 @@ class Game(object):
 
     def __init__(self):
     
-        self.GAME_NAME    = "Breakout"  #name of the game 
-        self.FPS          = 40          #frames per second limit
-        self.DISPLAY_SIZE = (800,600)   #size of the display
+        self.GAME_NAME  = "Breakout"  #name of the game 
+        self.FPS = 40 #frames per second limit
+        self.RES = (800,600)  #size of the display
 
-        self.display = pygame.display.set_mode(self.DISPLAY_SIZE)
+        self.display = pygame.display.set_mode(self.RES)
         pygame.display.set_caption(self.GAME_NAME)
         self.clock = pygame.time.Clock()
        
@@ -36,10 +36,10 @@ class Game(object):
         pygame.mouse.set_visible(False) #make mouse invisible while playing the game
         
         #initialize game objects 
-        player = Player(self.DISPLAY_SIZE, 'player1', 0)
-        paddle = Paddle(self.DISPLAY_SIZE, player)
-        ball = Ball(self.DISPLAY_SIZE, paddle, player)
-        bricks = BrickManager(self.DISPLAY_SIZE, ball, player)
+        player = Player(self.RES, 'player1', 0)
+        paddle = Paddle(self.RES, player)
+        ball = Ball(self.RES, paddle, player)
+        bricks = BrickManager(self.RES, ball, player)
         sprites = pygame.sprite.Group(paddle, ball, player)
   
         bricks.fillDisplay() #place bricks
@@ -90,12 +90,12 @@ class Game(object):
 
         pygame.mouse.set_visible(True)
 
-        player = Player(self.DISPLAY_SIZE, 'player1', 0)
+        player = Player(self.RES, 'player1', 0)
         #construct menu
-        menu = Menu(self.DISPLAY_SIZE, player) 
-        title = menu.addTitle(self.DISPLAY_SIZE[0]/2, 100, 'images/breakout.png') 
-        start = menu.addButton(self.DISPLAY_SIZE[0]/2, 200, 'images/start.png', 'images/start_pressed.png')
-        quit = menu.addButton(self.DISPLAY_SIZE[0]/2, 300, 'images/quit.png', 'images/quit_pressed.png')
+        menu = Menu(self.RES, player) 
+        title = menu.addTitle(self.RES[0]/2, 100, 'images/breakout.png') 
+        start = menu.addButton(self.RES[0]/2, 200, 'images/start.png', 'images/start_pressed.png')
+        quit = menu.addButton(self.RES[0]/2, 300, 'images/quit.png', 'images/quit_pressed.png')
         
         self.display.blit(self.background, (0,0))
         menu.draw(self.display)
@@ -123,12 +123,12 @@ class Game(object):
     
         pygame.mouse.set_visible(True)
 
-        player = Player(self.DISPLAY_SIZE, 'player1', 0)
+        player = Player(self.RES, 'player1', 0)
         #construct menu
-        menu = Menu(self.DISPLAY_SIZE, player)       
-        title = menu.addTitle(self.DISPLAY_SIZE[0]/2, 100, image) 
-        again = menu.addButton(self.DISPLAY_SIZE[0]/2, 200, 'images/retry.png', 'images/retry_pressed.png')
-        quit = menu.addButton(self.DISPLAY_SIZE[0]/2, 300, 'images/quit.png', 'images/quit_pressed.png')
+        menu = Menu(self.RES, player)       
+        title = menu.addTitle(self.RES[0]/2, 100, image) 
+        again = menu.addButton(self.RES[0]/2, 200, 'images/retry.png', 'images/retry_pressed.png')
+        quit = menu.addButton(self.RES[0]/2, 300, 'images/quit.png', 'images/quit_pressed.png')
         
         self.display.blit(self.background, (0,0))
         menu.draw(self.display)
