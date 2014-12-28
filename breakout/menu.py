@@ -13,14 +13,15 @@ Menu is a container for the buttons and a title.
 import pygame
 
 class Button(pygame.sprite.Sprite):
-    
-    def __init__(self, x, y, img1, img2, player):
+    """Button Class"""    
+    def __init__(self, x, y, img1, img2, player, command):
+        """Initialize button."""
         pygame.sprite.Sprite.__init__(self)
         self.player = player
-        self.pressed = False 
+        self.command = command
         #self.sound = pygame.mixer.Sound('sounds/blip.wav')
 
-        #load image
+        #load image and set position
         self.img_not_pressed = pygame.image.load(img1)
         self.img_pressed = pygame.image.load(img2)
         self.img_not_pressed  = pygame.transform.scale(self.img_not_pressed, (130,70))
@@ -31,24 +32,24 @@ class Button(pygame.sprite.Sprite):
 
         
     def update(self):
+        """Check to see if user has moused over or clicked the button."""
         if self.rect.collidepoint(self.player.mouse_pos):
             self.image = self.img_pressed
             
             if self.player.pressed == 'mouse 1':
-                self.pressed = True
                 #self.sound.play() 
-            else:
-                self.pressed = False
+                self.command()
         else:
             self.image = self.img_not_pressed
 
 
 
 class Title(pygame.sprite.Sprite):
-
+    """Title Class"""
     def __init__(self, x, y, image):
+        """Initialzie title."""
         pygame.sprite.Sprite.__init__(self)
-        #load image
+        #load image and set position
         self.image = pygame.image.load(image)
         self.image = pygame.transform.scale(self.image, (200,80))
         self.rect = self.image.get_rect()
@@ -56,28 +57,32 @@ class Title(pygame.sprite.Sprite):
 
 
     def update(self):
+        """Pass."""
         pass
 
 
 
 class Menu(pygame.sprite.Group):
-
+    """Menu Class"""
     def __init__(self, RES, player):
+        """Initialize menu."""
         pygame.sprite.Group.__init__(self)
         self.RES = RES
         self.player = player
         self.rects = []
 
 
-    def addButton(self, x, y, img1, img2):
-        button = Button(x, y, img1, img2, self.player)
+    def addButton(self, x, y, img1, img2, command):
+        """Create new button and add it to the menu."""
+        button = Button(x, y, img1, img2, self.player, command)
         self.add(button) 
         self.rects.append(button.rect)
-        return button
+        #return button
    
     
     def addTitle(self, x, y, image):
+        """Create new title and add it to the menu."""
         title = Title(x, y, image)
         self.add(title)
         self.rects.append(title.rect)
-        return title
+        #return title

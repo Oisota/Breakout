@@ -100,9 +100,9 @@ class Game(object):
         player = Player(self.RES, 'player1', 0)
         #construct menu
         menu = Menu(self.RES, player) 
-        title = menu.addTitle(self.RES[0]/2, 100, 'images/breakout.png') 
-        start = menu.addButton(self.RES[0]/2, 200, 'images/start.png', 'images/start_pressed.png')
-        quit = menu.addButton(self.RES[0]/2, 300, 'images/quit.png', 'images/quit_pressed.png')
+        menu.addTitle(self.RES[0]/2, 100, 'images/breakout.png') 
+        menu.addButton(self.RES[0]/2, 200, 'images/start.png', 'images/start_pressed.png', self.run)
+        menu.addButton(self.RES[0]/2, 300, 'images/quit.png', 'images/quit_pressed.png', self.quit)
         
         self.display.blit(self.background, (0,0))
         menu.draw(self.display)
@@ -114,12 +114,6 @@ class Game(object):
             self.display.blit(self.background, (0,0))
             menu.draw(self.display)
             menu.update()
-
-            if start.pressed:
-                self.run()
-            elif quit.pressed:
-                pygame.quit()
-                sys.exit()
 
             pygame.display.update(menu.rects)
             self.clock.tick(self.FPS)
@@ -133,9 +127,9 @@ class Game(object):
         player = Player(self.RES, 'player1', 0)
         #construct menu
         menu = Menu(self.RES, player)       
-        title = menu.addTitle(self.RES[0]/2, 100, image) 
-        again = menu.addButton(self.RES[0]/2, 200, 'images/retry.png', 'images/retry_pressed.png')
-        quit = menu.addButton(self.RES[0]/2, 300, 'images/quit.png', 'images/quit_pressed.png')
+        menu.addTitle(self.RES[0]/2, 100, image) 
+        menu.addButton(self.RES[0]/2, 200, 'images/retry.png', 'images/retry_pressed.png', self.run)
+        menu.addButton(self.RES[0]/2, 300, 'images/quit.png', 'images/quit_pressed.png', self.quit)
         
         self.display.blit(self.background, (0,0))
         menu.draw(self.display)
@@ -147,12 +141,12 @@ class Game(object):
             menu.draw(self.display)
             menu.update()
 
-            if again.pressed:
-                self.run()
-            elif quit.pressed:
-                pygame.quit()
-                sys.exit()
-
             pygame.display.update(menu.rects)
             self.clock.tick(self.FPS)
             pygame.time.wait(5)
+
+
+    def quit(self):
+        """Quit the game."""
+        pygame.quit()
+        sys.exit()
