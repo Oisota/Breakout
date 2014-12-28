@@ -1,4 +1,11 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+Event Handler Class
+
+This module handles events from the user.
+"""
 
 import sys
 from colors import *
@@ -19,6 +26,11 @@ class Player(pygame.sprite.Sprite):
         self.won = False
         self.pressed = ''
         self.mouse_pos = (0,0)
+        
+        #set which events will be allowed in the queue
+        allowed_events = [QUIT, KEYDOWN, KEYUP, MOUSEMOTION, MOUSEBUTTONUP, MOUSEBUTTONDOWN]
+        pygame.event.set_allowed(allowed_events)
+       
         self.font = pygame.font.Font(None, 40)
         self.image = self.font.render(str(self.score), True, BLACK)
         self.rect = self.image.get_rect()
