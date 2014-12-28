@@ -1,11 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""
-Event Handler Class
-
-This module handles events from the user.
-"""
 
 import sys
 from colors import *
