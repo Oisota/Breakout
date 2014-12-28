@@ -1,11 +1,21 @@
 #!/usr/bin/python3
+# -*- coding: utf-8 -*-
+"""
+Brick and BrickManager Classes
+
+This module contains the Brick and BrickManager classes. The Brick
+class displays a brick on the screen that gets destroyed once it
+is hit with a ball. The Brick Manager class is a container class 
+that allows easy manipulation of many bricks.
+"""
 
 import sys
 import pygame
 
 class Brick(pygame.sprite.Sprite):
-
+    """Brick Class"""
     def __init__(self, x, y, ball, player):
+        """Initialize brick"""
         pygame.sprite.Sprite.__init__(self)
         self.image = pygame.image.load('images/brick.png').convert()
         self.rect = self.image.get_rect()
@@ -15,6 +25,7 @@ class Brick(pygame.sprite.Sprite):
         
         
     def update(self, group):
+        """Check for ball collision and delete brick if there is a collision."""
         if self.rect.colliderect(self.ball.rect):
             #self.ball.sound.play()
             #tweak this
@@ -34,8 +45,9 @@ class Brick(pygame.sprite.Sprite):
         
 
 class BrickManager(pygame.sprite.Group):
-
+    """BrickManager Class"""
     def __init__(self, RES, ball, player):
+        """Initialze brick manager."""
         pygame.sprite.Group.__init__(self)
         self.RES = RES
         self.ball = ball
@@ -43,11 +55,13 @@ class BrickManager(pygame.sprite.Group):
         
         
     def addBrick(self, x, y):
+        """Add a brick with the given x,y position to the group"""
         brick = Brick(x, y, self.ball, self.player)
         self.add(brick)
         
             
     def fillDisplay(self):
+        """Fill the display with bricks."""
         #fix so bricks are placed based on screen resolution
         for x in range(85,785,70):
             for y in range(100,281,30):

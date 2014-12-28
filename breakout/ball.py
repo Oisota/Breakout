@@ -1,4 +1,11 @@
 #!/usr/bin/python3
+# -*- coding: utf-8 -*-
+"""
+Ball class definition.
+
+This module defines the ball class. It is used to
+display and animate balls that bounce around the screen.
+"""
 
 import sys
 import random
@@ -6,9 +13,11 @@ import pygame
 
 #ball class definition
 class Ball(pygame.sprite.Sprite):
-
+    """Ball Class"""
     def __init__(self, RES, paddle, player):
+        """Initialize ball object."""
         pygame.sprite.Sprite.__init__(self)
+        #super(Ball,self).__init__(self)
         self.RES = RES
         self.paddle = paddle 
         self.player = player
@@ -26,6 +35,7 @@ class Ball(pygame.sprite.Sprite):
         
         
     def update(self):
+        """Update the ball position and check for rect collisions."""
         #edit so the method takes a list of rects as a parameter and
         #have the ball bounce off the rects.
         self.rect = self.rect.move(self.x_vel, self.y_vel)
@@ -46,11 +56,17 @@ class Ball(pygame.sprite.Sprite):
             #self.sound.play()
 
 
-    #def update(self, rects):
-    #    self.rect = self.rect.move(self.x_vel, self.y_vel)
-    #    self.draw_rect.center = self.rect.center
+#    def update(self, rects):
+#        self.rect = self.rect.move(self.x_vel, self.y_vel)
+#        self.draw_rect.center = self.rect.center
+#
+#        rects.extend([self.left_wall, self.right_wall, self.top_wall, self.bottom_wall])
+#
+#        i = self.rect.collidelist(rects) #returns -1 if no collisions
+#        if i != -1:
+#            if self.rect.centerx < rects[i].left:
+                
 
-    #    for rect in rects:
-    #        if self.rect.colliderect(rect):
-    #            if self.x_vel > 0:
-    #    
+            
+            
+        

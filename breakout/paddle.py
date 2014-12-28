@@ -2,10 +2,10 @@
 
 import pygame
 
-#paddle class definition
 class Paddle(pygame.sprite.Sprite):
-
+    """Paddle Class"""
     def __init__(self, RES, player):
+        """Initialize paddle"""
         pygame.sprite.Sprite.__init__(self)
         self.RES = RES
         self.player = player
@@ -17,6 +17,7 @@ class Paddle(pygame.sprite.Sprite):
    
 
     def update(self):
+        """Update paddle position according to player button presses."""
         if self.player.pressed == 'right':
             self.rect = self.rect.move(self.vel, 0)
             self.draw_rect.center = self.rect.center

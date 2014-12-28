@@ -7,13 +7,14 @@ from pygame.locals import *
 
 
 class Player(pygame.sprite.Sprite):
-    
+    """Player Class""" 
     def __init__(self,RES, name, score):
+        """Initialize player."""
         pygame.sprite.Sprite.__init__(self)
         self.RES = RES
         self.name = ''
-        self.paused = False
         self.score = score
+        self.paused = False
         self.alive = True
         self.won = False
         self.pressed = ''
@@ -26,7 +27,7 @@ class Player(pygame.sprite.Sprite):
 
     
     def getInput(self):
-        #event handling loop
+        """Get input from the keyboard and mouse"""
         for event in pygame.event.get():
             if event.type == QUIT:
                 pygame.quit()
@@ -59,6 +60,7 @@ class Player(pygame.sprite.Sprite):
 
 
     def update(self):
+        """Update the player's score."""
         self.image = self.font.render(str(self.score), True, BLACK)
         self.rect = self.image.get_rect()
         self.rect.center = (self.RES[0]-100, self.RES[1]-25)

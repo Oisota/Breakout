@@ -1,9 +1,19 @@
 #!/usr/bin/python3
+# -*- coding: utf-8 -*-
+"""
+Menu, Button, and Title Classes
+
+This module contains the Menu, Button, and Title classes.
+These are used to create and display the menus for the start
+and quit screens. Button is a clickable button that changes
+color when the user mouses over it. Title is a a simple sprite.
+Menu is a container for the buttons and a title.
+"""
 
 import pygame
 
 class Button(pygame.sprite.Sprite):
-
+    
     def __init__(self, x, y, img1, img2, player):
         pygame.sprite.Sprite.__init__(self)
         self.player = player

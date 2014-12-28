@@ -1,4 +1,11 @@
 #!/usr/bin/python3
+# -*- coding: utf-8 -*-
+"""
+Game Class
+
+This module defines the game class. The class is used to
+create a game object that is able to run and control the game
+"""
 
 import sys
 import time
@@ -16,9 +23,9 @@ from menu import Menu
 pygame.init()
 
 class Game(object):
-
+    """Main Game Class"""
     def __init__(self):
-    
+        """Initialize Game object""" 
         self.GAME_NAME  = "Breakout"  #name of the game 
         self.FPS = 40 #frames per second limit
         self.RES = (800,600)  #size of the display
@@ -32,7 +39,7 @@ class Game(object):
 
 
     def run(self): #function that runs the game
-
+        """Run the main game loop."""
         pygame.mouse.set_visible(False) #make mouse invisible while playing the game
         
         #initialize game objects 
@@ -87,7 +94,7 @@ class Game(object):
 
 
     def start(self): #function displays the start screen
-
+        """Display the start screen."""
         pygame.mouse.set_visible(True)
 
         player = Player(self.RES, 'player1', 0)
@@ -120,7 +127,7 @@ class Game(object):
 
 
     def end(self, image): #function displays the win/lose screens
-    
+        """Display the quit screen.""" 
         pygame.mouse.set_visible(True)
 
         player = Player(self.RES, 'player1', 0)
