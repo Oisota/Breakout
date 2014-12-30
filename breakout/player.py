@@ -35,3 +35,10 @@ class Player(pygame.sprite.Sprite):
         self.image = self.font.render(str(self.score), True, self.color)
         self.rect = self.image.get_rect()
         self.rect.center = (self.RES[0]-100, self.RES[1]-25)
+
+
+    def reset(self):
+        """Reset player attributes."""
+        self.score = 0
+        self.alive = True
+        self.won = False

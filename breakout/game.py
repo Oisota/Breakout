@@ -31,6 +31,8 @@ class Game(object):
         self.display = pygame.display.set_mode(self.RES)
         pygame.display.set_caption(self.GAME_NAME)
         self.clock = pygame.time.Clock()
+        
+        self.player = Player(self.RES, 'player1', 0) 
        
         self.background, self.bg_rect = resource.load_image('resources/images/brickwall.png')
         self.background.convert()
@@ -40,15 +42,16 @@ class Game(object):
         """Run the main game loop."""
         pygame.mouse.set_visible(False) #make mouse invisible while playing the game
         paused = False
+
+        self.player.reset()
         
-        player = Player(self.RES, 'player1', 0) #initialize game objects
-        paddle = Paddle(self.RES, player)
-        ball = Ball(self.RES, paddle, player)
-        bricks = BrickManager(self.RES, ball, player)
-        sprites = pygame.sprite.Group(paddle, ball, player)
+        paddle = Paddle(self.RES)
+        ball = Ball(self.RES, paddle, self.player)
+        bricks = BrickManager(self.RES, ball, self.player)
+        sprites = pygame.sprite.Group(paddle, ball, self.player)
   
         bricks.fillDisplay() #place bricks
-        draw_rects = (ball.draw_rect, paddle.draw_rect, player.draw_rect) #list of rects to update
+        draw_rects = (ball.draw_rect, paddle.draw_rect, self.player.draw_rect) #list of rects to update
         self.display.blit(self.background, (0,0)) #blit background to the screen
 
         bricks.draw(self.display)
@@ -60,26 +63,26 @@ class Game(object):
         allowed_events = [QUIT, KEYDOWN, KEYUP]
         pygame.event.set_allowed(allowed_events)
         
-        while player.alive: #main game loop
+        while self.player.alive: #main game loop
             for event in pygame.event.get():
                 if event.type == QUIT:
                     pygame.quit()
                     sys.exit()
                 elif event.type == KEYDOWN:
                     if event.key == K_LEFT:
-                        paddle.move('left')
+                        paddle.direction = 'left'
                     elif event.key == K_RIGHT:
-                        paddle.move('right')
+                        paddle.direction = 'right'
                     elif event.key == K_p:
                         paused = True
                     elif event.key == K_ESCAPE:
-                        player.won = False
-                        player.alive = False
+                        self.player.won = False
+                        self.player.alive = False
                 elif event.type == KEYUP:
                     if event.key == K_LEFT:
-                        paddle.move('')
+                        paddle.direction = ''
                     elif event.key == K_RIGHT:
-                        paddle.move('')
+                        paddle.direction = ''
                     elif event.key == K_p:
                         paused = False
    
@@ -96,19 +99,15 @@ class Game(object):
             sprites.update()
         
             if not bricks.sprites(): #check if all bricks are destroyed
-                player.won = True
-                player.alive = False 
+                self.player.won = True
+                self.player.alive = False 
             
             pygame.display.update(draw_rects)
             self.clock.tick(self.FPS)
             pygame.time.wait(5)
 
         pygame.time.wait(300)
-        if player.won: #check if player has won/lost
-            self.end('resources/images/win.png')
-        elif not player.won:
-            self.end('resources/images/lose.png')
-
+        self.end()
 
     def start(self): #function displays the start screen
         """Display the start screen."""
@@ -148,14 +147,17 @@ class Game(object):
             pygame.time.wait(5)
 
 
-    def end(self, image): #function displays the win/lose screens
+    def end(self): #function displays the win/lose screens
         """Display the quit screen.""" 
         pygame.mouse.set_visible(True)
         mouse_pos = (0,0)
         pressed = ''
 
         menu = Menu(self.RES) #construct menu
-        menu.addTitle(self.RES[0]/2, 100, image) 
+        if self.player.won:
+            menu.addTitle(self.RES[0]/2, 100, 'resources/images/win.png') 
+        else:
+            menu.addTitle(self.RES[0]/2, 100, 'resources/images/lose.png') 
         menu.addButton(self.RES[0]/2, 200, 'resources/images/retry.png', 'resources/images/retry_pressed.png', self.run)
         menu.addButton(self.RES[0]/2, 300, 'resources/images/quit.png', 'resources/images/quit_pressed.png', self.quit)
         
