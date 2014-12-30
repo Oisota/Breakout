@@ -4,8 +4,8 @@
 """
 Player Module
 
-This module handles user events from the keyboard and mouse. It
-is also responsible for displaying the users score.
+This module defines the player class. It keeps track of the players
+name, score, and whether they have won. It also displays their score.
 """
 
 import pygame
