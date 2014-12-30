@@ -14,10 +14,9 @@ import pygame, resource
 
 class Button(pygame.sprite.Sprite):
     """Button Class"""    
-    def __init__(self, x, y, img1, img2, player, command):
+    def __init__(self, x, y, img1, img2, command):
         """Initialize button."""
         pygame.sprite.Sprite.__init__(self)
-        self.player = player
         self.command = command
         #self.sound = pygame.mixer.Sound('sounds/blip.wav')
 
@@ -31,17 +30,15 @@ class Button(pygame.sprite.Sprite):
         self.rect.center = (x,y)
 
         
-    def update(self):
+    def update(self, mouse_pos, pressed):
         """Check to see if user has moused over or clicked the button."""
-        if self.rect.collidepoint(self.player.mouse_pos):
+        if self.rect.collidepoint(mouse_pos):
             self.image = self.img_pressed
-            
-            if self.player.pressed == 'mouse 1':
+            if pressed == 'mouse 1':
                 #self.sound.play() 
                 self.command()
         else:
             self.image = self.img_not_pressed
-
 
 
 class Title(pygame.sprite.Sprite):
@@ -56,28 +53,25 @@ class Title(pygame.sprite.Sprite):
         self.rect.center = (x,y)
 
 
-    def update(self):
+    def update(self, mouse_pos, pressed):
         """Pass."""
         pass
 
 
-
 class Menu(pygame.sprite.Group):
     """Menu Class"""
-    def __init__(self, RES, player):
+    def __init__(self, RES):
         """Initialize menu."""
         pygame.sprite.Group.__init__(self)
         self.RES = RES
-        self.player = player
         self.rects = []
 
 
     def addButton(self, x, y, img1, img2, command):
         """Create new button and add it to the menu."""
-        button = Button(x, y, img1, img2, self.player, command)
+        button = Button(x, y, img1, img2, command)
         self.add(button) 
         self.rects.append(button.rect)
-        #return button
    
     
     def addTitle(self, x, y, image):
@@ -85,4 +79,3 @@ class Menu(pygame.sprite.Group):
         title = Title(x, y, image)
         self.add(title)
         self.rects.append(title.rect)
-        #return title
