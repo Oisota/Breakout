@@ -10,7 +10,7 @@ color when the user mouses over it. Title is a a simple sprite.
 Menu is a container for the buttons and a title.
 """
 
-import pygame
+import pygame, resource
 
 class Button(pygame.sprite.Sprite):
     """Button Class"""    
@@ -22,8 +22,8 @@ class Button(pygame.sprite.Sprite):
         #self.sound = pygame.mixer.Sound('sounds/blip.wav')
 
         #load image and set position
-        self.img_not_pressed = pygame.image.load(img1)
-        self.img_pressed = pygame.image.load(img2)
+        self.img_not_pressed, self.rect = resource.load_image(img1)
+        self.img_pressed, self.rect = resource.load_image(img2)
         self.img_not_pressed  = pygame.transform.scale(self.img_not_pressed, (130,70))
         self.img_pressed  = pygame.transform.scale(self.img_pressed, (130,70))
         self.image = self.img_not_pressed
@@ -50,7 +50,7 @@ class Title(pygame.sprite.Sprite):
         """Initialzie title."""
         pygame.sprite.Sprite.__init__(self)
         #load image and set position
-        self.image = pygame.image.load(image)
+        self.image, self.rect = resource.load_image(image)
         self.image = pygame.transform.scale(self.image, (200,80))
         self.rect = self.image.get_rect()
         self.rect.center = (x,y)

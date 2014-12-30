@@ -7,9 +7,7 @@ This module defines the game class. The class is used to
 create a game object that is able to run and control the game
 """
 
-import sys
-import time
-import pygame
+import pygame, resource, sys
 from pygame.locals import *
 
 #import game modules
@@ -34,11 +32,11 @@ class Game(object):
         pygame.display.set_caption(self.GAME_NAME)
         self.clock = pygame.time.Clock()
        
-        self.background = pygame.image.load('images/brickwall.png')
+        self.background, self.bg_rect = resource.load_image('images/brickwall.png')
         self.background.convert()
 
 
-    def run(self): #function that runs the game
+    def run(self): 
         """Run the main game loop."""
         pygame.mouse.set_visible(False) #make mouse invisible while playing the game
         

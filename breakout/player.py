@@ -1,10 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+"""
+Player Module
 
-import sys
+This module handles user events from the keyboard and mouse. It
+is also responsible for displaying the users score.
+"""
+
+
 from colors import *
-import pygame
+import pygame, sys
 from pygame.locals import *
 
 

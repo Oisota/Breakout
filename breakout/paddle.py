@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import pygame
+import pygame, resource
 
 class Paddle(pygame.sprite.Sprite):
     """Paddle Class"""
@@ -9,8 +9,7 @@ class Paddle(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         self.RES = RES
         self.player = player
-        self.image = pygame.image.load('images/paddle.png').convert()
-        self.rect = self.image.get_rect()
+        self.image, self.rect = resource.load_image('images/paddle.png')
         self.draw_rect = self.rect.inflate(120, 40)
         self.rect.center = (self.RES[0]/2, self.RES[1] - 75)
         self.vel = 16

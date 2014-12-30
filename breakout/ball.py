@@ -7,9 +7,7 @@ This module defines the ball class. It is used to
 display and animate balls that bounce around the screen.
 """
 
-import sys
-import random
-import pygame
+import pygame, random, sys, resource
 
 #ball class definition
 class Ball(pygame.sprite.Sprite):
@@ -21,9 +19,8 @@ class Ball(pygame.sprite.Sprite):
         self.RES = RES
         self.paddle = paddle 
         self.player = player
-        self.image = pygame.image.load('images/ball.png').convert_alpha()
-        #self.sound = pygame.mixer.Sound('sounds/blip.wav')
-        self.rect = self.image.get_rect()
+        self.image, self.rect = resource.load_image('images/ball.png')
+        #self.sound = resource.load_sound('sounds/blip.wav')
         self.draw_rect = self.rect.inflate(170, 170)
         self.rect.center = (random.randint(1, self.RES[0]-35), 450)
         self.x_vel = random.randint(6,9)

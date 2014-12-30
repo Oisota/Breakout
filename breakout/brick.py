@@ -9,16 +9,14 @@ is hit with a ball. The Brick Manager class is a container class
 that allows easy manipulation of many bricks.
 """
 
-import sys
-import pygame
+import pygame, resource, sys
 
 class Brick(pygame.sprite.Sprite):
     """Brick Class"""
     def __init__(self, x, y, ball, player):
         """Initialize brick"""
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.image.load('images/brick.png').convert()
-        self.rect = self.image.get_rect()
+        self.image, self.rect = resource.load_image('images/brick.png')
         self.rect.center = (x,y)
         self.ball = ball
         self.player = player
@@ -61,7 +59,7 @@ class BrickManager(pygame.sprite.Group):
         
             
     def fillDisplay(self):
-        """Fill the display with bricks."""
+        """Place bricks onto the screen."""
         #fix so bricks are placed based on screen resolution
         for x in range(85,785,70):
             for y in range(100,281,30):
