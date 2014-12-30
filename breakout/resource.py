@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Image Module
+Resource Module
 
 This module defines functions for loading resource files for use
 with pygame. It uses the built in pygame functions to accomplish
