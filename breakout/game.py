@@ -17,8 +17,7 @@ from player import Player
 from brick import BrickManager
 from menu import Menu
 
-#initialize pygame
-pygame.init()
+pygame.init() #initialize pygame
 
 class Game(object):
     """Main Game Class"""
@@ -93,8 +92,7 @@ class Game(object):
             self.display.blit(self.background, (0,0)) #blit background to the screen
                         
             bricks.draw(self.display) #draw sprites
-            sprites.draw(self.display)
-            
+            sprites.draw(self.display) 
             bricks.update(bricks) #update sprites
             sprites.update()
         
