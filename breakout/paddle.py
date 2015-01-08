@@ -1,4 +1,12 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+Paddle class definition.
+
+This module defines the paddle class. It is used to display
+and animate the paddle controlled by the user.
+"""
 
 import pygame, resource
 

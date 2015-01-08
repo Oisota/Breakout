@@ -1,5 +1,6 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+
 """
 Ball class definition.
 
@@ -15,7 +16,6 @@ class Ball(pygame.sprite.Sprite):
     def __init__(self, RES, paddle, player):
         """Initialize ball object."""
         pygame.sprite.Sprite.__init__(self)
-        #super(Ball,self).__init__(self)
         self.RES = RES
         self.paddle = paddle 
         self.player = player

@@ -12,7 +12,7 @@ from distutils.core import setup
 setup( 
               name = 'Breakout',
            version = '1.0',
-       description = 'A remake of the classic aracade game',
+       description = 'A remake of the classic video game',
             author = 'Derek Morey',
       author_email = 'dman6505@gmail.com',
            license = 'GPL',
@@ -23,7 +23,7 @@ setup(
           packages = ['breakout'],
       package_data = {'breakout':['resources/images/*.png', 
                                   'resources/sounds/*.wav']},
-          requires = ['sys', 'os', 'random', 'pygame'],
+          requires = ['sys', 'random', 'pygame'],
        classifiers = ['Programming Language :: Python',
                       'Programming Language :: Python :: 3',
                       'Development Status :: 3 - Alpha',
