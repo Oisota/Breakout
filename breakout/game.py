@@ -107,7 +107,7 @@ class Game(object):
         pygame.time.wait(300)
         self.end()
 
-    def start(self): #function displays the start screen
+    def start(self):
         """Display the start screen."""
         pygame.mouse.set_visible(True)
         mouse_pos = (0,0)
@@ -145,7 +145,7 @@ class Game(object):
             pygame.time.wait(5)
 
 
-    def end(self): #function displays the win/lose screens
+    def end(self): 
         """Display the quit screen.""" 
         pygame.mouse.set_visible(True)
         mouse_pos = (0,0)

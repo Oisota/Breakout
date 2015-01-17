@@ -47,6 +47,7 @@ class Title(pygame.sprite.Sprite):
     def __init__(self, x, y, image):
         """Initialzie title."""
         pygame.sprite.Sprite.__init__(self)
+
         #load image and set position
         self.image, self.rect = resource.load_image(image)
         self.image = pygame.transform.scale(self.image, (200,80))
