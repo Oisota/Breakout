@@ -7,7 +7,7 @@ Breakout
 teach myself about python, pygame, and game development. The game can be run
 by executing the "run.py" file.
 
-###Controls: 
+**Controls:** 
 - Use mouse to click on menu buttons
 - left arrow: moves paddle left
 - right arrow: moves paddle right
