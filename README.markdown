@@ -3,8 +3,9 @@ Breakout
 
 **Author:** Derek Morey 
 
-**Description:** A simple breakout clone. Run game by changing into
-            the game directory and running "python3 run.py".
+**Description:** A simple breakout clone that I made for myself in order to
+teach myself about python, pygame, and game development. The game can be run
+by executing the "run.py" file.
 
 **Controls:** 
 - Use mouse to click on menu buttons
