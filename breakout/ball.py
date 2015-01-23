@@ -33,7 +33,8 @@ class Ball(pygame.sprite.Sprite):
     def update(self):
         """Update the ball position and check for rect collisions."""
         #TODO edit so the method takes a list of rects as a parameter and
-        #have the ball bounce off the rects. This will make the class more modular.
+        #have the ball bounce off the rects. This will make the class more 
+        #generic in its functionality.
         self.rect = self.rect.move(self.x_vel, self.y_vel)
         self.draw_rect.center = self.rect.center
         
