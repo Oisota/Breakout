@@ -9,10 +9,13 @@ with pygame. It uses the built in pygame functions to accomplish
 this but also handles exceptions if files are not found.
 """
 
-import pygame
+import pygame, os, sys
 
 def load_image(path):
     """Load an image and return the image object and a rect for the image."""
+    #abs_path = os.path.abspath(sys.argv[0])
+    #path = os.path.join(abs_path, path)
+
     try:
         image = pygame.image.load(path)
         if image.get_alpha() is None:
@@ -20,7 +23,7 @@ def load_image(path):
         else:
             image = image.convert_alpha()
     except pygame.error as e:
-        print('Cannot load image: ', path)
+        print('Could not load image: ', path)
         print(e)
         raise SystemExit 
 
@@ -29,10 +32,13 @@ def load_image(path):
 
 def load_sound(path):
     """Load a sound and return the sound object."""
+    #abs_path = os.path.abspath(sys.argv[0])
+    #path = os.path.join(abs_path, path)
+
     try:
         sound = pygame.mixer.Sound(path)
     except pygame.error as e:
-        print('Cannot load sound: ', path)
+        print('Could not load sound: ', path)
         print(e)
         raise SystemExit 
 
