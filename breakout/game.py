@@ -34,7 +34,7 @@ class Game(object):
         
         self.player = Player(self.RES, 'player1', 0) 
        
-        self.background, self.bg_rect = resource.load_image('resources/images/brickwall.png')
+        self.background, self.bg_rect = resource.load_image('brickwall.png')
         self.background.convert()
 
 
@@ -115,9 +115,9 @@ class Game(object):
         pressed = ''
 
         menu = Menu(self.RES) #construct menu
-        menu.addTitle(self.RES[0]/2, 100, 'resources/images/breakout.png') 
-        menu.addButton(self.RES[0]/2, 200, 'resources/images/start.png', 'resources/images/start_pressed.png', self.run)
-        menu.addButton(self.RES[0]/2, 300, 'resources/images/quit.png', 'resources/images/quit_pressed.png', self.quit)
+        menu.addTitle(self.RES[0]/2, 100, 'breakout.png') 
+        menu.addButton(self.RES[0]/2, 200, 'start.png', 'start_pressed.png', self.run)
+        menu.addButton(self.RES[0]/2, 300, 'quit.png', 'quit_pressed.png', self.quit)
         
         self.display.blit(self.background, (0,0))
         menu.draw(self.display)
@@ -154,11 +154,11 @@ class Game(object):
 
         menu = Menu(self.RES) #construct menu
         if self.player.won:
-            menu.addTitle(self.RES[0]/2, 100, 'resources/images/win.png') 
+            menu.addTitle(self.RES[0]/2, 100, 'win.png') 
         else:
-            menu.addTitle(self.RES[0]/2, 100, 'resources/images/lose.png') 
-        menu.addButton(self.RES[0]/2, 200, 'resources/images/retry.png', 'resources/images/retry_pressed.png', self.run)
-        menu.addButton(self.RES[0]/2, 300, 'resources/images/quit.png', 'resources/images/quit_pressed.png', self.quit)
+            menu.addTitle(self.RES[0]/2, 100, 'lose.png') 
+        menu.addButton(self.RES[0]/2, 200, 'retry.png', 'retry_pressed.png', self.run)
+        menu.addButton(self.RES[0]/2, 300, 'quit.png', 'quit_pressed.png', self.quit)
         
         self.display.blit(self.background, (0,0))
         menu.draw(self.display)
