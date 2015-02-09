@@ -1,5 +1,5 @@
 #files for git to ignore
 
-/GIMP_Files/*
+resources/GIMP_files/*
 /breakout/__pycache__/*
 MANIFEST
