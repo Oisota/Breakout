@@ -15,6 +15,7 @@ def load_image(path):
     """Load an image and return the image object and a rect for the image."""
     #abs_path = os.path.abspath(sys.argv[0])
     #path = os.path.join(abs_path, path)
+    path = os.path.abspath(path)
 
     try:
         image = pygame.image.load(path)
@@ -34,6 +35,7 @@ def load_sound(path):
     """Load a sound and return the sound object."""
     #abs_path = os.path.abspath(sys.argv[0])
     #path = os.path.join(abs_path, path)
+    path = os.path.abspath(path)
 
     try:
         sound = pygame.mixer.Sound(path)
