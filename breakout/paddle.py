@@ -8,7 +8,8 @@ This module defines the paddle class. It is used to display
 and animate the paddle controlled by the user.
 """
 
-import pygame, resource
+import pygame 
+import breakout.resource
 
 class Paddle(pygame.sprite.Sprite):
     """Paddle Class"""
@@ -17,7 +18,7 @@ class Paddle(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         self.RES = RES
         self.direction = ''
-        self.image, self.rect = resource.load_image('resources/images/paddle.png')
+        self.image, self.rect = resource.load_image('../resources/images/paddle.png')
         self.draw_rect = self.rect.inflate(120, 40)
         self.rect.center = (self.RES[0]/2, self.RES[1] - 75)
         self.vel = 16

@@ -1,4 +1,4 @@
-recursive-include breakout/resources/images *.png
-recursive-include breakout/resources/sounds *.wav
+recursive-include resources/images *.png
+recursive-include resources/sounds *.wav
 include breakout.desktop
 include license.txt

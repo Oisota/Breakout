@@ -11,7 +11,8 @@ color when the user mouses over it. Title is a a simple sprite.
 Menu is a container for the buttons and a title.
 """
 
-import pygame, resource
+import pygame 
+import breakout.resource
 
 class Button(pygame.sprite.Sprite):
     """Button Class"""    
