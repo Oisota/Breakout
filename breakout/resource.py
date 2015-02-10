@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
 """
 Resource Module
 
@@ -12,9 +9,7 @@ this but also handles exceptions if files are not found.
 import pygame, os, sys
 
 def load_image(path):
-    """Load an image and return the image object and a rect for the image."""
-    #abs_path = os.path.abspath(sys.argv[0])
-    #path = os.path.join(abs_path, path)
+    """Load an image and return the image object and the image rect."""
     img_path = 'resources/images/'
     path = os.path.join(img_path, path)
     path = os.path.abspath(path)
@@ -35,8 +30,6 @@ def load_image(path):
 
 def load_sound(path):
     """Load a sound and return the sound object."""
-    #abs_path = os.path.abspath(sys.argv[0])
-    #path = os.path.join(abs_path, path)
     snd_path = 'resources/sounds/'
     path = os.path.join(snd_path, path)
     path = os.path.abspath(path)
