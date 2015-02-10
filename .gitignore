@@ -3,4 +3,5 @@
 resources/GIMP_files/*
 breakout/__pycache__/*
 dist/*
+venv/*
 MANIFEST

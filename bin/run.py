@@ -4,7 +4,7 @@
 """
 Run Module
 
-This module imports the game module and runs the game.
+This module imports the game package and runs the game.
 """
 
 from breakout.game import Game
