@@ -15,7 +15,7 @@ setup(
       author_email = 'dman6505@gmail.com',
            license = 'GPL',
                url = 'https://github.com/Oisota/Breakout',
-      download_url = 'https://github.com/Oisota/Breakout',
+      download_url = 'https://github.com/Oisota/Breakout/archive/master.zip',
           keywords = ['breakout', 'arcade', 'game', 'pygame', 'python',],
          platforms = ['linux', 'windows'],
            scripts = ['bin/run.py'],
