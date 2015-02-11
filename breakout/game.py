@@ -33,7 +33,6 @@ class Game(object):
         self.player = Player(self.RES, 'player1', 0) 
        
         self.background, self.bg_rect = resource.load_image('brickwall.png')
-        self.background.convert()
 
 
     def run(self): 

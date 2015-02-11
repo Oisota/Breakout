@@ -20,6 +20,8 @@ setup(
          platforms = ['linux', 'windows'],
            scripts = ['bin/run.py'],
           packages = ['breakout'],
+      #package_data = {'breakout':['resources/images/*.png',
+                                  #'resources/sounds/*.wav']},
         data_files = [('resources/images', ['resources/images/*.png']),
                       ('resources/sounds', ['resources/sounds/*.wav'])],
           requires = ['sys', 'os', 'random', 'pygame'],
