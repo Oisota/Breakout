@@ -63,8 +63,7 @@ class Game(object):
         while self.player.alive: #main game loop
             for event in pygame.event.get():
                 if event.type == QUIT:
-                    pygame.quit()
-                    sys.exit()
+                    self.quit()
                 elif event.type == KEYDOWN:
                     if event.key == K_LEFT:
                         paddle.direction = 'left'
@@ -126,8 +125,7 @@ class Game(object):
         while True:
             for event in pygame.event.get():
                 if event.type == QUIT:
-                    pygame.quit()
-                    sys.exit()
+                    self.quit()
                 elif event.type == MOUSEBUTTONDOWN:
                     mouse_pos = event.pos
                     pressed = 'mouse ' + str(event.button)
@@ -167,8 +165,7 @@ class Game(object):
         while True:
             for event in pygame.event.get():
                 if event.type == QUIT:
-                    pygame.quit()
-                    sys.exit()
+                    self.quit()
                 elif event.type == MOUSEBUTTONDOWN:
                     mouse_pos = event.pos
                     pressed = 'mouse ' + str(event.button)
