@@ -12,3 +12,6 @@ teach myself about python, pygame, and game development.
 - right arrow: moves paddle right
 - hold p: pauses the game
 - esc: quits to main menu
+
+###Screenshot
+![Breakout](screenshots/breakout_scrot.png "Breakout")
