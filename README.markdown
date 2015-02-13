@@ -13,5 +13,6 @@ teach myself about python, pygame, and game development.
 - hold p: pauses the game
 - esc: quits to main menu
 
-###Screenshot
+###Screenshots
+![Start](screenshots/start_scrot.png "Start")
 ![Breakout](screenshots/breakout_scrot.png "Breakout")
