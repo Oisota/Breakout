@@ -14,5 +14,7 @@ teach myself about python, pygame, and game development.
 - esc: quits to main menu
 
 ###Screenshots
+####Start Screen
 ![Start](screenshots/start_scrot.png "Start")
+####Gameplay
 ![Breakout](screenshots/breakout_scrot.png "Breakout")
