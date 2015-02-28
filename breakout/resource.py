@@ -10,7 +10,7 @@ import pygame, os, sys
 
 def load_image(path):
     """Load an image and return the image object and the image rect."""
-    img_path = 'resources/images/'
+    img_path = 'breakout/resources/images/'
     path = os.path.join(img_path, path)
     path = os.path.abspath(path)
 
@@ -30,7 +30,7 @@ def load_image(path):
 
 def load_sound(path):
     """Load a sound and return the sound object."""
-    snd_path = 'resources/sounds/'
+    snd_path = 'breakout/resources/sounds/'
     path = os.path.join(snd_path, path)
     path = os.path.abspath(path)
 

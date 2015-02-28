@@ -1,4 +1,4 @@
-resources/GIMP_files/*
+breakout/resources/GIMP_files/*
 breakout/__pycache__/*
 dist/*
 venv/*

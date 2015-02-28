@@ -18,3 +18,6 @@ teach myself about python, pygame, and game development.
 ![Start](screenshots/start_scrot.png "Start")
 ####Gameplay
 ![Breakout](screenshots/breakout_scrot.png "Breakout")
+
+###Installation
+
