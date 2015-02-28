@@ -1,8 +1,6 @@
 Breakout 
 ========
 
-**Author:** Derek Morey 
-
 **Description:** A simple breakout clone that I made in order to
 teach myself about python, pygame, and game development.
 
