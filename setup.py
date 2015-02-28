@@ -18,7 +18,7 @@ setup(
       download_url = 'https://github.com/Oisota/Breakout/archive/master.zip',
           keywords = ['breakout', 'arcade', 'game', 'pygame', 'python',],
          platforms = ['linux', 'windows'],
-           scripts = ['bin/breakout.py'],
+           scripts = ['breakout.py'],
           packages = ['breakout'],
       #package_data = {'breakout':['resources/images/*.png',
                                   #'resources/sounds/*.wav']},
