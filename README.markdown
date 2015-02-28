@@ -20,4 +20,6 @@ teach myself about python, pygame, and game development.
 ![Breakout](screenshots/breakout_scrot.png "Breakout")
 
 ###Installation
-
+Download the zip file and extract the contents. From the game
+directory execute breakout.py on the command line to run the
+game.
