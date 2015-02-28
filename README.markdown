@@ -1,8 +1,8 @@
 Breakout 
 ========
 
-**Description:** A simple breakout clone that I made in order to
-teach myself about python, pygame, and game development.
+A simple breakout clone that I made in order to teach
+myself about python, pygame, and game development.
 
 **Controls:** 
 - Use mouse to click on menu buttons
