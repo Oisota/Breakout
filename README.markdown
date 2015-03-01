@@ -1,6 +1,5 @@
 Breakout 
 ========
-
 A simple breakout clone that I made in order to teach
 myself about python, pygame, and game development.
 
@@ -14,8 +13,7 @@ myself about python, pygame, and game development.
 ###Installation
 Download the zip file and extract the contents. From the game
 directory, execute breakout.py on the command line to run the
-game. Alternatively on linux, double click the breakout.desktop
-icon in a file browser to launch the game.
+game. 
 
 ###Screenshots
 ####Start Screen
