@@ -26,6 +26,9 @@ class Game(object):
         self.FPS = 40 #frames per second limit
         self.RES = (800,600)  #size of the display
 
+        #TODO make game window resizable and have game objects
+        #scale to fit the screen.
+
         self.display = pygame.display.set_mode(self.RES)
         pygame.display.set_caption(self.GAME_NAME)
         self.clock = pygame.time.Clock()
