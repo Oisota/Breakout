@@ -59,7 +59,6 @@ class BrickManager(pygame.sprite.Group):
             
     def fillDisplay(self):
         """Place bricks onto the screen."""
-        #TODO fix so bricks are placed based on screen resolution
         for x in range(85,self.RES[0]-15,70):
             for y in range(100,self.RES[1]-319,30):
                 self.addBrick(x, y)
