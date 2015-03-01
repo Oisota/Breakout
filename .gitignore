@@ -3,3 +3,4 @@ breakout/__pycache__/*
 dist/*
 venv/*
 MANIFEST
+breakout.desktop
