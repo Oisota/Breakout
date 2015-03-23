@@ -7,8 +7,8 @@ myself about python, pygame, and game development.
 - Use mouse to click on menu buttons
 - left arrow: moves paddle left
 - right arrow: moves paddle right
-- hold p: pauses the game
-- esc: quits to main menu
+- P: pauses the game
+- ESC: quits to main menu
 
 ###Installation
 Download the zip file and extract the contents. From the game
