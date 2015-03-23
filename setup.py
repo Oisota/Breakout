@@ -42,6 +42,6 @@ Breakout
 --------
 This is a remake of the classic game Breakout. I made this game for the sole 
 purpose of educating myself about python, pygame, and game development in general. 
-Feel free use or modify my code in any way.
+Feel free to use or modify my code in any way.
 """
 )
