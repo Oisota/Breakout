@@ -41,8 +41,6 @@ class Game(object):
     def run(self): 
         """Run the main game loop."""
         pygame.mouse.set_visible(False) #make mouse invisible while playing the game
-        paused = False
-
         self.player.reset()
         
         paddle = Paddle(self.RES)
@@ -73,7 +71,7 @@ class Game(object):
                     elif event.key == K_RIGHT:
                         paddle.direction = 'right'
                     elif event.key == K_p:
-                        paused = True
+                        self.pause()
                     elif event.key == K_ESCAPE:
                         self.player.won = False
                         self.player.alive = False
@@ -85,9 +83,6 @@ class Game(object):
                     elif event.key == K_p:
                         paused = False
    
-
-            if paused:
-                continue
 
             self.display.blit(self.background, (0,0)) #blit background to the screen
                         
@@ -155,6 +150,7 @@ class Game(object):
             menu.addTitle(self.RES[0]/2, 100, 'win.png') 
         else:
             menu.addTitle(self.RES[0]/2, 100, 'lose.png') 
+
         menu.addButton(self.RES[0]/2, 200, 'retry.png', 'retry_pressed.png', self.run)
         menu.addButton(self.RES[0]/2, 300, 'quit.png', 'quit_pressed.png', self.quit)
         
@@ -187,6 +183,20 @@ class Game(object):
             pygame.time.wait(5)
 
     
+    def pause(self):
+        """Pause the game."""
+        while True:
+            for event in pygame.event.get():
+                if event.type == QUIT:
+                    self.quit()
+                elif event.type == KEYDOWN:
+                    if event.key == K_p:
+                        return
+
+            self.clock.tick(self.FPS)
+            pygame.time.wait(5)
+
+        
     def quit(self):
         """Quit the game."""
         pygame.quit()
