@@ -82,7 +82,6 @@ class Game(object):
                         paddle.direction = ''
                     elif event.key == K_p:
                         paused = False
-   
 
             self.display.blit(self.background, (0,0)) #blit background to the screen
                         
@@ -101,6 +100,7 @@ class Game(object):
 
         pygame.time.wait(300)
         self.end()
+
 
     def start(self):
         """Display the start screen."""

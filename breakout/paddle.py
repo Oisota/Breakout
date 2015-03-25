@@ -26,10 +26,10 @@ class Paddle(pygame.sprite.Sprite):
         if self.direction == 'right':
             self.rect = self.rect.move(self.vel, 0)
             self.draw_rect.center = self.rect.center
-            if self.rect.x > self.RES[0] - 100:
+            if self.rect.x > self.RES[0] - 100: #keep paddle within the display
                 self.rect.x = self.RES[0] - 100
         elif self.direction == 'left':
             self.rect = self.rect.move(-self.vel, 0)
             self.draw_rect.center = self.rect.center
-            if self.rect.x < 0:
+            if self.rect.x < 0: #keep paddle within the display
                 self.rect.x = 0
