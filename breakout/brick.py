@@ -12,42 +12,40 @@ import breakout.resource as resource
 
 class Brick(pygame.sprite.Sprite):
     """Brick Class"""
-    def __init__(self, x, y, ball, player):
+    def __init__(self, x, y, player):
         """Initialize the brick."""
         pygame.sprite.Sprite.__init__(self)
         self.image, self.rect = resource.load_image('brick.png')
         self.rect.center = (x,y)
-        self.ball = ball
         self.player = player
         
         
-    def update(self, group): #consider passing ball as a parameter.
+    def update(self, group, ball): 
         """Check for ball collision and delete brick if there is a collision."""
-        if self.rect.colliderect(self.ball.rect):
+        if self.rect.colliderect(ball.rect):
             #self.ball.sound.play()
             self.remove(group)
             self.player.score += 5
             #bounce ball
-            if self.ball.rect.x < self.rect.x or (self.ball.rect.x + self.ball.rect.width) > (self.rect.x + self.rect.width):
-                self.ball.x_vel = -self.ball.x_vel 
-            elif self.ball.rect.x < (self.rect.x + self.rect.width):
-                self.ball.y_vel = -self.ball.y_vel 
+            if ball.rect.x < self.rect.x or (ball.rect.x + ball.rect.width) > (self.rect.x + self.rect.width):
+                ball.x_vel = -ball.x_vel 
+            elif ball.rect.x < (self.rect.x + self.rect.width):
+                ball.y_vel = -ball.y_vel 
 
         
 
 class BrickManager(pygame.sprite.Group):
     """BrickManager Class"""
-    def __init__(self, RES, ball, player):
+    def __init__(self, RES, player):
         """Initialze brick manager."""
         pygame.sprite.Group.__init__(self)
         self.RES = RES
-        self.ball = ball
         self.player = player
         
         
     def addBrick(self, x, y):
         """Add a brick with the given x,y position to the group"""
-        brick = Brick(x, y, self.ball, self.player)
+        brick = Brick(x, y, self.player)
         self.add(brick)
         
             

@@ -45,7 +45,7 @@ class Game(object):
         
         paddle = Paddle(self.RES)
         ball = Ball(self.RES, paddle, self.player)
-        bricks = BrickManager(self.RES, ball, self.player)
+        bricks = BrickManager(self.RES, self.player)
         sprites = pygame.sprite.Group(paddle, ball, self.player)
   
         bricks.fillDisplay() #place bricks
@@ -88,7 +88,7 @@ class Game(object):
                         
             bricks.draw(self.display) #draw sprites
             sprites.draw(self.display) 
-            bricks.update(bricks) #update sprites
+            bricks.update(bricks, ball) #update sprites
             sprites.update()
         
             if not bricks.sprites(): #check if all bricks are destroyed
