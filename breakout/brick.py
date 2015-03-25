@@ -25,19 +25,15 @@ class Brick(pygame.sprite.Sprite):
         """Check for ball collision and delete brick if there is a collision."""
         if self.rect.colliderect(self.ball.rect):
             #self.ball.sound.play()
-            #tweak this
+            self.remove(group)
+            self.player.score += 5
+            #bounce ball
             if self.ball.rect.x < self.rect.x:
-                self.ball.x_vel = -self.ball.x_vel
-                self.player.score += 5
-                self.remove(group)
+                self.ball.x_vel = -self.ball.x_vel 
             elif self.ball.rect.x < self.rect.x + self.rect.width:
-                self.ball.y_vel = -self.ball.y_vel
-                self.player.score += 5
-                self.remove(group)
+                self.ball.y_vel = -self.ball.y_vel 
             elif self.ball.rect.x + self.ball.rect.width > self.rect.x + self.rect.width:
-                self.ball.x_vel = -self.ball.x_vel
-                self.player.score += 5
-                self.remove(group)
+                self.ball.x_vel = -self.ball.x_vel 
 
         
 

@@ -43,7 +43,7 @@ class Ball(pygame.sprite.Sprite):
             self.y_vel = -self.y_vel 
             #self.sound.play()
         elif self.rect.colliderect(self.paddle.rect):  #ball has hit paddle
-            self.y_vel = -self.y_vel               #bounce ball up
+            self.y_vel = -self.y_vel
             #self.sound.play()
         elif self.rect.colliderect(self.bottom_wall):  #ball has missed paddle
             self.player.won = False
