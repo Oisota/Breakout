@@ -185,6 +185,10 @@ class Game(object):
     
     def pause(self):
         """Pause the game."""
+
+        allowed_events = [QUIT, KEYDOWN, KEYUP]
+        pygame.event.set_allowed(allowed_events)
+
         while True:
             for event in pygame.event.get():
                 if event.type == QUIT:
