@@ -13,7 +13,7 @@ import breakout.resource as resource
 class Brick(pygame.sprite.Sprite):
     """Brick Class"""
     def __init__(self, x, y, ball, player):
-        """Initialize brick"""
+        """Initialize the brick."""
         pygame.sprite.Sprite.__init__(self)
         self.image, self.rect = resource.load_image('brick.png')
         self.rect.center = (x,y)
@@ -21,19 +21,17 @@ class Brick(pygame.sprite.Sprite):
         self.player = player
         
         
-    def update(self, group):
+    def update(self, group): #consider passing ball as a parameter.
         """Check for ball collision and delete brick if there is a collision."""
         if self.rect.colliderect(self.ball.rect):
             #self.ball.sound.play()
             self.remove(group)
             self.player.score += 5
             #bounce ball
-            if self.ball.rect.x < self.rect.x:
+            if self.ball.rect.x < self.rect.x or (self.ball.rect.x + self.ball.rect.width) > (self.rect.x + self.rect.width):
                 self.ball.x_vel = -self.ball.x_vel 
-            elif self.ball.rect.x < self.rect.x + self.rect.width:
+            elif self.ball.rect.x < (self.rect.x + self.rect.width):
                 self.ball.y_vel = -self.ball.y_vel 
-            elif self.ball.rect.x + self.ball.rect.width > self.rect.x + self.rect.width:
-                self.ball.x_vel = -self.ball.x_vel 
 
         
 
