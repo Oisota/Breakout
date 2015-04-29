@@ -1,8 +1,8 @@
 """
 Player Module
 
-This module defines the player class. It keeps track of the players
-name, score, and whether they have won. It also displays their score.
+This module defines the player and score classes. They keep track of the players
+name, score, and whether they have won. The score class displays the player's score.
 """
 
 import pygame
@@ -10,7 +10,7 @@ from pygame.locals import *
 
 class Player(object):
     """Player Class""" 
-    def __init__(self, RES, name, score=0):
+    def __init__(self, RES, name='player one', score=0):
         """Initialize player."""
         self.name = ''
         self.score = Score(RES, score)
