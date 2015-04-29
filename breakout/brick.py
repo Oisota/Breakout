@@ -25,7 +25,7 @@ class Brick(pygame.sprite.Sprite):
         if self.rect.colliderect(ball.rect):
             #self.ball.sound.play()
             self.remove(group)
-            self.player.score += 5
+            self.player.score.incr(5)
             #bounce ball
             if ball.rect.x < self.rect.x or (ball.rect.x + ball.rect.width) > (self.rect.x + self.rect.width):
                 ball.x_vel = -ball.x_vel 

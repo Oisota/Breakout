@@ -46,10 +46,10 @@ class Game(object):
         paddle = Paddle(self.RES)
         ball = Ball(self.RES, paddle, self.player)
         bricks = BrickManager(self.RES, self.player)
-        sprites = pygame.sprite.Group(paddle, ball, self.player)
+        sprites = pygame.sprite.Group(paddle, ball, self.player.score)
   
         bricks.fillDisplay() #place bricks
-        draw_rects = (ball.draw_rect, paddle.draw_rect, self.player.draw_rect) #list of rects to update
+        draw_rects = (ball.draw_rect, paddle.draw_rect, self.player.score.draw_rect) #list of rects to update
         self.display.blit(self.background, (0,0)) #blit background to the screen
 
         bricks.draw(self.display)
