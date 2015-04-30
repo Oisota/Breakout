@@ -1,4 +1,4 @@
-import pygame
+import pygame, sys
 from pygame.locals import *
 from breakout.scene import Scene
 from breakout.menu import Menu
@@ -56,4 +56,3 @@ class Title(Scene):
     def terminate(self):
         """End the scene"""
         self.goto(None)
-        

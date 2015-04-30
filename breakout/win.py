@@ -1,3 +1,5 @@
+import pygame, sys
+from pygame.locals import *
 from breakout.scene import Scene
 from breakout.menu import Menu
 import breakout.resource as resource
@@ -34,7 +36,8 @@ class Win(Scene):
         """Handle Events"""
         for event in pygame.event.get():
             if event.type == QUIT:
-                game.quit()
+                pygame.quit()
+                sys.exit()
             elif event.type == MOUSEBUTTONDOWN:
                 mouse_pos = event.pos
                 pressed = 'mouse ' + str(event.button)

@@ -1,3 +1,5 @@
+import pygame, sys
+from pygame.locals import *
 from breakout.menu import Menu
 from breakout.scene import Scene
 import breakout.resource as resource
