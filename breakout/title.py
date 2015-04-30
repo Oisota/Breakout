@@ -34,11 +34,12 @@ class Title(Scene):
         """handle user input events"""
         for event in pygame.event.get():
             if event.type == QUIT:
-                game.quit()
+                pygame.quit()
+                sys.exit()
             elif event.type == MOUSEBUTTONDOWN:
-                mouse_pos = event.pos
-                pressed = 'mouse ' + str(event.button)
+                self.mouse_pos = event.pos
+                self.pressed = 'mouse ' + str(event.button)
             elif event.type == MOUSEMOTION:
-                mouse_pos = event.pos
+                self.mouse_pos = event.pos
          
         
