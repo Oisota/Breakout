@@ -28,7 +28,7 @@ class Ball(pygame.sprite.Sprite):
         self.bottom_wall = pygame.Rect(0,RES[1]-40,RES[0],1)       
         
         
-    def update(self):
+    def update(self, on_lose):
         """Update the ball position and check for rect collisions."""
         #TODO edit so the method takes a list of rects as a parameter and
         #have the ball bounce off the rects. This will make the class more 
@@ -47,8 +47,9 @@ class Ball(pygame.sprite.Sprite):
             #self.sound.play()
         elif self.rect.colliderect(self.bottom_wall):  #ball has missed paddle
             #need to change scene here
-            self.player.won = False
-            self.player.alive = False 
+            on_lose()
+            #self.player.won = False
+            #self.player.alive = False 
             #self.sound.play()
 
 

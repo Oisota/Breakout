@@ -1,48 +1,56 @@
 import pygame, sys
 from pygame.locals import *
-from breakout.menu import Menu
+
+# scenes
 from breakout.scene import Scene
+#from breakout.gameplay import GamePlay
+
+# game objects
+from breakout.menu import Menu
 import breakout.resource as resource
 
 class Lose(Scene):
     """Win scene"""
     def __init__(self, RES):
         """Initialize the scene"""
+        self.next_scene = self
+        self.RES = RES
         self.mouse_pos = (0,0)
         self.pressed = ''
         self.background, self.bg_rect = resource.load_image('brickwall.png')
 
         self.menu = Menu(self.RES) #construct menu
         self.menu.addTitle(self.RES[0]/2, 100, 'lose.png') 
-        self.menu.addButton(self.RES[0]/2, 200, 'retry.png', 'retry_pressed.png', lambda: self.goto(Gameplay()))
+        self.menu.addButton(self.RES[0]/2, 200, 'retry.png', 'retry_pressed.png', lambda: self.goto(Gameplay(self.RES)))
         self.menu.addButton(self.RES[0]/2, 300, 'quit.png', 'quit_pressed.png', lambda: self.terminate())
 
-        self.allowed_events = [QUIT, MOUSEMOTION, MOUSEBUTTONUP, MOUSEBUTTONDOWN]
-        pygame.event.set_allowed(allowed_events)
+        pygame.event.set_allowed([QUIT, MOUSEMOTION, MOUSEBUTTONUP, MOUSEBUTTONDOWN])
         pygame.mouse.set_visible(True)
-        pygame.display.update()
 
 
-    def render(self):
+    def render(self, screen):
         """Render the Scene"""
         screen.blit(self.background, (0,0))
         self.menu.draw(screen)
 
+
     def update(self):
         """Update the Scene"""
-        self.menu.update(mouse_pos, pressed)
-        pygame.display.update(self.menu.rects)
+        self.menu.update(self.mouse_pos, self.pressed)
+        #pygame.display.update(self.menu.rects)
+        pygame.display.update()
+
 
     def handle_events(self):
         """Handle Events"""
         for event in pygame.event.get():
             if event.type == QUIT:
-                game.quit()
+                self.terminate()
             elif event.type == MOUSEBUTTONDOWN:
-                mouse_pos = event.pos
+                self.mouse_pos = event.pos
                 pressed = 'mouse ' + str(event.button)
             elif event.type == MOUSEMOTION:
-                mouse_pos = event.pos
+                self.mouse_pos = event.pos
 
 
     def goto(self, scene):

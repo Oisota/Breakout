@@ -18,10 +18,8 @@ class Title(Scene):
         self.menu.addButton(RES[0]/2, 200, 'start.png', 'start_pressed.png', lambda: self.goto(GamePlay(RES)))
         self.menu.addButton(RES[0]/2, 300, 'quit.png', 'quit_pressed.png', lambda: self.terminate())
         
-        self.allowed_events = [QUIT, MOUSEMOTION, MOUSEBUTTONUP, MOUSEBUTTONDOWN]
-        pygame.event.set_allowed(self.allowed_events)
+        pygame.event.set_allowed([QUIT, MOUSEMOTION, MOUSEBUTTONUP, MOUSEBUTTONDOWN])
         pygame.mouse.set_visible(True)
-        pygame.display.update()
         
 
     def render(self, screen):
@@ -33,15 +31,15 @@ class Title(Scene):
     def update(self):
         """Update the Title scene"""
         self.menu.update(self.mouse_pos, self.pressed)
-        pygame.display.update(self.menu.rects)
+        #pygame.display.update(self.menu.rects)
+        pygame.display.update()
 
 
     def handle_events(self):
         """handle user input events"""
         for event in pygame.event.get():
             if event.type == QUIT:
-                pygame.quit()
-                sys.exit()
+                self.terminate()
             elif event.type == MOUSEBUTTONDOWN:
                 self.mouse_pos = event.pos
                 self.pressed = 'mouse ' + str(event.button)
