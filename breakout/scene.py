@@ -21,6 +21,14 @@ class Scene(metaclass=ABCMeta):
     def handle_events(self):
         """Handle Events"""
         pass
+
+    def goto(self, scene):
+        """switch scenes"""
+        self.scene = scene
+
+    def terminate(self):
+        """End the scene"""
+        self.goto(None) 
         
 
 
