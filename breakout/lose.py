@@ -19,10 +19,10 @@ class Lose(Scene):
         self.pressed = ''
         self.background, self.bg_rect = resource.load_image('brickwall.png')
 
-        self.menu = Menu(self.RES) #construct menu
-        self.menu.addTitle(self.RES[0]/2, 100, 'lose.png') 
-        self.menu.addButton(self.RES[0]/2, 200, 'retry.png', 'retry_pressed.png', lambda: self.goto(Gameplay(self.RES)))
-        self.menu.addButton(self.RES[0]/2, 300, 'quit.png', 'quit_pressed.png', lambda: self.terminate())
+        self.menu = Menu(RES) #construct menu
+        self.menu.addTitle(RES[0]/2, 100, 'lose.png') 
+        self.menu.addButton(RES[0]/2, 200, 'retry.png', 'retry_pressed.png', lambda: self.goto(Gameplay(RES)))
+        self.menu.addButton(RES[0]/2, 300, 'quit.png', 'quit_pressed.png', lambda: self.terminate())
 
         pygame.event.set_allowed([QUIT, MOUSEMOTION, MOUSEBUTTONUP, MOUSEBUTTONDOWN])
         pygame.mouse.set_visible(True)
