@@ -21,6 +21,7 @@ class Title(Scene):
         self.allowed_events = [QUIT, MOUSEMOTION, MOUSEBUTTONUP, MOUSEBUTTONDOWN]
         pygame.event.set_allowed(self.allowed_events)
         pygame.mouse.set_visible(True)
+        pygame.display.update()
         
 
     def render(self, screen):
@@ -32,8 +33,7 @@ class Title(Scene):
     def update(self):
         """Update the Title scene"""
         self.menu.update(self.mouse_pos, self.pressed)
-#        pygame.display.update(self.menu.rects)
-        pygame.display.update()
+        pygame.display.update(self.menu.rects)
 
 
     def handle_events(self):

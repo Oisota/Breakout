@@ -20,6 +20,7 @@ class Win(Scene):
         self.allowed_events = [QUIT, MOUSEMOTION, MOUSEBUTTONUP, MOUSEBUTTONDOWN]
         pygame.event.set_allowed(allowed_events)
         pygame.mouse.set_visible(True)
+        pygame.display.update()
 
 
     def render(self):
@@ -30,8 +31,7 @@ class Win(Scene):
     def update(self):
         """Update the Scene"""
         self.menu.update(mouse_pos, pressed)
-        #pygame.display.update(self.menu.rects)
-        pygame.display.update()
+        pygame.display.update(self.menu.rects)
 
     def handle_events(self):
         """Handle Events"""

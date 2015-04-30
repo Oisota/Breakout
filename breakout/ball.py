@@ -46,6 +46,7 @@ class Ball(pygame.sprite.Sprite):
             self.y_vel = -self.y_vel
             #self.sound.play()
         elif self.rect.colliderect(self.bottom_wall):  #ball has missed paddle
+            #need to change scene here
             self.player.won = False
             self.player.alive = False 
             #self.sound.play()

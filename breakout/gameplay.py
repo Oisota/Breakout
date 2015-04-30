@@ -27,6 +27,7 @@ class GamePlay(Scene):
         self.allowed_events = [QUIT, KEYDOWN, KEYUP]
         pygame.event.set_allowed(self.allowed_events)
         pygame.mouse.set_visible(False) #make mouse invisible while playing the game
+        pygame.display.update()
 
 
     def render(self, screen):
@@ -43,8 +44,7 @@ class GamePlay(Scene):
         if not self.bricks.sprites(): #check if all bricks are destroyed
             self.goto(Win(self.RES))
 
-        #pygame.display.update(self.draw_rects)
-        pygame.display.update()
+        pygame.display.update(self.draw_rects)
 
 
     def handle_events(self):
