@@ -5,7 +5,6 @@ from breakout.ball import Ball
 from breakout.paddle import Paddle
 from breakout.player import Player
 from breakout.brick import BrickManager
-from breakout.menu import Menu
 import breakout.resource as resource
 
 class GamePlay(Scene):
@@ -43,7 +42,8 @@ class GamePlay(Scene):
         if not self.bricks.sprites(): #check if all bricks are destroyed
             self.goto(Win(self.RES))
 
-        pygame.display.update(self.draw_rects)
+        #pygame.display.update(self.draw_rects)
+        pygame.display.update()
 
 
     def handle_events(self):

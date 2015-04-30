@@ -6,7 +6,7 @@ import breakout.resource as resource
 
 class Win(Scene):
     """Win scene"""
-    def __init__(self):
+    def __init__(self, RES):
         """Initialize the scene"""
         self.mouse_pos = (0,0)
         self.pressed = ''
@@ -30,7 +30,8 @@ class Win(Scene):
     def update(self):
         """Update the Scene"""
         self.menu.update(mouse_pos, pressed)
-        pygame.display.update(self.menu.rects)
+        #pygame.display.update(self.menu.rects)
+        pygame.display.update()
 
     def handle_events(self):
         """Handle Events"""

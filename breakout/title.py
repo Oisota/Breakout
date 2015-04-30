@@ -32,7 +32,8 @@ class Title(Scene):
     def update(self):
         """Update the Title scene"""
         self.menu.update(self.mouse_pos, self.pressed)
-        pygame.display.update(self.menu.rects)
+#        pygame.display.update(self.menu.rects)
+        pygame.display.update()
 
 
     def handle_events(self):
