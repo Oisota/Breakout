@@ -1,4 +1,9 @@
-from scene import Scene
+from breakout.scene import Scene
+from breakout.ball import Ball
+from breakout.paddle import Paddle
+from breakout.player import Player
+from breakout.brick import BrickManager
+from breakout.menu import Menu
 import breakout.resource as resource
 
 class GamePlay(Scene):
@@ -61,3 +66,12 @@ class GamePlay(Scene):
                     elif event.key == K_p:
                         paused = False
     
+
+    def goto(self, scene):
+        """change the scene"""
+        self.next_scene = scene
+
+
+    def terminate(self):
+        """End the scene"""
+        self.goto(None)

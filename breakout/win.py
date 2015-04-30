@@ -1,4 +1,5 @@
-from scene import Scene
+from breakout.scene import Scene
+from breakout.menu import Menu
 import breakout.resource as resource
 
 class Win(Scene):
@@ -39,3 +40,13 @@ class Win(Scene):
                 pressed = 'mouse ' + str(event.button)
             elif event.type == MOUSEMOTION:
                 mouse_pos = event.pos
+    
+    
+    def goto(self, scene):
+        """change the scene"""
+        self.next_scene = scene
+
+
+    def terminate(self):
+        """End the scene"""
+        self.goto(None)

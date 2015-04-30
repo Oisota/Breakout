@@ -1,5 +1,5 @@
-from scene import Scene
-from gameplay import GamePlay
+from breakout.scene import Scene
+from breakout.gameplay import GamePlay
 
 class Pause(Scene):
     """Title scene class"""
@@ -27,3 +27,13 @@ class Pause(Scene):
             elif event.type == KEYDOWN:
                 if event.key == K_p:
                     self.goto(self.game_scene)
+
+
+    def goto(self, scene):
+        """change the scene"""
+        self.next_scene = scene
+
+
+    def terminate(self):
+        """End the scene"""
+        self.goto(None)

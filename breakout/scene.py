@@ -1,6 +1,6 @@
 from abc import ABCMeta, abstractmethod
 
-class Scene(metaclass=ABCMeta):
+class Scene(object, metaclass=ABCMeta):
     """Base class for game scenes"""
     @abstractmethod
     def __init__(self):
@@ -22,17 +22,12 @@ class Scene(metaclass=ABCMeta):
         """Handle Events"""
         pass
 
+    @abstractmethod
     def goto(self, scene):
         """switch scenes"""
-        self.scene = scene
+        pass
 
+    @abstractmethod
     def terminate(self):
         """End the scene"""
-        self.goto(None) 
-        
-
-
-class SceneManager(object):
-    """Manage the game scenes"""
-    def __init__(self):
-       pass 
+        pass
