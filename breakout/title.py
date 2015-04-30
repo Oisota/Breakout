@@ -1,5 +1,6 @@
 from scene import Scene
 from gameplay import GamePlay
+import breakout.resource as resource
 
 class Title(Scene):
     """Title scene class"""

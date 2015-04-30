@@ -1,4 +1,5 @@
 from scene import Scene
+import breakout.resource as resource
 
 class GamePlay(Scene):
     """Main gameplay scene"""
