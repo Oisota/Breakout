@@ -1,9 +1,11 @@
+import pygame
+from pygame.locals import *
 from breakout.scene import Scene
-from breakout.gameplay import GamePlay
 
 class Pause(Scene):
     """Title scene class"""
     def __init__(self, RES, game_scene):
+        self.next_scene = self
         self.game_scene = game_scene
         self.allowed_events = [QUIT, KEYDOWN, KEYUP]
         pygame.event.set_allowed(self.allowed_events)

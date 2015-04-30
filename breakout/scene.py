@@ -1,7 +1,7 @@
 from abc import ABCMeta, abstractmethod
 
 class Scene(object, metaclass=ABCMeta):
-    """Base class for game scenes"""
+    """Abstract Base class for game scenes"""
     @abstractmethod
     def __init__(self):
         """Initialize the scene"""

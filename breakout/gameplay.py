@@ -1,6 +1,7 @@
 import pygame, sys
 from pygame.locals import *
 from breakout.scene import Scene
+from breakout.pause import Pause
 from breakout.ball import Ball
 from breakout.paddle import Paddle
 from breakout.player import Player
