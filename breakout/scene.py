@@ -1,23 +1,38 @@
-class Scene(object):
+"""
+Scene class definition
+
+This module defines the scene class. It is an abstract 
+base class used as a base class for all other game 
+scenes. It can not be instantiated itself. It must be
+subclassed instead. The subclasses must then provide
+implementation for every abstract method.
+"""
+
+from abc import ABCMeta, abstractmethod
+
+class Scene(object, metaclass=ABCMeta):
     """Base class for game scenes"""
     def __init__(self):
         """Initialize the scene"""
         self.next_scene = self
 
+    @abstractmethod
     def render(self):
         """Render the Scene"""
-        raise NotImplementedError
+        pass
 
+    @abstractmethod
     def update(self):
         """Update the Scene"""
-        raise NotImplementedError
+        pass
 
+    @abstractmethod
     def handle_events(self):
         """Handle Events"""
-        raise NotImplementedError
+        pass
 
     def goto(self, scene):
-        """switch scenes"""
+        """Switch scenes"""
         self.next_scene = scene
 
     def terminate(self):
