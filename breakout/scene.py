@@ -5,7 +5,7 @@ This module defines the scene class. It is an abstract
 base class used as a base class for all other game 
 scenes. It can not be instantiated itself. It must be
 subclassed instead. The subclasses must then provide
-implementation for every abstract method.
+implementations for every abstract method.
 """
 
 from abc import ABCMeta, abstractmethod
