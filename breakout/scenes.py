@@ -3,7 +3,7 @@ from pygame.locals import *
 from breakout.scene import Scene
 from breakout.ball import Ball
 from breakout.paddle import Paddle
-from breakout.player import Score
+from breakout.score import Score
 from breakout.brick import BrickManager
 from breakout.menu import Menu
 import breakout.resource as resource
@@ -49,23 +49,20 @@ class GamePlay(Scene):
 
     def handle_events(self):
         """Handle Events"""
+        keys = pygame.key.get_pressed()
+        if keys[K_LEFT]:
+            self.paddle.move_left()
+        if keys[K_RIGHT]:
+            self.paddle.move_right()
+
         for event in pygame.event.get():
             if event.type == QUIT:
                 self.terminate()
             elif event.type == KEYDOWN:
-                if event.key == K_LEFT:
-                    self.paddle.direction = 'left'
-                elif event.key == K_RIGHT:
-                    self.paddle.direction = 'right'
-                elif event.key == K_p:
+                if event.key == K_p:
                     self.goto(Pause(self.RES, self))
                 elif event.key == K_ESCAPE:
                     self.goto(MenuScene.lose(self.RES))
-            elif event.type == KEYUP:
-                if event.key == K_LEFT:
-                    self.paddle.direction = ''
-                elif event.key == K_RIGHT:
-                    self.paddle.direction = ''
 
 
 
