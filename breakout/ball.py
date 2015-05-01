@@ -10,12 +10,13 @@ import breakout.resource as resource
 
 class Ball(pygame.sprite.Sprite):
     """Ball Class"""
-    def __init__(self, RES, paddle, player):
+    def __init__(self, RES, paddle, player, on_lose):
         """Initialize ball object."""
         pygame.sprite.Sprite.__init__(self)
         self.RES = RES
         self.paddle = paddle 
         self.player = player
+        self.on_lose = on_lose
         self.image, self.rect = resource.load_image('ball.png')
         #self.sound = resource.load_sound('sounds/blip.wav')
         self.draw_rect = self.rect.inflate(170, 170)
@@ -28,7 +29,7 @@ class Ball(pygame.sprite.Sprite):
         self.bottom_wall = pygame.Rect(0,RES[1]-40,RES[0],1)       
         
         
-    def update(self, on_lose):
+    def update(self):
         """Update the ball position and check for rect collisions."""
         #TODO edit so the method takes a list of rects as a parameter and
         #have the ball bounce off the rects. This will make the class more 
@@ -47,7 +48,7 @@ class Ball(pygame.sprite.Sprite):
             #self.sound.play()
         elif self.rect.colliderect(self.bottom_wall):  #ball has missed paddle
             #need to change scene here
-            on_lose()
+            self.on_lose()
             #self.player.won = False
             #self.player.alive = False 
             #self.sound.play()

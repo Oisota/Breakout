@@ -10,6 +10,7 @@ class Win(Scene):
         """Initialize the scene"""
         self.mouse_pos = (0,0)
         self.pressed = ''
+        self.next_scene = self
         self.background, self.bg_rect = resource.load_image('brickwall.png')
 
         self.menu = Menu(RES) #construct menu
@@ -29,7 +30,7 @@ class Win(Scene):
 
     def update(self):
         """Update the Scene"""
-        self.menu.update(mouse_pos, pressed)
+        self.menu.update(self.mouse_pos, self.pressed)
         #pygame.display.update(self.menu.rects)
         pygame.display.update()
 
@@ -40,10 +41,10 @@ class Win(Scene):
             if event.type == QUIT:
                 self.terminate()
             elif event.type == MOUSEBUTTONDOWN:
-                mouse_pos = event.pos
-                pressed = 'mouse ' + str(event.button)
+                self.mouse_pos = event.pos
+                self.pressed = 'mouse ' + str(event.button)
             elif event.type == MOUSEMOTION:
-                mouse_pos = event.pos
+                self.mouse_pos = event.pos
     
     
     def goto(self, scene):

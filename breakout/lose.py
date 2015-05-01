@@ -13,10 +13,9 @@ class Lose(Scene):
     """Win scene"""
     def __init__(self, RES):
         """Initialize the scene"""
-        self.next_scene = self
-        self.RES = RES
         self.mouse_pos = (0,0)
         self.pressed = ''
+        self.next_scene = self
         self.background, self.bg_rect = resource.load_image('brickwall.png')
 
         self.menu = Menu(RES) #construct menu

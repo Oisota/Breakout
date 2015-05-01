@@ -1,6 +1,9 @@
 from abc import ABCMeta, abstractmethod
 
-class Scene(object, metaclass=ABCMeta):
+#test if concrete implementations for goto and terminate
+#work properly
+
+class Scene(metaclass=ABCMeta):
     """Abstract Base class for game scenes"""
     @abstractmethod
     def __init__(self):

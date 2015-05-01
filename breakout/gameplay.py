@@ -23,9 +23,9 @@ class GamePlay(Scene):
         self.background, self.bg_rect = resource.load_image('brickwall.png')
         self.player = Player(self.RES, 'player1', 0) 
         self.paddle = Paddle(self.RES)
-        self.ball = Ball(self.RES, self.paddle, self.player)
+        self.ball = Ball(self.RES, self.paddle, self.player, lambda: self.goto(Lose(self.RES)))
         self.bricks = BrickManager(self.RES, self.player)
-        self.sprites = pygame.sprite.Group(self.paddle, self.player.score)
+        self.sprites = pygame.sprite.Group(self.ball, self.paddle, self.player.score)
   
         self.bricks.fillDisplay() #place bricks
         self.draw_rects = (self.ball.draw_rect, self.paddle.draw_rect, self.player.score.draw_rect) #list of rects to update
@@ -36,14 +36,14 @@ class GamePlay(Scene):
 
     def render(self, screen):
         """Render the Scene"""
-        self.bricks.draw(screen) #draw sprites
+        screen.blit(self.background, (0,0))
+        self.bricks.draw(screen)
         self.sprites.draw(screen) 
 
 
     def update(self):
         """Update the Scene"""
         self.bricks.update(self.bricks, self.ball) #update sprites
-        self.ball.update(lambda: self.goto(Lose(self.RES)))
         self.sprites.update()
             
         if not self.bricks.sprites(): #check if all bricks are destroyed
@@ -67,13 +67,11 @@ class GamePlay(Scene):
                     self.goto(Pause(self.RES, self))
                 elif event.key == K_ESCAPE:
                     self.goto(Lose(self.RES))
-                elif event.type == KEYUP:
-                    if event.key == K_LEFT:
-                        self.paddle.direction = ''
-                    elif event.key == K_RIGHT:
-                        self.paddle.direction = ''
-                    elif event.key == K_p:
-                        paused = False
+            elif event.type == KEYUP:
+                if event.key == K_LEFT:
+                    self.paddle.direction = ''
+                elif event.key == K_RIGHT:
+                    self.paddle.direction = ''
     
 
     def goto(self, scene):

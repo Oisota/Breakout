@@ -5,8 +5,8 @@ from breakout.menu import Menu
 from breakout.gameplay import GamePlay
 import breakout.resource as resource
 
-class Title(Scene):
-    """Title scene class"""
+class Start(Scene):
+    """Start scene class"""
     def __init__(self, RES):
         self.next_scene = self
         self.mouse_pos = (0,0)
@@ -23,13 +23,13 @@ class Title(Scene):
         
 
     def render(self, screen):
-        """Render the Title scene"""
+        """Render the Start scene"""
         screen.blit(self.background, (0,0))
         self.menu.draw(screen)
 
         
     def update(self):
-        """Update the Title scene"""
+        """Update the Start scene"""
         self.menu.update(self.mouse_pos, self.pressed)
         #pygame.display.update(self.menu.rects)
         pygame.display.update()
