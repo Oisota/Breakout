@@ -1,11 +1,11 @@
 import pygame, sys
 from pygame.locals import *
-from breakout.BaseScenes import Scene
-from breakout.BaseScenes import MenuScene
+from breakout.scene import Scene
 from breakout.ball import Ball
 from breakout.paddle import Paddle
 from breakout.player import Player
 from breakout.brick import BrickManager
+from breakout.menu import Menu
 import breakout.resource as resource
 
 class GamePlay(Scene):
@@ -17,7 +17,7 @@ class GamePlay(Scene):
         self.background, self.bg_rect = resource.load_image('brickwall.png')
         self.player = Player(self.RES, 'player1', 0) 
         self.paddle = Paddle(self.RES)
-        self.ball = Ball(self.RES, self.paddle, self.player, lambda: self.goto(lose(self.RES)))
+        self.ball = Ball(self.RES, self.paddle, self.player, lambda: self.goto(MenuScene.lose(self.RES)))
         self.bricks = BrickManager(self.RES, self.player)
         self.sprites = pygame.sprite.Group(self.ball, self.paddle, self.player.score)
   
@@ -41,7 +41,7 @@ class GamePlay(Scene):
         self.sprites.update()
             
         if not self.bricks.sprites(): #check if all bricks are destroyed
-            self.goto(Win(self.RES))
+            self.goto(MenuScene.win(self.RES))
 
         #pygame.display.update(self.draw_rects)
         pygame.display.update()
@@ -60,7 +60,7 @@ class GamePlay(Scene):
                 elif event.key == K_p:
                     self.goto(Pause(self.RES, self))
                 elif event.key == K_ESCAPE:
-                    self.goto(Lose(self.RES))
+                    self.goto(MenuScene.lose(self.RES))
             elif event.type == KEYUP:
                 if event.key == K_LEFT:
                     self.paddle.direction = ''
@@ -111,23 +111,24 @@ class MenuScene(Scene):
                 self.mouse_pos = event.pos
 
 
-    def start(RES):
+    @classmethod
+    def start(cls, RES):
         """return a menu scene object for the start screen"""
-        return MenuScene(RES, 'breakout.png','start.png','start_pressed.png',
+        return cls(RES, 'breakout.png','start.png','start_pressed.png',
                 'quit.png','quit_pressed.png', GamePlay(RES), None)
     
     
-    
-    def win(RES):
+    @classmethod
+    def win(cls, RES):
         """return a menu scene object for the win screen"""
-        return MenuScene(RES, 'win.png','retry.png','retry_pressed.png',
+        return cls(RES, 'win.png','retry.png','retry_pressed.png',
                 'quit.png','quit_pressed.png', GamePlay(RES), None)
     
     
-    
-    def lose(RES):
+    @classmethod
+    def lose(cls, RES):
         """return a menu scene object for the lose screen"""
-        return MenuScene(RES, 'lose.png','retry.png','retry_pressed.png',
+        return cls(RES, 'lose.png','retry.png','retry_pressed.png',
                 'quit.png','quit_pressed.png', GamePlay(RES), None)
 
 
