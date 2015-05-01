@@ -1,8 +1,35 @@
 import pygame, sys
 from pygame.locals import *
-from breakout.scene import Scene
 from breakout.menu import Menu
 import breakout.resource as resource
+
+class Scene(object):
+    """Base class for game scenes"""
+    def __init__(self):
+        """Initialize the scene"""
+        self.next_scene = self
+
+    def render(self):
+        """Render the Scene"""
+        raise NotImplementedError
+
+    def update(self):
+        """Update the Scene"""
+        raise NotImplementedError
+
+    def handle_events(self):
+        """Handle Events"""
+        raise NotImplementedError
+
+    def goto(self, scene):
+        """switch scenes"""
+        self.next_scene = scene
+
+    def terminate(self):
+        """End the scene"""
+        self.goto(None)
+
+
 
 class MenuScene(Scene):
     """Base menu scene class"""
@@ -44,13 +71,3 @@ class MenuScene(Scene):
                 self.pressed = 'mouse ' + str(event.button)
             elif event.type == MOUSEMOTION:
                 self.mouse_pos = event.pos
-         
-        
-    def goto(self, scene):
-        """change the scene"""
-        self.next_scene = scene
-
-
-    def terminate(self):
-        """End the scene"""
-        self.goto(None)

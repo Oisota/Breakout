@@ -1,6 +1,7 @@
 import pygame, sys
 from pygame.locals import *
-from breakout.scene import Scene
+from breakout.BaseScenes import Scene
+from breakout.BaseScenes import MenuScene
 from breakout.ball import Ball
 from breakout.paddle import Paddle
 from breakout.player import Player
@@ -67,16 +68,6 @@ class GamePlay(Scene):
                     self.paddle.direction = ''
     
 
-    def goto(self, scene):
-        """change the scene"""
-        self.next_scene = scene
-
-
-    def terminate(self):
-        """End the scene"""
-        self.goto(None)
-
-
 
 class Start(MenuScene):
     """Start scene class"""
@@ -133,13 +124,3 @@ class Pause(Scene):
             elif event.type == KEYDOWN:
                 if event.key == K_p:
                     self.goto(self.game_scene)
-
-
-    def goto(self, scene):
-        """change the scene"""
-        self.next_scene = scene
-
-
-    def terminate(self):
-        """End the scene"""
-        self.goto(None)
