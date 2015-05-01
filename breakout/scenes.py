@@ -74,7 +74,7 @@ class MenuScene(Scene):
         self.pressed = ''
         self.background, self.bg_rect = resource.load_image('brickwall.png')
 
-        self.menu = Menu(RES) #construct menu
+        self.menu = Menu() #construct menu
         self.menu.addTitle(RES[0]/2, 100, title) 
         self.menu.addButton(RES[0]/2, 200, btn1, btn1_pressed, lambda: self.goto(scene1))
         self.menu.addButton(RES[0]/2, 300, btn2, btn2_pressed, lambda: self.goto(scene2))
