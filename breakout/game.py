@@ -2,7 +2,7 @@
 Game Module
 
 This module defines a run function. The run function
-initializes pygame, sets some game variabls and runs 
+initializes pygame, sets some game variables and runs 
 the game.
 """
 
