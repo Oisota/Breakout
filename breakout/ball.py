@@ -6,7 +6,7 @@ display and animate balls that bounce around the screen.
 """
 
 import pygame, random
-import breakout.resource as resource
+from breakout.resource import load_image
 
 class Ball(pygame.sprite.Sprite):
     """Ball Class"""
@@ -16,7 +16,7 @@ class Ball(pygame.sprite.Sprite):
         self.RES = RES
         self.paddle = paddle 
         self.on_lose = on_lose
-        self.image, self.rect = resource.load_image('ball.png')
+        self.image, self.rect = load_image('ball.png')
         #self.sound = resource.load_sound('sounds/blip.wav')
         self.draw_rect = self.rect.inflate(170, 170)
         self.rect.center = (random.randint(1, self.RES[0]-35), 450)

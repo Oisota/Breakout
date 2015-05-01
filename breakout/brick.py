@@ -8,14 +8,14 @@ that allows easy manipulation of many bricks.
 """
 
 import pygame
-import breakout.resource as resource
+from breakout.resource import load_image
 
 class Brick(pygame.sprite.Sprite):
     """Brick Class"""
     def __init__(self, x, y):
         """Initialize the brick."""
         pygame.sprite.Sprite.__init__(self)
-        self.image, self.rect = resource.load_image('brick.png')
+        self.image, self.rect = load_image('brick.png')
         self.rect.center = (x,y)
         
         
