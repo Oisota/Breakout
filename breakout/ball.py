@@ -10,12 +10,11 @@ import breakout.resource as resource
 
 class Ball(pygame.sprite.Sprite):
     """Ball Class"""
-    def __init__(self, RES, paddle, player, on_lose):
+    def __init__(self, RES, paddle, on_lose):
         """Initialize ball object."""
         pygame.sprite.Sprite.__init__(self)
         self.RES = RES
         self.paddle = paddle 
-        self.player = player
         self.on_lose = on_lose
         self.image, self.rect = resource.load_image('ball.png')
         #self.sound = resource.load_sound('sounds/blip.wav')
@@ -49,8 +48,6 @@ class Ball(pygame.sprite.Sprite):
         elif self.rect.colliderect(self.bottom_wall):  #ball has missed paddle
             #need to change scene here
             self.on_lose()
-            #self.player.won = False
-            #self.player.alive = False 
             #self.sound.play()
 
 

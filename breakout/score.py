@@ -1,34 +1,12 @@
 """
-Player Module
+Score Module
 
-This module defines the player and score classes. They keep track of the players
-name, score, and whether they have won. The score class displays the player's score.
+This module defines the score class. It keeps track of the players
+score and displays it on the screen.
 """
 
 import pygame
 from pygame.locals import *
-
-class Player(object):
-    """Player Class""" 
-    def __init__(self, RES, name='player one', score=0):
-        """Initialize player."""
-        self.name = ''
-        self.score = Score(RES, score)
-        self.alive = True
-        self.won = False
-        
-
-    def update(self):
-        """Update the player's score."""
-        self.score.update()
-
-
-    def reset(self):
-        """Reset player attributes."""
-        self.score.score = 0
-        self.alive = True
-        self.won = False
-
 
 class Score(pygame.sprite.Sprite):
     """Score Class"""

@@ -3,7 +3,7 @@ from pygame.locals import *
 from breakout.scene import Scene
 from breakout.ball import Ball
 from breakout.paddle import Paddle
-from breakout.player import Player
+from breakout.player import Score
 from breakout.brick import BrickManager
 from breakout.menu import Menu
 import breakout.resource as resource
@@ -15,14 +15,14 @@ class GamePlay(Scene):
         self.RES = RES
         self.next_scene = self
         self.background, self.bg_rect = resource.load_image('brickwall.png')
-        self.player = Player(self.RES, 'player1', 0) 
+        self.score = Score(self.RES, 0) 
         self.paddle = Paddle(self.RES)
-        self.ball = Ball(self.RES, self.paddle, self.player, lambda: self.goto(MenuScene.lose(self.RES)))
-        self.bricks = BrickManager(self.RES, self.player)
-        self.sprites = pygame.sprite.Group(self.ball, self.paddle, self.player.score)
+        self.ball = Ball(self.RES, self.paddle, lambda: self.goto(MenuScene.lose(self.RES)))
+        self.bricks = BrickManager(self.RES)
+        self.sprites = pygame.sprite.Group(self.ball, self.paddle, self.score)
   
         self.bricks.fillDisplay() #place bricks
-        self.draw_rects = (self.ball.draw_rect, self.paddle.draw_rect, self.player.score.draw_rect) #list of rects to update
+        self.draw_rects = (self.ball.draw_rect, self.paddle.draw_rect, self.score.draw_rect) #list of rects to update
 
         pygame.event.set_allowed([QUIT, KEYDOWN, KEYUP])
         pygame.mouse.set_visible(False) #make mouse invisible while playing the game
@@ -37,7 +37,7 @@ class GamePlay(Scene):
 
     def update(self):
         """Update the Scene"""
-        self.bricks.update(self.bricks, self.ball) #update sprites
+        self.bricks.update(self.bricks, self.ball, lambda: self.score.incr()) #update sprites
         self.sprites.update()
             
         if not self.bricks.sprites(): #check if all bricks are destroyed
