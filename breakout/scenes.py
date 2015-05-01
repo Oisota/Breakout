@@ -17,7 +17,7 @@ class GamePlay(Scene):
         self.background, self.bg_rect = resource.load_image('brickwall.png')
         self.player = Player(self.RES, 'player1', 0) 
         self.paddle = Paddle(self.RES)
-        self.ball = Ball(self.RES, self.paddle, self.player, lambda: self.goto(Lose(self.RES)))
+        self.ball = Ball(self.RES, self.paddle, self.player, lambda: self.goto(lose(self.RES)))
         self.bricks = BrickManager(self.RES, self.player)
         self.sprites = pygame.sprite.Group(self.ball, self.paddle, self.player.score)
   
@@ -66,43 +66,77 @@ class GamePlay(Scene):
                     self.paddle.direction = ''
                 elif event.key == K_RIGHT:
                     self.paddle.direction = ''
+
+
+
+class MenuScene(Scene):
+    """Menu scene class"""
+    def __init__(self, RES, title, btn1, btn1_pressed, btn2, btn2_pressed, scene1, scene2):
+        self.next_scene = self
+        self.mouse_pos = (0,0)
+        self.pressed = ''
+        self.background, self.bg_rect = resource.load_image('brickwall.png')
+
+        self.menu = Menu(RES) #construct menu
+        self.menu.addTitle(RES[0]/2, 100, title) 
+        self.menu.addButton(RES[0]/2, 200, btn1, btn1_pressed, lambda: self.goto(scene1))
+        self.menu.addButton(RES[0]/2, 300, btn2, btn2_pressed, lambda: self.goto(scene2))
+        
+        pygame.event.set_allowed([QUIT, MOUSEMOTION, MOUSEBUTTONUP, MOUSEBUTTONDOWN])
+        pygame.mouse.set_visible(True)
+        
+
+    def render(self, screen):
+        """Render the scene"""
+        screen.blit(self.background, (0,0))
+        self.menu.draw(screen)
+
+        
+    def update(self):
+        """Update the scene"""
+        self.menu.update(self.mouse_pos, self.pressed)
+        #pygame.display.update(self.menu.rects)
+        pygame.display.update()
+
+
+    def handle_events(self):
+        """handle user input events"""
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                self.terminate()
+            elif event.type == MOUSEBUTTONDOWN:
+                self.mouse_pos = event.pos
+                self.pressed = 'mouse ' + str(event.button)
+            elif event.type == MOUSEMOTION:
+                self.mouse_pos = event.pos
+
+
+    def start(RES):
+        """return a menu scene object for the start screen"""
+        return MenuScene(RES, 'breakout.png','start.png','start_pressed.png',
+                'quit.png','quit_pressed.png', GamePlay(RES), None)
     
-
-
-class Start(MenuScene):
-    """Start scene class"""
-    def __init__(self, RES):
-        MenuScene.__init__(self, RES, 
-                'breakout.png','start.png','start_pressed.png','quit.png','quit_pressed.png', 
-                lambda: self.goto(GamePlay(RES)), lambda: self.terminate())
-
-
-
-class Win(MenuScene):
-    """Win scene"""
-    def __init__(self, RES):
-        """Initialize the scene"""
-        MenuScene.__init__(self, RES, 
-                'win.png','retry.png','retry_pressed.png','quit.png','quit_pressed.png', 
-                lambda: self.goto(GamePlay(RES)), lambda: self.terminate())
-
-
-
-class Lose(MenuScene):
-    """Win scene"""
-    def __init__(self, RES):
-        """Initialize the scene"""
-        MenuScene.__init__(self, RES, 
-                'lose.png','retry.png','retry_pressed.png','quit.png','quit_pressed.png', 
-                lambda: self.goto(GamePlay(RES)), lambda: self.terminate())
+    
+    
+    def win(RES):
+        """return a menu scene object for the win screen"""
+        return MenuScene(RES, 'win.png','retry.png','retry_pressed.png',
+                'quit.png','quit_pressed.png', GamePlay(RES), None)
+    
+    
+    
+    def lose(RES):
+        """return a menu scene object for the lose screen"""
+        return MenuScene(RES, 'lose.png','retry.png','retry_pressed.png',
+                'quit.png','quit_pressed.png', GamePlay(RES), None)
 
 
 
 class Pause(Scene):
     """Title scene class"""
-    def __init__(self, RES, game_scene):
+    def __init__(self, RES, return_scene):
         self.next_scene = self
-        self.game_scene = game_scene
+        self.return_scene = return_scene
         pygame.event.set_allowed([QUIT, KEYDOWN, KEYUP])
         
 
@@ -123,4 +157,5 @@ class Pause(Scene):
                 self.terminate()
             elif event.type == KEYDOWN:
                 if event.key == K_p:
-                    self.goto(self.game_scene)
+                    self.goto(self.return_scene)
+
