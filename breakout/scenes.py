@@ -1,13 +1,6 @@
 import pygame, sys
 from pygame.locals import *
-
-# scenes
 from breakout.scene import Scene
-from breakout.pause import Pause
-from breakout.lose import Lose
-from breakout.win import Win
-
-# game objects
 from breakout.ball import Ball
 from breakout.paddle import Paddle
 from breakout.player import Player
@@ -73,6 +66,74 @@ class GamePlay(Scene):
                 elif event.key == K_RIGHT:
                     self.paddle.direction = ''
     
+
+    def goto(self, scene):
+        """change the scene"""
+        self.next_scene = scene
+
+
+    def terminate(self):
+        """End the scene"""
+        self.goto(None)
+
+
+
+class Start(MenuScene):
+    """Start scene class"""
+    def __init__(self, RES):
+        MenuScene.__init__(self, RES, 
+                'breakout.png','start.png','start_pressed.png','quit.png','quit_pressed.png', 
+                lambda: self.goto(GamePlay(RES)), lambda: self.terminate())
+
+
+
+class Win(MenuScene):
+    """Win scene"""
+    def __init__(self, RES):
+        """Initialize the scene"""
+        MenuScene.__init__(self, RES, 
+                'win.png','retry.png','retry_pressed.png','quit.png','quit_pressed.png', 
+                lambda: self.goto(GamePlay(RES)), lambda: self.terminate())
+
+
+
+class Lose(MenuScene):
+    """Win scene"""
+    def __init__(self, RES):
+        """Initialize the scene"""
+        MenuScene.__init__(self, RES, 
+                'lose.png','retry.png','retry_pressed.png','quit.png','quit_pressed.png', 
+                lambda: self.goto(GamePlay(RES)), lambda: self.terminate())
+
+
+
+class Pause(Scene):
+    """Title scene class"""
+    def __init__(self, RES, game_scene):
+        self.next_scene = self
+        self.game_scene = game_scene
+        pygame.event.set_allowed([QUIT, KEYDOWN, KEYUP])
+        
+
+    def render(self, screen):
+        """Render the Title scene"""
+        pass
+
+        
+    def update(self):
+        """Update the Title scene"""
+        pass
+
+
+    def handle_events(self):
+        """handle user input events"""
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                self.terminate()
+            elif event.type == KEYDOWN:
+                if event.key == K_p:
+                    self.goto(self.game_scene)
+
 
     def goto(self, scene):
         """change the scene"""

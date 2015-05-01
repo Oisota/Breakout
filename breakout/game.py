@@ -7,22 +7,21 @@ the game.
 """
 
 import pygame, sys
-from breakout.start import Start
+import scenes
 
 pygame.init() #initialize pygame
 
 def run():
     """Run the game""" 
     GAME_NAME  = "Breakout"  #name of the game 
-    FPS = 40 #frames per second limit
-    RES = (800,600)  #size of the display
+    FPS = 40                 #frames per second limit
+    RES = (800,600)          #size of the display
 
     screen = pygame.display.set_mode(RES)
     pygame.display.set_caption(GAME_NAME)
     clock = pygame.time.Clock()
-    
 
-    scene = Start(RES)
+    scene = scenes.Start(RES)
 
     while scene != None:
         scene.handle_events()
