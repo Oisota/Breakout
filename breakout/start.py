@@ -1,13 +1,16 @@
 import pygame, sys
 from pygame.locals import *
-from breakout.scene import Scene
+from breakout.menuscene import MenuScene
 from breakout.menu import Menu
 from breakout.gameplay import GamePlay
 import breakout.resource as resource
 
-class Start(Scene):
+class Start(MenuScene):
     """Start scene class"""
     def __init__(self, RES):
+        MenuScene.__init__(self, RES, 
+                'breakout.png','start.png','start_pressed.png','quit.png','quit_pressed.png', 
+                lambda: self.goto(GamePlay(RES), lambda: self.terminate())
         self.next_scene = self
         self.mouse_pos = (0,0)
         self.pressed = ''
