@@ -7,7 +7,7 @@ the game.
 """
 
 import pygame, sys
-import scenes
+from breakout.scenes import Start
 
 pygame.init() #initialize pygame
 
@@ -21,7 +21,7 @@ def run():
     pygame.display.set_caption(GAME_NAME)
     clock = pygame.time.Clock()
 
-    scene = scenes.Start(RES)
+    scene = Start(RES)
 
     while scene != None:
         scene.handle_events()
