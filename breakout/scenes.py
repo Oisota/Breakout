@@ -1,3 +1,10 @@
+"""
+Scenes Module
+
+This module contains all the game scenes. The scenes
+included are MenuScene, GamePlay, and Pause scenes.
+"""
+
 import pygame, sys
 from pygame.locals import *
 from breakout.scene import Scene
@@ -9,9 +16,9 @@ from breakout.menu import Menu
 import breakout.resource as resource
 
 class GamePlay(Scene):
-    """Main gameplay scene"""
+    """Main gameplay scene."""
     def __init__(self, RES):
-        """Initialize the scene"""
+        """Initialize the scene."""
         self.RES = RES
         self.next_scene = self
         self.background, self.bg_rect = resource.load_image('brickwall.png')
@@ -29,14 +36,14 @@ class GamePlay(Scene):
 
 
     def render(self, screen):
-        """Render the Scene"""
+        """Render the Scene."""
         screen.blit(self.background, (0,0))
         self.bricks.draw(screen)
         self.sprites.draw(screen) 
 
 
     def update(self):
-        """Update the Scene"""
+        """Update the Scene."""
         self.bricks.update(self.bricks, self.ball, lambda: self.score.incr()) #update sprites
         self.sprites.update()
             
@@ -48,7 +55,7 @@ class GamePlay(Scene):
 
 
     def handle_events(self):
-        """Handle Events"""
+        """Handle user input events."""
         keys = pygame.key.get_pressed()
         if keys[K_LEFT]:
             self.paddle.move_left()
@@ -69,6 +76,7 @@ class GamePlay(Scene):
 class MenuScene(Scene):
     """Menu scene class"""
     def __init__(self, RES, title, btn1, btn1_pressed, btn2, btn2_pressed, scene1, scene2):
+        """Initialize the scene."""
         self.next_scene = self
         self.mouse_pos = (0,0)
         self.pressed = ''
@@ -84,20 +92,20 @@ class MenuScene(Scene):
         
 
     def render(self, screen):
-        """Render the scene"""
+        """Render the scene."""
         screen.blit(self.background, (0,0))
         self.menu.draw(screen)
 
         
     def update(self):
-        """Update the scene"""
+        """Update the scene."""
         self.menu.update(self.mouse_pos, self.pressed)
         #pygame.display.update(self.menu.rects)
         pygame.display.update()
 
 
     def handle_events(self):
-        """handle user input events"""
+        """Handle user input events."""
         for event in pygame.event.get():
             if event.type == QUIT:
                 self.terminate()
@@ -110,46 +118,47 @@ class MenuScene(Scene):
 
     @classmethod
     def start(cls, RES):
-        """return a menu scene object for the start screen"""
+        """Return a menu scene object for the start screen."""
         return cls(RES, 'breakout.png','start.png','start_pressed.png',
                 'quit.png','quit_pressed.png', GamePlay(RES), None)
     
     
     @classmethod
     def win(cls, RES):
-        """return a menu scene object for the win screen"""
+        """Return a menu scene object for the win screen."""
         return cls(RES, 'win.png','retry.png','retry_pressed.png',
                 'quit.png','quit_pressed.png', GamePlay(RES), None)
     
     
     @classmethod
     def lose(cls, RES):
-        """return a menu scene object for the lose screen"""
+        """Return a menu scene object for the lose screen."""
         return cls(RES, 'lose.png','retry.png','retry_pressed.png',
                 'quit.png','quit_pressed.png', GamePlay(RES), None)
 
 
 
 class Pause(Scene):
-    """Title scene class"""
+    """Pause scene class."""
     def __init__(self, RES, return_scene):
+        """Initialize the scene."""
         self.next_scene = self
         self.return_scene = return_scene
         pygame.event.set_allowed([QUIT, KEYDOWN, KEYUP])
         
 
     def render(self, screen):
-        """Render the Title scene"""
+        """Render the scene."""
         pass
 
         
     def update(self):
-        """Update the Title scene"""
+        """Update the scene."""
         pass
 
 
     def handle_events(self):
-        """handle user input events"""
+        """Handle user input events."""
         for event in pygame.event.get():
             if event.type == QUIT:
                 self.terminate()

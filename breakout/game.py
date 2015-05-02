@@ -12,7 +12,7 @@ from breakout.scenes import MenuScene
 pygame.init() #initialize pygame
 
 def run():
-    """Run the game""" 
+    """Run the game.""" 
     GAME_NAME = "Breakout" #name of the game 
     FPS = 40               #frames per second limit
     RES = (800,600)        #size of the display
