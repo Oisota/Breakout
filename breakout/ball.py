@@ -30,9 +30,6 @@ class Ball(pygame.sprite.Sprite):
         
     def update(self):
         """Update the ball position and check for rect collisions."""
-        #TODO edit so the method takes a list of rects as a parameter and
-        #have the ball bounce off the rects. This will make the class more 
-        #generic in its functionality.
         self.rect = self.rect.move(self.x_vel, self.y_vel)
         self.draw_rect.center = self.rect.center
         
@@ -48,14 +45,3 @@ class Ball(pygame.sprite.Sprite):
         elif self.rect.colliderect(self.bottom_wall):  #ball has missed paddle
             self.on_lose()
             #self.sound.play()
-
-
-#    def update(self, rects):
-#        self.rect = self.rect.move(self.x_vel, self.y_vel)
-#        self.draw_rect.center = self.rect.center
-#
-#        rects.extend([self.left_wall, self.right_wall, self.top_wall, self.bottom_wall])
-#
-#        i = self.rect.collidelist(rects) #returns -1 if no collisions
-#        if i != -1:
-#            if self.rect.centerx < rects[i].left:
