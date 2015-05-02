@@ -6,7 +6,6 @@ score and displays it on the screen.
 """
 
 import pygame
-from pygame.locals import *
 
 class Score(pygame.sprite.Sprite):
     """Score Class"""
