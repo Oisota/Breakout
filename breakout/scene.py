@@ -10,31 +10,31 @@ implementations for every abstract method.
 
 from abc import ABCMeta, abstractmethod
 
-class Scene(object, metaclass=ABCMeta):
-    """Base class for game scenes"""
+class Scene(metaclass=ABCMeta):
+    """Base class for game scenes."""
     def __init__(self):
-        """Initialize the scene"""
+        """Initialize the scene."""
         self.next_scene = self
 
     @abstractmethod
     def render(self):
-        """Render the Scene"""
+        """Render the scene."""
         pass
 
     @abstractmethod
     def update(self):
-        """Update the Scene"""
+        """Update the scene."""
         pass
 
     @abstractmethod
     def handle_events(self):
-        """Handle Events"""
+        """Handle user input events."""
         pass
 
     def goto(self, scene):
-        """Switch scenes"""
+        """Switch scenes."""
         self.next_scene = scene
 
     def terminate(self):
-        """End the scene"""
+        """End the scene."""
         self.goto(None)
