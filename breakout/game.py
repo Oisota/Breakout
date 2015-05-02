@@ -13,9 +13,9 @@ pygame.init() #initialize pygame
 
 def run():
     """Run the game""" 
-    GAME_NAME  = "Breakout"  #name of the game 
-    FPS = 40                 #frames per second limit
-    RES = (800,600)          #size of the display
+    GAME_NAME = "Breakout" #name of the game 
+    FPS = 40               #frames per second limit
+    RES = (800,600)        #size of the display
 
     screen = pygame.display.set_mode(RES)
     pygame.display.set_caption(GAME_NAME)
