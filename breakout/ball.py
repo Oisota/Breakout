@@ -10,22 +10,22 @@ from breakout.resource import load_image
 
 class Ball(pygame.sprite.Sprite):
     """Ball Class"""
-    def __init__(self, RES, paddle, on_lose):
+    def __init__(self, *args, **kwargs):
         """Initialize ball object."""
         pygame.sprite.Sprite.__init__(self)
-        self.RES = RES
-        self.paddle = paddle 
-        self.on_lose = on_lose
+        self.RES = kwargs['RES']
+        self.paddle = kwargs['paddle']
+        self.on_lose = kwargs['on_lose']
         self.image, self.rect = load_image('ball.png')
         #self.sound = resource.load_sound('sounds/blip.wav')
         self.draw_rect = self.rect.inflate(170, 170)
         self.rect.center = (random.randint(1, self.RES[0]-35), 450)
         self.x_vel = random.randint(6,9)
         self.y_vel = -random.randint(6,9)
-        self.left_wall = pygame.Rect(0,0,1,RES[1]) 
-        self.right_wall = pygame.Rect(799,0,1,RES[1])
-        self.top_wall = pygame.Rect(0,0,RES[0],1)
-        self.bottom_wall = pygame.Rect(0,RES[1]-40,RES[0],1)       
+        self.left_wall = pygame.Rect(0, 0, 1, self.RES[1]) 
+        self.right_wall = pygame.Rect(799, 0, 1, self.RES[1])
+        self.top_wall = pygame.Rect(0, 0, self.RES[0], 1)
+        self.bottom_wall = pygame.Rect(0, self.RES[1]-40, self.RES[0], 1)       
         
         
     def update(self):

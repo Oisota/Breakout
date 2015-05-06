@@ -24,11 +24,11 @@ class GamePlay(Scene):
         self.background, self.bg_rect = resource.load_image('brickwall.png')
         self.score = Score(self.RES, 0) 
         self.paddle = Paddle(self.RES)
-        self.ball = Ball(self.RES, self.paddle, lambda: self.goto(MenuScene.lose(self.RES)))
-        self.bricks = BrickManager(self.RES)
+        self.ball = Ball(RES=self.RES, paddle=self.paddle, on_lose=lambda: self.goto(MenuScene.lose(self.RES)))
+        self.bricks = BrickManager()
         self.sprites = pygame.sprite.Group(self.ball, self.paddle, self.score)
   
-        self.bricks.fillDisplay() #place bricks
+        self.bricks.fillDisplay(self.RES) #place bricks
         self.draw_rects = (self.ball.draw_rect, self.paddle.draw_rect, self.score.draw_rect) #list of rects to update
 
         pygame.event.set_allowed([QUIT, KEYDOWN, KEYUP])
@@ -72,7 +72,7 @@ class GamePlay(Scene):
                     self.goto(MenuScene.lose(self.RES))
 
 
-
+# consider using *args, **kwargs for constructor
 class MenuScene(Scene):
     """Menu scene class"""
     def __init__(self, RES, title, btn1, btn1_pressed, btn2, btn2_pressed, scene1, scene2):
