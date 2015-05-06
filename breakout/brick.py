@@ -35,10 +35,9 @@ class Brick(pygame.sprite.Sprite):
 
 class BrickManager(pygame.sprite.Group):
     """BrickManager Class"""
-    def __init__(self, RES):
+    def __init__(self):
         """Initialze brick manager."""
         pygame.sprite.Group.__init__(self)
-        self.RES = RES
         
         
     def addBrick(self, x, y):
@@ -47,8 +46,8 @@ class BrickManager(pygame.sprite.Group):
         self.add(brick)
         
             
-    def fillDisplay(self):
+    def fillDisplay(self, RES):
         """Place bricks onto the screen."""
-        for x in range(85,self.RES[0]-15,70):
-            for y in range(100,self.RES[1]-319,30):
+        for x in range(85, RES[0]-15, 70):
+            for y in range(100, RES[1]-319, 30):
                 self.addBrick(x, y)
