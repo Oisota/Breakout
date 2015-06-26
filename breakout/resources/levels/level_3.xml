@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 <level id="0">
-    <name>Level One</name>
+    <name>Level Three</name>
     <difficulty>easy</difficulty>
+    <ball_spped>7</ball_spped>
     <bricks rows="10" columns="10">
         <row id="0">
             <column id="0">1</column>

@@ -1,19 +1,20 @@
 <?xml version="1.0"?>
 <level id="0">
-    <name>Level One</name>
+    <name>Level Two</name>
     <difficulty>easy</difficulty>
+    <ball_spped>6</ball_spped>
     <bricks rows="10" columns="10">
         <row id="0">
-            <column id="0">1</column>
-            <column id="1">1</column>
-            <column id="2">1</column>
-            <column id="3">1</column>
-            <column id="4">1</column>
-            <column id="5">1</column>
-            <column id="6">1</column>
-            <column id="7">1</column>
-            <column id="8">1</column>
-            <column id="9">1</column>
+            <column id="0">0</column>
+            <column id="1">0</column>
+            <column id="2">0</column>
+            <column id="3">0</column>
+            <column id="4">0</column>
+            <column id="5">0</column>
+            <column id="6">0</column>
+            <column id="7">0</column>
+            <column id="8">0</column>
+            <column id="9">0</column>
         </row>
         <row id="1">
             <column id="0">1</column>
@@ -112,16 +113,16 @@
             <column id="9">1</column>
         </row>
         <row id="9">
-            <column id="0">1</column>
-            <column id="1">1</column>
-            <column id="2">1</column>
-            <column id="3">1</column>
-            <column id="4">1</column>
-            <column id="5">1</column>
-            <column id="6">1</column>
-            <column id="7">1</column>
-            <column id="8">1</column>
-            <column id="9">1</column>
+            <column id="0">0</column>
+            <column id="1">0</column>
+            <column id="2">0</column>
+            <column id="3">0</column>
+            <column id="4">0</column>
+            <column id="5">0</column>
+            <column id="6">0</column>
+            <column id="7">0</column>
+            <column id="8">0</column>
+            <column id="9">0</column>
         </row>
     </bricks>        
 </level>
