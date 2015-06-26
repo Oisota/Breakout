@@ -17,9 +17,11 @@ import breakout.resource as resource
 
 class GamePlay(Scene):
     """Main gameplay scene."""
-    def __init__(self, RES):
+    def __init__(self, RES, level):
         """Initialize the scene."""
         self.RES = RES
+        self.level = level
+        self.next_level = level + 1
         self.next_scene = self
         self.background, self.bg_rect = resource.load_image('brickwall.png')
         self.score = Score(self.RES, 0) 
@@ -48,7 +50,7 @@ class GamePlay(Scene):
         self.sprites.update()
             
         if not self.bricks.sprites(): #check if all bricks are destroyed
-            self.goto(MenuScene.win(self.RES))
+            self.goto(GamePlay(self.RES, self.next_level))
 
         #pygame.display.update(self.draw_rects)
         pygame.display.update()
@@ -120,21 +122,21 @@ class MenuScene(Scene):
     def start(cls, RES):
         """Return a menu scene object for the start screen."""
         return cls(RES, 'breakout.png','start.png','start_pressed.png',
-                'quit.png','quit_pressed.png', GamePlay(RES), None)
+                'quit.png','quit_pressed.png', GamePlay(RES, 1), None)
     
     
     @classmethod
     def win(cls, RES):
         """Return a menu scene object for the win screen."""
         return cls(RES, 'win.png','retry.png','retry_pressed.png',
-                'quit.png','quit_pressed.png', GamePlay(RES), None)
+                'quit.png','quit_pressed.png', GamePlay(RES, 1), None)
     
     
     @classmethod
     def lose(cls, RES):
         """Return a menu scene object for the lose screen."""
         return cls(RES, 'lose.png','retry.png','retry_pressed.png',
-                'quit.png','quit_pressed.png', GamePlay(RES), None)
+                'quit.png','quit_pressed.png', GamePlay(RES, 1), None)
 
 
 
