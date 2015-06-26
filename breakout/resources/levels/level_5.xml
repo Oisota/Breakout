@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<level id="0">
+    <name>Level One</name>
+    <difficulty>easy</difficulty>
+    <bricks rows="10" columns="10">
+        <row id="0">
+            <column id="0">1</column>
+            <column id="1">1</column>
+            <column id="2">1</column>
+            <column id="3">1</column>
+            <column id="4">1</column>
+            <column id="5">1</column>
+            <column id="6">1</column>
+            <column id="7">1</column>
+            <column id="8">1</column>
+            <column id="9">1</column>
+        </row>
+        <row id="1">
+            <column id="0">1</column>
+            <column id="1">1</column>
+            <column id="2">1</column>
+            <column id="3">1</column>
+            <column id="4">1</column>
+            <column id="5">1</column>
+            <column id="6">1</column>
+            <column id="7">1</column>
+            <column id="8">1</column>
+            <column id="9">1</column>
+        </row>
+        <row id="2">
+            <column id="0">1</column>
+            <column id="1">1</column>
+            <column id="2">1</column>
+            <column id="3">1</column>
+            <column id="4">1</column>
+            <column id="5">1</column>
+            <column id="6">1</column>
+            <column id="7">1</column>
+            <column id="8">1</column>
+            <column id="9">1</column>
+        </row>
+        <row id="3">
+            <column id="0">1</column>
+            <column id="1">1</column>
+            <column id="2">1</column>
+            <column id="3">1</column>
+            <column id="4">1</column>
+            <column id="5">1</column>
+            <column id="6">1</column>
+            <column id="7">1</column>
+            <column id="8">1</column>
+            <column id="9">1</column>
+        </row>
+        <row id="4">
+            <column id="0">1</column>
+            <column id="1">1</column>
+            <column id="2">1</column>
+            <column id="3">1</column>
+            <column id="4">1</column>
+            <column id="5">1</column>
+            <column id="6">1</column>
+            <column id="7">1</column>
+            <column id="8">1</column>
+            <column id="9">1</column>
+        </row>
+        <row id="5">
+            <column id="0">1</column>
+            <column id="1">1</column>
+            <column id="2">1</column>
+            <column id="3">1</column>
+            <column id="4">1</column>
+            <column id="5">1</column>
+            <column id="6">1</column>
+            <column id="7">1</column>
+            <column id="8">1</column>
+            <column id="9">1</column>
+        </row>
+        <row id="6">
+            <column id="0">1</column>
+            <column id="1">1</column>
+            <column id="2">1</column>
+            <column id="3">1</column>
+            <column id="4">1</column>
+            <column id="5">1</column>
+            <column id="6">1</column>
+            <column id="7">1</column>
+            <column id="8">1</column>
+            <column id="9">1</column>
+        </row>
+        <row id="7">
+            <column id="0">1</column>
+            <column id="1">1</column>
+            <column id="2">1</column>
+            <column id="3">1</column>
+            <column id="4">1</column>
+            <column id="5">1</column>
+            <column id="6">1</column>
+            <column id="7">1</column>
+            <column id="8">1</column>
+            <column id="9">1</column>
+        </row>
+        <row id="8">
+            <column id="0">1</column>
+            <column id="1">1</column>
+            <column id="2">1</column>
+            <column id="3">1</column>
+            <column id="4">1</column>
+            <column id="5">1</column>
+            <column id="6">1</column>
+            <column id="7">1</column>
+            <column id="8">1</column>
+            <column id="9">1</column>
+        </row>
+        <row id="9">
+            <column id="0">1</column>
+            <column id="1">1</column>
+            <column id="2">1</column>
+            <column id="3">1</column>
+            <column id="4">1</column>
+            <column id="5">1</column>
+            <column id="6">1</column>
+            <column id="7">1</column>
+            <column id="8">1</column>
+            <column id="9">1</column>
+        </row>
+    </bricks>        
+</level>
