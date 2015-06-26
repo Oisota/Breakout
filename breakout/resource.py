@@ -7,6 +7,7 @@ this but also handles exceptions if files are not found.
 """
 
 import pygame, os, sys
+import xml.etree.ElementTree as ET
 
 def load_image(path):
     """Load an image and return the image object and the image rect."""
@@ -42,3 +43,14 @@ def load_sound(path):
         raise SystemExit 
 
     return sound
+
+
+def load_level(path):
+    """Load the given level file into a dict and return the dict."""
+    level = dict()
+    tree = ET.parse(path)
+    root = tree.getroot()
+    
+    for child in root:
+        print(child.tag, child.attrib, child.text)
+    
