@@ -46,7 +46,7 @@ def load_sound(path):
 
 
 def load_level(path):
-    """Load the given level file into a dict and return the dict."""
+    """Load the given xml level file into a dict and return the dict."""
     level_path = 'breakout/resources/levels/'
     path = os.path.join(level_path, path)
     path = os.path.abspath(path)
@@ -58,14 +58,15 @@ def load_level(path):
     level.update({root[0].tag : root[0].text})
     level.update({root[1].tag : root[1].text})
     level.update({root[2].tag : root[2].text})
+    level.update({root[3].tag : root[3].text})
 
-    for row in root[3]:
+    for row in root[4]:
         tmp = list()
         for column in row:
             tmp.append(column.text)
 
         bricks.append(tmp)
 
-    level.update({root[3].tag : bricks})
+    level.update({root[4].tag : bricks})
 
     return level
