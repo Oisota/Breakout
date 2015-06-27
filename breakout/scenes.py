@@ -83,7 +83,7 @@ class MenuScene(Scene):
         self.next_scene = self
         self.mouse_pos = (0,0)
         self.pressed = ''
-        self.background, self.bg_rect = resource.load_image('brickwall.png')
+        self.background, self.bg_rect = load_image('brickwall.png')
 
         self.menu = Menu() #construct menu
         self.menu.addTitle(RES[0]/2, 100, title) 
