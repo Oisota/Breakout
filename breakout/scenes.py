@@ -21,7 +21,8 @@ class GamePlay(Scene):
         """Initialize the scene."""
         self.RES = RES
         self.level = level
-        self.next_level = load_level(level['next'])
+        if self.level is not None and self.level['next'] != 'None':
+            self.next_level = load_level(level['next'])
         self.next_scene = self
         self.background, self.bg_rect = load_image('brickwall.png')
         self.score = Score(self.RES, 0) 
@@ -131,14 +132,14 @@ class MenuScene(Scene):
     def win(cls, RES):
         """Return a menu scene object for the win screen."""
         return cls(RES, 'win.png','retry.png','retry_pressed.png',
-                'quit.png','quit_pressed.png', GamePlay(RES, 1), None)
+                'quit.png','quit_pressed.png', GamePlay(RES, None), None)
     
     
     @classmethod
     def lose(cls, RES):
         """Return a menu scene object for the lose screen."""
         return cls(RES, 'lose.png','retry.png','retry_pressed.png',
-                'quit.png','quit_pressed.png', GamePlay(RES, 1), None)
+                'quit.png','quit_pressed.png', GamePlay(RES, None), None)
 
 
 
