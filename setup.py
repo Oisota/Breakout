@@ -26,7 +26,7 @@ setup(
           requires = ['sys', 'os', 'random', 'pygame', 'xml'],
        classifiers = ['Programming Language :: Python',
                       'Programming Language :: Python :: 3',
-                      'Development Status :: 3 - Beta',
+                      'Development Status :: 4 - Beta',
                       'Environment :: Other Environment',
                       'Framework :: Pygame',
                       'Intended Audience :: End Users/Desktop',
