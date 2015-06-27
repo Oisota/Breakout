@@ -50,5 +50,5 @@ class BrickManager(pygame.sprite.Group):
         """Place bricks onto the screen."""
         for x, row in zip(range(0, RES[0], 80), bricks):
             for y, brick in zip(range(100, RES[1]-200, 30), row):
-                if brick == 1:
+                if brick == '1':
                     self.addBrick(x, y)
