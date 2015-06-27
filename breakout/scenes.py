@@ -147,7 +147,7 @@ class MenuScene(Scene):
 
 class Pause(Scene):
     """Pause scene class."""
-    def __init__(self, RES, return_scene):
+    def __init__(self, return_scene):
         """Initialize the scene."""
         self.next_scene = self
         self.return_scene = return_scene
