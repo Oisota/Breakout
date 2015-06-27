@@ -71,7 +71,7 @@ class GamePlay(Scene):
                 self.terminate()
             elif event.type == KEYDOWN:
                 if event.key == K_p:
-                    self.goto(Pause(self.RES, self))
+                    self.goto(Pause(self))
                 elif event.key == K_ESCAPE:
                     self.goto(MenuScene.lose(self.RES))
 
