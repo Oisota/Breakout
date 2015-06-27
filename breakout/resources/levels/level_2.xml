@@ -2,7 +2,7 @@
 <level id="0">
     <name>Level Two</name>
     <difficulty>easy</difficulty>
-    <ball_spped>6</ball_spped>
+    <ball_speed>6</ball_speed>
     <next>level_3.xml</next>
     <bricks rows="10" columns="10">
         <row id="0">
