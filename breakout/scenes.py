@@ -13,7 +13,7 @@ from breakout.paddle import Paddle
 from breakout.score import Score
 from breakout.brick import BrickManager
 from breakout.menu import Menu
-import breakout.resource as resource
+from breakout.resource import *
 
 class GamePlay(Scene):
     """Main gameplay scene."""
@@ -21,16 +21,17 @@ class GamePlay(Scene):
         """Initialize the scene."""
         self.RES = RES
         self.level = level
-        self.next_level = level + 1
+        self.next_level = load_level(level['next'])
         self.next_scene = self
-        self.background, self.bg_rect = resource.load_image('brickwall.png')
+        self.background, self.bg_rect = load_image('brickwall.png')
         self.score = Score(self.RES, 0) 
         self.paddle = Paddle(self.RES)
-        self.ball = Ball(RES=self.RES, paddle=self.paddle, on_lose=lambda: self.goto(MenuScene.lose(self.RES)))
+        self.ball = Ball(RES=self.RES, paddle=self.paddle, speed=self.level['ball_speed'], 
+                on_lose=lambda: self.goto(MenuScene.lose(self.RES)))
         self.bricks = BrickManager()
         self.sprites = pygame.sprite.Group(self.ball, self.paddle, self.score)
   
-        self.bricks.fillDisplay(self.RES) #place bricks
+        self.bricks.fillDisplay(self.RES, level['bricks']) #place bricks
         self.draw_rects = (self.ball.draw_rect, self.paddle.draw_rect, self.score.draw_rect) #list of rects to update
 
         pygame.event.set_allowed([QUIT, KEYDOWN, KEYUP])
@@ -121,8 +122,9 @@ class MenuScene(Scene):
     @classmethod
     def start(cls, RES):
         """Return a menu scene object for the start screen."""
+        level = load_level('level_1.xml')
         return cls(RES, 'breakout.png','start.png','start_pressed.png',
-                'quit.png','quit_pressed.png', GamePlay(RES, 1), None)
+                'quit.png','quit_pressed.png', GamePlay(RES, level), None)
     
     
     @classmethod
