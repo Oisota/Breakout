@@ -55,18 +55,18 @@ def load_level(path):
     tree = ET.parse(path)
     root = tree.getroot()
 
-    level.update({root[0].tag : root[0].text})
-    level.update({root[1].tag : root[1].text})
-    level.update({root[2].tag : root[2].text})
-    level.update({root[3].tag : root[3].text})
+    level.update({root[0].tag : root[0].text}) # name
+    level.update({root[1].tag : root[1].text}) # difficulty
+    level.update({root[2].tag : root[2].text}) # ball speed
+    level.update({root[3].tag : root[3].text}) # filename of next level
 
-    for row in root[4]:
+    for row in root[4]: # load brick data into list of lists
         tmp = list()
         for column in row:
             tmp.append(column.text)
 
         bricks.append(tmp)
 
-    level.update({root[4].tag : bricks})
+    level.update({root[4].tag : bricks}) # brick data
 
     return level
