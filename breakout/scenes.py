@@ -131,15 +131,17 @@ class MenuScene(Scene):
     @classmethod
     def win(cls, RES):
         """Return a menu scene object for the win screen."""
+        level = load_level('level_1.xml')
         return cls(RES, 'win.png','retry.png','retry_pressed.png',
-                'quit.png','quit_pressed.png', GamePlay(RES, None), None)
+                'quit.png','quit_pressed.png', GamePlay(RES, level), None)
     
     
     @classmethod
     def lose(cls, RES):
         """Return a menu scene object for the lose screen."""
+        level = load_level('level_1.xml')
         return cls(RES, 'lose.png','retry.png','retry_pressed.png',
-                'quit.png','quit_pressed.png', GamePlay(RES, None), None)
+                'quit.png','quit_pressed.png', GamePlay(RES, level), None)
 
 
 
