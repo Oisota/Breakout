@@ -3,6 +3,7 @@
     <name>Level Two</name>
     <difficulty>easy</difficulty>
     <ball_spped>6</ball_spped>
+    <next>level_3.xml</next>
     <bricks rows="10" columns="10">
         <row id="0">
             <column id="0">0</column>

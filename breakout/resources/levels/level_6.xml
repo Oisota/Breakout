@@ -3,6 +3,7 @@
     <name>Level Six</name>
     <difficulty>medium</difficulty>
     <ball_speed>10</ball_speed>
+    <next>level_7.xml</next>
     <bricks rows="10" columns="10">
         <row id="0">
             <column id="0">1</column>
