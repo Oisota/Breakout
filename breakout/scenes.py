@@ -21,8 +21,7 @@ class GamePlay(Scene):
         """Initialize the scene."""
         self.RES = RES
         self.level = level
-        if self.level is not None and self.level['next'] != 'None':
-            self.next_level = load_level(level['next'])
+        self.next_level = load_level(level['next'])
         self.next_scene = self
         self.background, self.bg_rect = load_image('brickwall.png')
         self.score = Score(self.RES, 0) 
