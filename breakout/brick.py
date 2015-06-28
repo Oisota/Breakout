@@ -1,10 +1,12 @@
 """
 Brick and BrickManager Classes
 
-This module contains the Brick and BrickManager classes. The Brick
-class displays a brick on the screen that gets destroyed once it
-is hit with a ball. The Brick Manager class is a container class 
-that allows easy manipulation of many bricks.
+This module contains the Brick class and the fill_display() 
+function. The Brick class displays a brick on the screen 
+that gets destroyed once it is hit with a ball. The
+fill_display() function places bricks based on the given
+bricks parameter which is a list of lists representing the
+brick layout.
 """
 
 import pygame
@@ -35,17 +37,12 @@ class Brick(pygame.sprite.Sprite):
             elif ball.rect.x < (self.rect.x + self.rect.width):
                 ball.y_vel = -ball.y_vel 
 
-        
 
-def addBrick(group, x, y):
-    """Add a brick with the given x,y position to the given group"""
-    brick = Brick(x, y)
-    group.add(brick)
-    
-        
-def fillDisplay(group, RES, bricks):
+
+def fill_display(group, RES, bricks):
     """Place bricks onto the screen, adding them to the given group"""
     for y, row in zip(range(50, RES[1]-150, 30), bricks):
         for x, brick in zip(range(40, RES[0], 80), row):
             if brick == '1':
-                addBrick(group, x, y)
+                brick = Brick(x, y) # create brick at specified location
+                group.add(brick)    # add brick to given group
