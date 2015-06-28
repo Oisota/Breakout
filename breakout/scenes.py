@@ -52,6 +52,7 @@ class GamePlay(Scene):
             
         if not self.bricks.sprites(): #check if all bricks are destroyed
             self.goto(GamePlay(self.RES, self.next_level))
+            pygame.time.wait(300)
 
         #pygame.display.update(self.draw_rects)
         pygame.display.update()
