@@ -11,7 +11,7 @@ from breakout.scene import Scene
 from breakout.ball import Ball
 from breakout.paddle import Paddle
 from breakout.score import Score
-from breakout.brick import fill_display
+from breakout.brick import Brick
 from breakout.menu import Menu
 from breakout.resource import *
 
@@ -30,7 +30,7 @@ class GamePlay(Scene):
                 on_lose=lambda: self.goto(MenuScene.lose(self.RES)))
         self.sprites = pygame.sprite.Group(self.ball, self.paddle, self.score)
 
-        fill_display(self.sprites, self.RES, level['bricks']) #place bricks
+        Brick.fill_display(self.sprites, self.RES, level['bricks']) #place bricks
         self.draw_rects = (self.ball.draw_rect, self.paddle.draw_rect, self.score.draw_rect) #list of rects to update
 
         pygame.event.set_allowed([QUIT, KEYDOWN, KEYUP])

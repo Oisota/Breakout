@@ -39,7 +39,7 @@ class Brick(pygame.sprite.Sprite):
                 ball.y_vel = -ball.y_vel 
 
 
-    @class_method
+    @classmethod
     def fill_display(cls, group, RES, bricks):
         """Place bricks onto the screen, adding them to the given group"""
         for y, row in zip(range(50, RES[1]-150, 30), bricks):
