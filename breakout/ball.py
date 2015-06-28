@@ -28,7 +28,7 @@ class Ball(pygame.sprite.Sprite):
         self.bottom_wall = pygame.Rect(0, self.RES[1]-40, self.RES[0], 1)       
         
         
-    def update(self):
+    def update(self, *args, **kwargs):
         """Update the ball position and check for rect collisions."""
         self.rect = self.rect.move(self.x_vel, self.y_vel)
         self.draw_rect.center = self.rect.center

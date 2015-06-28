@@ -19,8 +19,12 @@ class Brick(pygame.sprite.Sprite):
         self.rect.center = (x,y)
         
         
-    def update(self, group, ball, on_collision): 
+    def update(self, *args, **kwargs): 
         """Check for ball collision and delete brick if there is a collision."""
+        group = args[0]
+        ball = args[1]
+        on_collision = args[2]
+
         if self.rect.colliderect(ball.rect):
             #self.ball.sound.play()
             self.remove(group)
@@ -33,22 +37,15 @@ class Brick(pygame.sprite.Sprite):
 
         
 
-class BrickManager(pygame.sprite.Group):
-    """BrickManager Class"""
-    def __init__(self):
-        """Initialze brick manager."""
-        pygame.sprite.Group.__init__(self)
+def addBrick(group, x, y):
+    """Add a brick with the given x,y position to the given group"""
+    brick = Brick(x, y)
+    group.add(brick)
+    
         
-        
-    def addBrick(self, x, y):
-        """Add a brick with the given x,y position to the group"""
-        brick = Brick(x, y)
-        self.add(brick)
-        
-            
-    def fillDisplay(self, RES, bricks):
-        """Place bricks onto the screen."""
-        for y, row in zip(range(50, RES[1]-150, 30), bricks):
-            for x, brick in zip(range(40, RES[0], 80), row):
-                if brick == '1':
-                    self.addBrick(x, y)
+def fillDisplay(group, RES, bricks):
+    """Place bricks onto the screen, adding them to the given group"""
+    for y, row in zip(range(50, RES[1]-150, 30), bricks):
+        for x, brick in zip(range(40, RES[0], 80), row):
+            if brick == '1':
+                addBrick(group, x, y)

@@ -21,7 +21,7 @@ class Score(pygame.sprite.Sprite):
         self.rect.center = (self.RES[0]-100, self.RES[1]-25)
         self.draw_rect = self.rect.inflate(40,10)
 
-    def update(self):
+    def update(self, *args, **kwargs):
         """Update the player's score."""
         self.image = self.font.render(str(self.score), True, self.color)
         self.rect = self.image.get_rect()
