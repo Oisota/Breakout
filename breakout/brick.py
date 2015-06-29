@@ -43,7 +43,7 @@ class Brick(pygame.sprite.Sprite):
     def fill_display(cls, group, RES, bricks):
         """Place bricks onto the screen, adding them to the given group"""
         for y, row in zip(range(50, RES[1]-150, 30), bricks):
-            for x, brick in zip(range(40, RES[0], 80), row):
-                if brick == '1':
+            for x, column in zip(range(40, RES[0], 80), row):
+                if column == '1':
                     brick = cls(x, y) # create brick at specified location
                     group.add(brick)    # add brick to given group
