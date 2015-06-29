@@ -7,16 +7,16 @@ and animate the paddle controlled by the user.
 
 import pygame 
 from breakout.resource import load_image
+from breakout.constants import *
 
 class Paddle(pygame.sprite.Sprite):
     """Paddle Class"""
-    def __init__(self, RES):
+    def __init__(self):
         """Initialize paddle"""
         pygame.sprite.Sprite.__init__(self)
-        self.RES = RES
         self.image, self.rect = load_image('paddle.png')
         self.draw_rect = self.rect.inflate(120, 40)
-        self.rect.center = (self.RES[0]/2, self.RES[1] - 75)
+        self.rect.center = (RESOLUTION[0]/2, RESOLUTION[1] - 75)
         self.vel = 16
    
 
@@ -32,5 +32,5 @@ class Paddle(pygame.sprite.Sprite):
         """Move the paddle right."""
         self.rect = self.rect.move(self.vel, 0)
         self.draw_rect.center = self.rect.center
-        if self.rect.x > self.RES[0] - 100: #keep paddle within the display
-            self.rect.x = self.RES[0] - 100
+        if self.rect.x > RESOLUTION[0] - 100: #keep paddle within the display
+            self.rect.x = RESOLUTION[0] - 100

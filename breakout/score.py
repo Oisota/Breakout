@@ -6,26 +6,26 @@ score and displays it on the screen.
 """
 
 import pygame
+from breakout.constants import *
 
 class Score(pygame.sprite.Sprite):
     """Score Class"""
-    def __init__(self, RES, score=0):
+    def __init__(self, score=0):
         """Initialize player score."""
         pygame.sprite.Sprite.__init__(self)
-        self.RES = RES
         self.score = score
         self.color = (0,0,0) #black
         self.font = pygame.font.Font(None, 40)
         self.image = self.font.render(str(self.score), True, self.color)
         self.rect = self.image.get_rect()
-        self.rect.center = (self.RES[0]-100, self.RES[1]-25)
+        self.rect.center = (RESOLUTION[0]-100, RESOLUTION[1]-25)
         self.draw_rect = self.rect.inflate(40,10)
 
     def update(self, *args, **kwargs):
         """Update the player's score."""
         self.image = self.font.render(str(self.score), True, self.color)
         self.rect = self.image.get_rect()
-        self.rect.center = (self.RES[0]-100, self.RES[1]-25)
+        self.rect.center = (RESOLUTION[0]-100, RESOLUTION[1]-25)
 
 
     def incr(self, incr=5):
