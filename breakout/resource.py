@@ -52,7 +52,14 @@ def load_level(path):
     path = os.path.abspath(path)
     level = dict()
     bricks = list()
-    tree = ET.parse(path)
+
+    try:
+        tree = ET.parse(path)
+    except FileNotFoundError as e:
+        print('Could not load level: ', path)
+        print(e)
+        raise SystemExit
+
     root = tree.getroot()
 
     level.update({root[0].tag : root[0].text}) # name
