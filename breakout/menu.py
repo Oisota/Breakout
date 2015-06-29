@@ -13,7 +13,7 @@ from breakout.resource import load_image
 
 class Button(pygame.sprite.Sprite):
     """Button Class"""    
-    def __init__(self, x, y, img1, img2, on_click):
+    def __init__(self, x, y, text, on_click):
         """Initialize button."""
         pygame.sprite.Sprite.__init__(self)
         self.on_click = on_click
@@ -42,7 +42,7 @@ class Button(pygame.sprite.Sprite):
 
 class Title(pygame.sprite.Sprite):
     """Title Class"""
-    def __init__(self, x, y, image):
+    def __init__(self, x, y, text):
         """Initialzie title."""
         pygame.sprite.Sprite.__init__(self)
 
@@ -61,15 +61,15 @@ class Menu(pygame.sprite.Group):
         self.rects = []
 
 
-    def addButton(self, x, y, img1, img2, on_click):
+    def addButton(self, *args, **kwargs):
         """Create new button and add it to the menu."""
-        button = Button(x, y, img1, img2, on_click)
+        button = Button(kwargs['x'], kwargs['y'], kwargs['text'], kwargs['on_click'])
         self.add(button) 
         self.rects.append(button.rect)
    
     
-    def addTitle(self, x, y, image):
+    def addTitle(self, *args, **kwargs):
         """Create new title and add it to the menu."""
-        title = Title(x, y, image)
+        title = Title(kwargs['x'], kwargs['y'], kwargs['text'])
         self.add(title)
         self.rects.append(title.rect)
