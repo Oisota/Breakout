@@ -49,10 +49,6 @@ class Scene(metaclass=ABCMeta):
         """Switch scenes."""
         self.next_scene = scene
 
-    def terminate(self):
-        """End the scene."""
-        self.goto(None)
-
 
 
 class GamePlay(Scene):
