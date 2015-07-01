@@ -6,6 +6,7 @@ and animate the paddle controlled by the user.
 """
 
 import pygame 
+
 from breakout.resource import load_image
 from breakout.constants import *
 

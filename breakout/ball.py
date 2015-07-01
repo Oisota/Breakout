@@ -6,6 +6,7 @@ display and animate balls that bounce around the screen.
 """
 
 import pygame, random
+
 from breakout.resource import load_image
 from breakout.constants import *
 

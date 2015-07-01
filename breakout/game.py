@@ -7,14 +7,13 @@ the game.
 """
 
 import pygame, sys
+
 from breakout.scenes import MenuScene
 from breakout.constants import *
 
-pygame.init() #initialize pygame
-
 def run():
     """Run the game.""" 
-
+    pygame.init() 
     screen = pygame.display.set_mode(RESOLUTION)
     pygame.display.set_caption(GAME_NAME)
     clock = pygame.time.Clock()

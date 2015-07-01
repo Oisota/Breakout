@@ -7,6 +7,7 @@ included are MenuScene, GamePlay, and Pause scenes.
 
 import pygame, sys
 from pygame.locals import *
+
 from breakout.scene import Scene
 from breakout.ball import Ball
 from breakout.paddle import Paddle

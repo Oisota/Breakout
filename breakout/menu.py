@@ -9,6 +9,7 @@ Menu is a container for the buttons and a title.
 """
 
 import pygame
+
 from breakout.resource import load_image
 from breakout.constants import *
 
