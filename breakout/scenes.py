@@ -9,7 +9,17 @@ class for all other game scenes. It can not be instantiated
 itself. It must be subclassed instead. The subclasses must then provide
 implementations for every abstract method.
 
-TODO: Add docs for the other classes
+The GamePlay scene is what handles the game logic behind the user
+playing the game. It creates all the necessary game objects and
+responds to user input accordingly.
+
+The MenuScene is responsible for the logic behind creating the
+start/win/lose menus and handling user input accordingly.
+
+The Pause scene is a dummy scene that loops continuously without
+drawing anything new to the screen. It only waits for the user 
+to press "P" again and once that happens it switches back to
+the scene it was called from.
 """
 
 from abc import ABCMeta, abstractmethod
