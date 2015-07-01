@@ -31,7 +31,7 @@ class Button(pygame.sprite.Sprite):
         self.image_not_pressed = self.font.render(str(self.text), True, self.color2)
         self.image = self.image_not_pressed
         self.rect = self.image.get_rect()
-        self.rect.center = (x,y)
+        self.rect.center = (self.x, self.y)
 
         
     def update(self, mouse_pos, pressed):
@@ -60,7 +60,7 @@ class Title(pygame.sprite.Sprite):
         #load image and set position
         self.image = self.font.render(str(self.text), True, self.color)
         self.rect = self.image.get_rect()
-        self.rect.center = (x,y)
+        self.rect.center = (self.x, self.y)
 
 
 

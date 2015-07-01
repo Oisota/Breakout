@@ -84,9 +84,9 @@ class MenuScene(Scene):
         self.background, self.bg_rect = load_image('brickwall.png')
 
         self.menu = Menu() #construct menu
-        self.menu.addTitle(RESOLUTION[0]/2, 100, title) 
-        self.menu.addButton(RESOLUTION[0]/2, 200, btn1, btn1_pressed, lambda: self.goto(scene1))
-        self.menu.addButton(RESOLUTION[0]/2, 300, btn2, btn2_pressed, lambda: self.goto(scene2))
+        self.menu.add_title(x=RESOLUTION[0]/2, y=100, text=title) 
+        self.menu.add_button(x=RESOLUTION[0]/2, y=200, on_click=lambda: self.goto(scene1))
+        self.menu.add_button(x=RESOLUTION[0]/2, y=300, on_click=lambda: self.goto(scene2))
         
         pygame.event.set_allowed([QUIT, MOUSEMOTION, MOUSEBUTTONUP, MOUSEBUTTONDOWN])
         pygame.mouse.set_visible(True)
