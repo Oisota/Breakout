@@ -2,13 +2,20 @@
 Scenes Module
 
 This module contains all the game scenes. The scenes
-included are MenuScene, GamePlay, and Pause scenes.
+included are Scene, MenuScene, GamePlay, and Pause scenes.
+
+The Scene class is an abstract base class used as a base 
+class for all other game scenes. It can not be instantiated 
+itself. It must be subclassed instead. The subclasses must then provide
+implementations for every abstract method.
+
+TODO: Add docs for the other classes
 """
 
+from abc import ABCMeta, abstractmethod
 import pygame, sys
 from pygame.locals import *
 
-from breakout.scene import Scene
 from breakout.ball import Ball
 from breakout.paddle import Paddle
 from breakout.score import Score
@@ -16,6 +23,37 @@ from breakout.brick import Brick
 from breakout.menu import Menu
 from breakout.resource import *
 from breakout.constants import *
+
+class Scene(metaclass=ABCMeta):
+    """Base class for game scenes."""
+    def __init__(self):
+        """Initialize the scene."""
+        self.next_scene = self
+
+    @abstractmethod
+    def render(self):
+        """Render the scene."""
+        pass
+
+    @abstractmethod
+    def update(self):
+        """Update the scene."""
+        pass
+
+    @abstractmethod
+    def handle_events(self):
+        """Handle user input events."""
+        pass
+
+    def goto(self, scene):
+        """Switch scenes."""
+        self.next_scene = scene
+
+    def terminate(self):
+        """End the scene."""
+        self.goto(None)
+
+
 
 class GamePlay(Scene):
     """Main gameplay scene."""
