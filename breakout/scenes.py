@@ -210,7 +210,7 @@ class Pause(Scene):
         """Handle user input events."""
         for event in pygame.event.get():
             if event.type == QUIT:
-                self.terminate()
+                self.goto(None)
             elif event.type == KEYDOWN:
                 if event.key == K_p:
                     self.goto(self.return_scene)
