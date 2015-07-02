@@ -68,7 +68,7 @@ class GamePlay(Scene):
         self.level = level
         self.next_level = load_level(level['next'])
         self.next_scene = self
-        self.background, self.bg_rect = load_image('brickwall.png')
+        self.background, self.bg_rect = load_image(BACKGROUND_IMAGE)
         self.score = Score(0) 
         self.paddle = Paddle()
         self.ball = Ball(paddle=self.paddle, speed=self.level['ball_speed'], 
@@ -126,7 +126,7 @@ class MenuScene(Scene):
         self.next_scene = self
         self.mouse_pos = (0,0)
         self.pressed = ''
-        self.background, self.bg_rect = load_image('brickwall.png')
+        self.background, self.bg_rect = load_image(BACKGROUND_IMAGE)
 
         self.menu = Menu() #construct menu
         self.menu.addTitle(RESOLUTION[0]/2, 100, title) 
@@ -165,25 +165,25 @@ class MenuScene(Scene):
     @classmethod
     def start(cls):
         """Return a menu scene object for the start screen."""
-        level = load_level('level_1.xml')
-        return cls('breakout.png','start.png','start_pressed.png',
-                'quit.png','quit_pressed.png', GamePlay(level), None)
+        level = load_level(START_LEVEL)
+        return cls(BREAKOUT_IMAGE,START_IMAGE,START_PRESSED_IMAGE,
+                QUIT_IMAGE,QUIT_PRESSED_IMAGE, GamePlay(level), None)
     
     
     @classmethod
     def win(cls):
         """Return a menu scene object for the win screen."""
-        level = load_level('level_1.xml')
-        return cls('win.png','retry.png','retry_pressed.png',
-                'quit.png','quit_pressed.png', GamePlay(level), None)
+        level = load_level(START_LEVEL)
+        return cls(WIN_IMAGE,RETRY_IMAGE,RETRY_PRESSED_IMAGE,
+                QUIT_IMAGE,QUIT_PRESSED_IMAGE, GamePlay(level), None)
     
     
     @classmethod
     def lose(cls):
         """Return a menu scene object for the lose screen."""
-        level = load_level('level_1.xml')
-        return cls('lose.png','retry.png','retry_pressed.png',
-                'quit.png','quit_pressed.png', GamePlay(level), None)
+        level = load_level(START_LEVEL)
+        return cls(LOSE_IMAGE,RETRY_IMAGE,RETRY_PRESSED_IMAGE,
+                QUIT_IMAGE,QUIT_PRESSED_IMAGE, GamePlay(level), None)
 
 
 

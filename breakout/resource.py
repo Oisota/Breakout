@@ -9,10 +9,11 @@ this but also handles exceptions if files are not found.
 import pygame, os, sys
 import xml.etree.ElementTree as ET
 
-def load_image(path):
+from breakout.constants import *
+
+def load_image(file_name):
     """Load an image and return the image object and the image rect."""
-    img_path = 'breakout/resources/images/'
-    path = os.path.join(img_path, path)
+    path = os.path.join(IMAGE_PATH, file_name)
     path = os.path.abspath(path)
 
     try:
@@ -29,10 +30,9 @@ def load_image(path):
     return image, image.get_rect()
 
 
-def load_sound(path):
+def load_sound(file_name):
     """Load a sound and return the sound object."""
-    snd_path = 'breakout/resources/sounds/'
-    path = os.path.join(snd_path, path)
+    path = os.path.join(SOUND_PATH, file_name)
     path = os.path.abspath(path)
 
     try:
@@ -45,10 +45,9 @@ def load_sound(path):
     return sound
 
 
-def load_level(path):
+def load_level(file_name):
     """Load the given xml level file into a dict and return the dict."""
-    level_path = 'breakout/resources/levels/'
-    path = os.path.join(level_path, path)
+    path = os.path.join(LEVEL_PATH, file_name)
     path = os.path.abspath(path)
     level = dict()
     bricks = list()
