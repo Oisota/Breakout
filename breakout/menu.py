@@ -24,12 +24,12 @@ class Button(pygame.sprite.Sprite):
         self.on_click = kwargs['on_click']
         #self.sound = pygame.mixer.Sound('sounds/blip.wav')
         self.font = pygame.font.Font(None, 60)
-        self.color1 = (0,0,0) #black
-        self.color2 = (255,255,255) #white
+        self.color1 = (255,255,255)
+        self.color2 = (255,50,50) 
 
-        #load image and set position
-        self.image_pressed = self.font.render(str(self.text), True, self.color1)
-        self.image_not_pressed = self.font.render(str(self.text), True, self.color2)
+        #render text and set position
+        self.image_not_pressed = self.font.render(str(self.text), True, self.color1)
+        self.image_pressed = self.font.render(str(self.text), True, self.color2)
         self.image = self.image_not_pressed
         self.rect = self.image.get_rect()
         self.rect.center = (self.x, self.y)
@@ -38,12 +38,12 @@ class Button(pygame.sprite.Sprite):
     def update(self, mouse_pos, pressed):
         """Check to see if user has moused over or clicked the button."""
         if self.rect.collidepoint(mouse_pos):
-            self.image = self.img_pressed
+            self.image = self.image_pressed
             if pressed == 'mouse 1':
                 #self.sound.play() 
                 self.on_click()
         else:
-            self.image = self.img_not_pressed
+            self.image = self.image_not_pressed
 
 
 
@@ -55,10 +55,10 @@ class Title(pygame.sprite.Sprite):
         self.x = kwargs['x']
         self.y = kwargs['y']
         self.text = kwargs['text']
-        self.font = pygame.font.Font(None, 40)
-        self.color = (0,0,0) #black
+        self.font = pygame.font.Font(None, 80)
+        self.color = (255,255,255) #black
 
-        #load image and set position
+        #render text and set position
         self.image = self.font.render(str(self.text), True, self.color)
         self.rect = self.image.get_rect()
         self.rect.center = (self.x, self.y)

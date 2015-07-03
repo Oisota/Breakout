@@ -121,7 +121,7 @@ class GamePlay(Scene):
 # consider using *args, **kwargs for constructor
 class MenuScene(Scene):
     """Menu scene class"""
-    def __init__(self, title, btn1, btn1_pressed, btn2, btn2_pressed, scene1, scene2):
+    def __init__(self, title, btn1_text, btn2_text ,scene1, scene2):
         """Initialize the scene."""
         self.next_scene = self
         self.mouse_pos = (0,0)
@@ -130,8 +130,8 @@ class MenuScene(Scene):
 
         self.menu = Menu() #construct menu
         self.menu.add_title(x=RESOLUTION[0]/2, y=100, text=title) 
-        self.menu.add_button(x=RESOLUTION[0]/2, y=200, on_click=lambda: self.goto(scene1))
-        self.menu.add_button(x=RESOLUTION[0]/2, y=300, on_click=lambda: self.goto(scene2))
+        self.menu.add_button(x=RESOLUTION[0]/2, y=200, text=btn1_text, on_click=lambda: self.goto(scene1))
+        self.menu.add_button(x=RESOLUTION[0]/2, y=300, text=btn2_text, on_click=lambda: self.goto(scene2))
         
         pygame.event.set_allowed([QUIT, MOUSEMOTION, MOUSEBUTTONUP, MOUSEBUTTONDOWN])
         pygame.mouse.set_visible(True)
@@ -166,24 +166,21 @@ class MenuScene(Scene):
     def start(cls):
         """Return a menu scene object for the start screen."""
         level = load_level(START_LEVEL)
-        return cls(BREAKOUT_IMAGE,START_IMAGE,START_PRESSED_IMAGE,
-                QUIT_IMAGE,QUIT_PRESSED_IMAGE, GamePlay(level), None)
+        return cls('Breakout','Start', 'Quit', GamePlay(level), None)
     
     
     @classmethod
     def win(cls):
         """Return a menu scene object for the win screen."""
         level = load_level(START_LEVEL)
-        return cls(WIN_IMAGE,RETRY_IMAGE,RETRY_PRESSED_IMAGE,
-                QUIT_IMAGE,QUIT_PRESSED_IMAGE, GamePlay(level), None)
+        return cls('You Won!','Retry', 'Quit', GamePlay(level), None)
     
     
     @classmethod
     def lose(cls):
         """Return a menu scene object for the lose screen."""
         level = load_level(START_LEVEL)
-        return cls(LOSE_IMAGE,RETRY_IMAGE,RETRY_PRESSED_IMAGE,
-                QUIT_IMAGE,QUIT_PRESSED_IMAGE, GamePlay(level), None)
+        return cls('You Lose.','Retry', 'Quit', GamePlay(level), None)
 
 
 
