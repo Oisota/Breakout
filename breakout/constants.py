@@ -17,8 +17,15 @@ IMAGE_PATH = 'breakout/resources/images/'
 BACKGROUND_IMAGE = 'brickwall.png'
 BALL_IMAGE = 'ball.png'
 PADDLE_IMAGE = 'paddle.png'
-BRICK_IMAGE = 'brick.png'
-
+BRICK_IMAGES = {'red' : 'brick_red.png',
+                'blue' : 'brick_blue.png',
+                'green' : 'brick_green.png',
+                'orange' : 'brick_orange.png',
+                'purple' : 'brick_purple.png',
+                'tan' : 'brick_tan.png',
+                'white' : 'brick_white.png',
+                'black' : 'brick_black.png',
+                'grey' : 'brick_grey.png'}
 
 # Menu Images
 BREAKOUT_IMAGE = 'breakout.png'

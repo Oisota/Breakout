@@ -51,6 +51,7 @@ def load_level(file_name):
     path = os.path.abspath(path)
     level = dict()
     bricks = list()
+    brick_colors = list()
 
     try:
         tree = ET.parse(path)
@@ -68,11 +69,15 @@ def load_level(file_name):
 
     for row in root[4]: # load brick data into list of lists
         tmp = list()
+        color_tmp = list()
         for column in row:
             tmp.append(column.text)
+            color_tmp.append(column.attrib['color'])
 
         bricks.append(tmp)
+        brick_colors.append(color_tmp)
 
     level.update({root[4].tag : bricks}) # brick data
+    level.update({'brick_colors' : brick_colors}) # brick data
 
     return level

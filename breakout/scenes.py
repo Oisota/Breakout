@@ -75,7 +75,7 @@ class GamePlay(Scene):
                 on_lose=lambda: self.goto(MenuScene.lose()))
         self.sprites = pygame.sprite.Group(self.ball, self.paddle, self.score)
 
-        Brick.fill_display(self.sprites, level['bricks']) #place bricks
+        Brick.fill_display(self.sprites, level['bricks'], level['brick_colors']) #place bricks
         self.draw_rects = (self.ball.draw_rect, self.paddle.draw_rect, self.score.draw_rect) #list of rects to update
 
         pygame.event.set_allowed([QUIT, KEYDOWN, KEYUP])
@@ -110,7 +110,7 @@ class GamePlay(Scene):
 
         for event in pygame.event.get():
             if event.type == QUIT:
-                self.terminate()
+                self.goto(None)
             elif event.type == KEYDOWN:
                 if event.key == K_p:
                     self.goto(Pause(self))
@@ -154,7 +154,7 @@ class MenuScene(Scene):
         """Handle user input events."""
         for event in pygame.event.get():
             if event.type == QUIT:
-                self.terminate()
+                self.goto(None)
             elif event.type == MOUSEBUTTONDOWN:
                 self.mouse_pos = event.pos
                 self.pressed = 'mouse ' + str(event.button)
