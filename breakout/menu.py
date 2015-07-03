@@ -15,44 +15,54 @@ from breakout.constants import *
 
 class Button(pygame.sprite.Sprite):
     """Button Class"""    
-    def __init__(self, x, y, img1, img2, on_click):
+    def __init__(self, kwargs):
         """Initialize button."""
         pygame.sprite.Sprite.__init__(self)
-        self.on_click = on_click
+        self.x = kwargs['x']
+        self.y = kwargs['y']
+        self.text = kwargs['text']
+        self.on_click = kwargs['on_click']
         #self.sound = pygame.mixer.Sound('sounds/blip.wav')
+        self.font = pygame.font.Font(None, 60)
+        self.color1 = (255,255,255)
+        self.color2 = (255,50,50) 
 
-        #load image and set position
-        self.img_not_pressed, self.rect = load_image(img1)
-        self.img_pressed, self.rect = load_image(img2)
-        self.img_not_pressed  = pygame.transform.scale(self.img_not_pressed, (130,70))
-        self.img_pressed  = pygame.transform.scale(self.img_pressed, (130,70))
-        self.image = self.img_not_pressed
+        #render text and set position
+        self.image_not_pressed = self.font.render(str(self.text), True, self.color1)
+        self.image_pressed = self.font.render(str(self.text), True, self.color2)
+        self.image = self.image_not_pressed
         self.rect = self.image.get_rect()
-        self.rect.center = (x,y)
+        self.rect.center = (self.x, self.y)
 
         
     def update(self, mouse_pos, pressed):
         """Check to see if user has moused over or clicked the button."""
         if self.rect.collidepoint(mouse_pos):
-            self.image = self.img_pressed
+            self.image = self.image_pressed
             if pressed == 'mouse 1':
                 #self.sound.play() 
                 self.on_click()
         else:
-            self.image = self.img_not_pressed
+            self.image = self.image_not_pressed
+
 
 
 class Title(pygame.sprite.Sprite):
     """Title Class"""
-    def __init__(self, x, y, image):
+    def __init__(self, kwargs):
         """Initialzie title."""
         pygame.sprite.Sprite.__init__(self)
+        self.x = kwargs['x']
+        self.y = kwargs['y']
+        self.text = kwargs['text']
+        self.font = pygame.font.Font(None, 80)
+        self.color = (255,255,255) #black
 
-        #load image and set position
-        self.image, self.rect = load_image(image)
-        self.image = pygame.transform.scale(self.image, (200,80))
+        #render text and set position
+        self.image = self.font.render(str(self.text), True, self.color)
         self.rect = self.image.get_rect()
-        self.rect.center = (x,y)
+        self.rect.center = (self.x, self.y)
+
 
 
 class Menu(pygame.sprite.Group):
@@ -63,15 +73,15 @@ class Menu(pygame.sprite.Group):
         self.rects = []
 
 
-    def addButton(self, x, y, img1, img2, on_click):
+    def add_button(self, *args, **kwargs):
         """Create new button and add it to the menu."""
-        button = Button(x, y, img1, img2, on_click)
+        button = Button(kwargs)
         self.add(button) 
         self.rects.append(button.rect)
    
     
-    def addTitle(self, x, y, image):
+    def add_title(self, *args, **kwargs):
         """Create new title and add it to the menu."""
-        title = Title(x, y, image)
+        title = Title(kwargs)
         self.add(title)
         self.rects.append(title.rect)
