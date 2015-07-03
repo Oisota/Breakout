@@ -17,10 +17,10 @@ from breakout.constants import *
 
 class Brick(pygame.sprite.Sprite):
     """Brick Class"""
-    def __init__(self, x, y, img):
+    def __init__(self, x, y, color):
         """Initialize the brick."""
         pygame.sprite.Sprite.__init__(self)
-        self.image, self.rect = load_image(img)
+        self.image, self.rect = load_image(BRICK_IMAGES[color])
         self.rect.center = (x,y)
         
         
@@ -47,5 +47,5 @@ class Brick(pygame.sprite.Sprite):
         for y, row, colors in zip(range(50, RESOLUTION[1]-150, 30), bricks, brick_colors):
             for x, column, color in zip(range(40, RESOLUTION[0], 80), row, colors):
                 if column == '1':
-                    brick = cls(x, y, BRICK_IMAGES[color]) # create brick at specified location
+                    brick = cls(x, y, color) # create brick at specified location
                     group.add(brick)    # add brick to given group
