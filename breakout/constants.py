@@ -14,7 +14,7 @@ RESOLUTION = (800,600)
 
 # Images
 IMAGE_PATH = 'breakout/resources/images/'
-BACKGROUND_IMAGE = 'brickwall.png'
+BACKGROUND_IMAGE = 'background.png'
 BALL_IMAGE = 'ball.png'
 PADDLE_IMAGE = 'paddle.png'
 BRICK_IMAGES = {'red' : 'brick_red.png',
