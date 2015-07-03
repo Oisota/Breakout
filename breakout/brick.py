@@ -11,15 +11,16 @@ GamePlay scene.
 """
 
 import pygame
+
 from breakout.resource import load_image
 from breakout.constants import *
 
 class Brick(pygame.sprite.Sprite):
     """Brick Class"""
-    def __init__(self, x, y):
+    def __init__(self, x, y, color):
         """Initialize the brick."""
         pygame.sprite.Sprite.__init__(self)
-        self.image, self.rect = load_image('brick.png')
+        self.image, self.rect = load_image(BRICK_IMAGES[color])
         self.rect.center = (x,y)
         
         
@@ -41,10 +42,10 @@ class Brick(pygame.sprite.Sprite):
 
 
     @classmethod
-    def fill_display(cls, group, bricks):
+    def fill_display(cls, group, bricks, brick_colors):
         """Place bricks onto the screen, adding them to the given group"""
-        for y, row in zip(range(50, RESOLUTION[1]-150, 30), bricks):
-            for x, column in zip(range(40, RESOLUTION[0], 80), row):
+        for y, row, colors in zip(range(50, RESOLUTION[1]-150, 30), bricks, brick_colors):
+            for x, column, color in zip(range(40, RESOLUTION[0], 80), row, colors):
                 if column == '1':
-                    brick = cls(x, y) # create brick at specified location
+                    brick = cls(x, y, color) # create brick at specified location
                     group.add(brick)    # add brick to given group

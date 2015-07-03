@@ -6,6 +6,7 @@ score and displays it on the screen.
 """
 
 import pygame
+
 from breakout.constants import *
 
 class Score(pygame.sprite.Sprite):
@@ -14,7 +15,7 @@ class Score(pygame.sprite.Sprite):
         """Initialize player score."""
         pygame.sprite.Sprite.__init__(self)
         self.score = score
-        self.color = (0,0,0) #black
+        self.color = (200,200,200) 
         self.font = pygame.font.Font(None, 40)
         self.image = self.font.render(str(self.score), True, self.color)
         self.rect = self.image.get_rect()
