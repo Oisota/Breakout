@@ -214,4 +214,6 @@ class Pause(Scene):
             elif event.type == KEYDOWN:
                 if event.key == K_p:
                     self.goto(self.return_scene)
+                elif event.key == K_ESCAPE:
+                    self.goto(MenuScene.lose())
 
