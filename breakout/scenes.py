@@ -175,14 +175,14 @@ class MenuScene(Scene):
     def win(cls):
         """Return a menu scene object for the win screen."""
         level = load_level(START_LEVEL)
-        return cls('You Won!','Retry', 'Quit', GamePlay(level), None)
+        return cls('You Won','Retry', 'Quit', GamePlay(level), None)
     
     
     @classmethod
     def lose(cls):
         """Return a menu scene object for the lose screen."""
         level = load_level(START_LEVEL)
-        return cls('You Lose.','Retry', 'Quit', GamePlay(level), None)
+        return cls('You Lose','Retry', 'Quit', GamePlay(level), None)
 
 
 
