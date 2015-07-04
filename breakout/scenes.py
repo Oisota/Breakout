@@ -78,7 +78,7 @@ class GamePlay(Scene):
         self.sprites = pygame.sprite.Group(self.ball, self.paddle, self.score, self.level_num)
 
         Brick.fill_display(self.sprites, level['bricks'], self.level['brick_colors']) #place bricks
-        self.draw_rects = (self.ball.draw_rect, self.paddle.draw_rect, self.score.draw_rect) #list of rects to update
+        self.draw_rects = (self.ball.draw_rect, self.paddle.draw_rect, self.score.draw_rect, self.level_num.draw_rect) #list of rects to update
 
         pygame.event.set_allowed([QUIT, KEYDOWN, KEYUP])
         pygame.mouse.set_visible(False) #make mouse invisible while playing the game
@@ -160,6 +160,9 @@ class MenuScene(Scene):
             elif event.type == MOUSEBUTTONDOWN:
                 self.mouse_pos = event.pos
                 self.pressed = 'mouse ' + str(event.button)
+            elif event.type == MOUSEBUTTONUP:
+                self.mouse_pos = event.pos
+                self.pressed = ''
             elif event.type == MOUSEMOTION:
                 self.mouse_pos = event.pos
 
