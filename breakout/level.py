@@ -11,7 +11,7 @@ from breakout.constants import *
 
 class Level(pygame.sprite.Sprite):
     """Level Class"""
-    def __init__(self, level=1):
+    def __init__(self, level):
         pygame.sprite.Sprite.__init__(self)
         self.level = level
         self.color = (200,200,200) 
