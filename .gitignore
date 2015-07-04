@@ -1,4 +1,5 @@
 breakout/resources/GIMP_files/*
+breakout/resources/levels/level_test.xml
 breakout/__pycache__/*
 dist/*
 venv/*
