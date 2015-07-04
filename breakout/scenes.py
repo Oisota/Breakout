@@ -29,6 +29,7 @@ from pygame.locals import *
 from breakout.ball import Ball
 from breakout.paddle import Paddle
 from breakout.score import Score
+from breakout.level import Level
 from breakout.brick import Brick
 from breakout.menu import Menu
 from breakout.resource import *
@@ -66,16 +67,17 @@ class GamePlay(Scene):
     def __init__(self, level):
         """Initialize the scene."""
         self.level = level
-        self.next_level = load_level(level['next'])
+        self.next_level = load_level(self.level['next'])
         self.next_scene = self
         self.background, self.bg_rect = load_image(BACKGROUND_IMAGE)
         self.score = Score(0) 
+        self.level_num = Level(self.level['name']) 
         self.paddle = Paddle()
         self.ball = Ball(paddle=self.paddle, speed=self.level['ball_speed'], 
                 on_lose=lambda: self.goto(MenuScene.lose()))
-        self.sprites = pygame.sprite.Group(self.ball, self.paddle, self.score)
+        self.sprites = pygame.sprite.Group(self.ball, self.paddle, self.score, self.level_num)
 
-        Brick.fill_display(self.sprites, level['bricks'], level['brick_colors']) #place bricks
+        Brick.fill_display(self.sprites, level['bricks'], self.level['brick_colors']) #place bricks
         self.draw_rects = (self.ball.draw_rect, self.paddle.draw_rect, self.score.draw_rect) #list of rects to update
 
         pygame.event.set_allowed([QUIT, KEYDOWN, KEYUP])
@@ -92,7 +94,7 @@ class GamePlay(Scene):
         """Update the Scene."""
         self.sprites.update(self.sprites, self.ball, lambda: self.score.incr()) #update sprites
             
-        if len(self.sprites.sprites()) == 3: #check if all bricks are destroyed
+        if len(self.sprites.sprites()) == 4: #check if all bricks are destroyed
             self.goto(GamePlay(self.next_level))
             pygame.time.wait(300)
 
