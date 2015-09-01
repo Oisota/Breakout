@@ -4,126 +4,102 @@
     <difficulty>medium</difficulty>
     <ball_speed>8</ball_speed>
     <next>level_5.xml</next>
-    <bricks rows="10" columns="10">
-        <row id="0">
-            <column id="0" color="orange">1</column>
-            <column id="1" color="orange">1</column>
-            <column id="2" color="orange">1</column>
-            <column id="3" color="orange">1</column>
-            <column id="4" color="orange">1</column>
-            <column id="5" color="orange">1</column>
-            <column id="6" color="orange">1</column>
-            <column id="7" color="orange">1</column>
-            <column id="8" color="orange">1</column>
-            <column id="9" color="orange">1</column>
+    <bricks>
+        <row>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
         </row>
-        <row id="1">
-            <column id="0" color="orange">1</column>
-            <column id="1" color="orange">1</column>
-            <column id="2" color="orange">1</column>
-            <column id="3" color="orange">1</column>
-            <column id="4" color="orange">1</column>
-            <column id="5" color="orange">1</column>
-            <column id="6" color="orange">1</column>
-            <column id="7" color="orange">1</column>
-            <column id="8" color="orange">1</column>
-            <column id="9" color="orange">1</column>
+        <row>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
         </row>
-        <row id="2">
-            <column id="0" color="orange">1</column>
-            <column id="1" color="orange">1</column>
-            <column id="2" color="orange">1</column>
-            <column id="3" color="orange">1</column>
-            <column id="4" color="orange">1</column>
-            <column id="5" color="orange">1</column>
-            <column id="6" color="orange">1</column>
-            <column id="7" color="orange">1</column>
-            <column id="8" color="orange">1</column>
-            <column id="9" color="orange">1</column>
+        <row>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
         </row>
-        <row id="3">
-            <column id="0" color="orange">1</column>
-            <column id="1" color="orange">1</column>
-            <column id="2" color="orange">1</column>
-            <column id="3" color="orange">1</column>
-            <column id="4" color="orange">1</column>
-            <column id="5" color="orange">1</column>
-            <column id="6" color="orange">1</column>
-            <column id="7" color="orange">1</column>
-            <column id="8" color="orange">1</column>
-            <column id="9" color="orange">1</column>
+        <row>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
         </row>
-        <row id="4">
-            <column id="0" color="orange">1</column>
-            <column id="1" color="orange">1</column>
-            <column id="2" color="orange">1</column>
-            <column id="3" color="orange">1</column>
-            <column id="4" color="orange">1</column>
-            <column id="5" color="orange">1</column>
-            <column id="6" color="orange">1</column>
-            <column id="7" color="orange">1</column>
-            <column id="8" color="orange">1</column>
-            <column id="9" color="orange">1</column>
+        <row>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
         </row>
-        <row id="5">
-            <column id="0" color="orange">1</column>
-            <column id="1" color="orange">1</column>
-            <column id="2" color="orange">1</column>
-            <column id="3" color="orange">1</column>
-            <column id="4" color="orange">1</column>
-            <column id="5" color="orange">1</column>
-            <column id="6" color="orange">1</column>
-            <column id="7" color="orange">1</column>
-            <column id="8" color="orange">1</column>
-            <column id="9" color="orange">1</column>
+        <row>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
         </row>
-        <row id="6">
-            <column id="0" color="orange">1</column>
-            <column id="1" color="orange">1</column>
-            <column id="2" color="orange">1</column>
-            <column id="3" color="orange">1</column>
-            <column id="4" color="orange">1</column>
-            <column id="5" color="orange">1</column>
-            <column id="6" color="orange">1</column>
-            <column id="7" color="orange">1</column>
-            <column id="8" color="orange">1</column>
-            <column id="9" color="orange">1</column>
+        <row>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
         </row>
-        <row id="7">
-            <column id="0" color="orange">1</column>
-            <column id="1" color="orange">1</column>
-            <column id="2" color="orange">1</column>
-            <column id="3" color="orange">1</column>
-            <column id="4" color="orange">1</column>
-            <column id="5" color="orange">1</column>
-            <column id="6" color="orange">1</column>
-            <column id="7" color="orange">1</column>
-            <column id="8" color="orange">1</column>
-            <column id="9" color="orange">1</column>
-        </row>
-        <row id="8">
-            <column id="0" color="orange">0</column>
-            <column id="1" color="orange">0</column>
-            <column id="2" color="orange">0</column>
-            <column id="3" color="orange">0</column>
-            <column id="4" color="orange">0</column>
-            <column id="5" color="orange">0</column>
-            <column id="6" color="orange">0</column>
-            <column id="7" color="orange">0</column>
-            <column id="8" color="orange">0</column>
-            <column id="9" color="orange">0</column>
-        </row>
-        <row id="9">
-            <column id="0" color="orange">0</column>
-            <column id="1" color="orange">0</column>
-            <column id="2" color="orange">0</column>
-            <column id="3" color="orange">0</column>
-            <column id="4" color="orange">0</column>
-            <column id="5" color="orange">0</column>
-            <column id="6" color="orange">0</column>
-            <column id="7" color="orange">0</column>
-            <column id="8" color="orange">0</column>
-            <column id="9" color="orange">0</column>
+        <row>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
+            <column color="orange">1</column>
         </row>
     </bricks>        
 </level>
