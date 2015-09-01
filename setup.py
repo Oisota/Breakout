@@ -23,7 +23,7 @@ setup(
       package_data = {'breakout':['resources/images/*.png',
                                   'resources/sounds/*.wav',
                                   'resources/levels/*.xml']},
-          requires = ['sys', 'os', 'random', 'pygame', 'xml'],
+          requires = ['sys', 'os', 'random', 'pygame', 'lxml'],
        classifiers = ['Programming Language :: Python',
                       'Programming Language :: Python :: 3',
                       'Development Status :: 4 - Beta',

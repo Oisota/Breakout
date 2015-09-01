@@ -7,7 +7,7 @@ this but also handles exceptions if files are not found.
 """
 
 import pygame, os, sys
-import xml.etree.ElementTree as ET
+import lxml.etree as ET
 
 from breakout.constants import *
 
