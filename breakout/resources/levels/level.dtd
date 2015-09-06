@@ -4,7 +4,8 @@
     <!ELEMENT difficulty (#PCDATA)>
     <!ELEMENT ball_speed (#PCDATA)>
     <!ELEMENT next (#PCDATA)>
-    <!ELEMENT bricks (row)>
-    <!ELEMENT row (column)>
+    <!ELEMENT bricks (row+)>
+    <!ELEMENT row (column+)>
     <!ELEMENT column (#PCDATA)>
+    <!ATTLIST column color (red|orange|yellow|green|blue|black|grey|tan|white) #REQUIRED>
 ]>
