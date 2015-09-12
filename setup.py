@@ -19,7 +19,7 @@ setup(
           keywords = ['breakout', 'arcade', 'game', 'pygame', 'python',],
          platforms = ['linux', 'windows'],
            scripts = ['breakout.py','breakout-editor.py'],
-          packages = ['breakout','breakout.game','breakout.util','breakout.editor'],
+          packages = ['breakout','breakout.game','breakout.utils','breakout.editor'],
       package_data = {'breakout':['resources/images/*.png',
                                   'resources/sounds/*.wav',
                                   'resources/levels/*.xml',

@@ -12,8 +12,8 @@ GamePlay scene.
 
 import pygame
 
-from breakout.util.resource import load_image
-from breakout.util.constants import *
+from breakout.utils.resource import load_image
+from breakout.utils.constants import *
 
 class Brick(pygame.sprite.Sprite):
     """Brick Class"""

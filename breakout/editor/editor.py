@@ -9,7 +9,7 @@ the game.
 import pygame, sys
 
 from breakout.editor.scenes import Editor
-from breakout.util.constants import *
+from breakout.utils.constants import *
 
 def run():
     """Run the game.""" 

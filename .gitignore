@@ -5,8 +5,8 @@ breakout/game/__pycache__/*
 breakout/game/*.pyc
 breakout/editor/__pycache__/*
 breakout/editor/*.pyc
-breakout/util/__pycache__/*
-breakout/util/*.pyc
+breakout/utils/__pycache__/*
+breakout/utils/*.pyc
 dist/*
 venv/*
 MANIFEST

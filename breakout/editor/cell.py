@@ -1,7 +1,7 @@
 import pygame, sys
 
-from breakout.util.resource import load_image
-from breakout.util.constants import *
+from breakout.utils.resource import load_image
+from breakout.utils.constants import *
 
 class Cell(pygame.sprite.Sprite):
     """Grid Cell Class"""
@@ -17,7 +17,8 @@ class Cell(pygame.sprite.Sprite):
 
     def update(self, mouse_pos, pressed):
         """Place a brick if user has click on the cell."""
-        if self.rect.collidepoint(mouse_pos) and pressed == 'mouse 1':
+        if self.rect.collidepoint(mouse_pos) and pressed:
+            pressed = False
             self.advance()
     
     

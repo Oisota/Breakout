@@ -7,7 +7,7 @@ displays the current level number.
 
 import pygame
 
-from breakout.util.constants import *
+from breakout.utils.constants import *
 
 class Level(pygame.sprite.Sprite):
     """Level Class"""

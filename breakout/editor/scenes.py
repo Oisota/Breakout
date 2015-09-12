@@ -1,9 +1,9 @@
 import pygame
 from pygame.locals import *
 
-from breakout.util.scene import Scene
-from breakout.util.constants import *
-from breakout.util.resource import load_image
+from breakout.utils.scene import Scene
+from breakout.utils.constants import *
+from breakout.utils.resource import load_image
 from breakout.editor.cell import Cell
 
 
@@ -12,12 +12,11 @@ class Editor(Scene):
     def __init__(self):
         self.next_scene = self 
         self.mouse_pos = (0,0)
-        self.pressed = ''
+        self.pressed = False
         self.background, self.bg_rect = load_image(BACKGROUND_IMAGE)
         
         self.sprites = pygame.sprite.Group()
         Cell.fill_display(self.sprites)
-
  
         pygame.event.set_allowed([QUIT, MOUSEMOTION, MOUSEBUTTONUP, MOUSEBUTTONDOWN])
         pygame.mouse.set_visible(True)
@@ -32,7 +31,6 @@ class Editor(Scene):
     def update(self):
         """Update the scene."""
         self.sprites.update(self.mouse_pos, self.pressed)
-        #pygame.display.update(self.menu.rects)
         pygame.display.update()
  
  
@@ -43,9 +41,10 @@ class Editor(Scene):
                 self.goto(None)
             elif event.type == MOUSEBUTTONDOWN:
                 self.mouse_pos = event.pos
-                self.pressed = 'mouse ' + str(event.button)
+                if event.button == 1 and not self.pressed:
+                    self.pressed = True
             elif event.type == MOUSEBUTTONUP:
                 self.mouse_pos = event.pos
-                self.pressed = ''
+                self.pressed = False
             elif event.type == MOUSEMOTION:
                 self.mouse_pos = event.pos

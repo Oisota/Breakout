@@ -7,7 +7,7 @@ score and displays it on the screen.
 
 import pygame
 
-from breakout.util.constants import *
+from breakout.utils.constants import *
 
 class Score(pygame.sprite.Sprite):
     """Score Class"""
