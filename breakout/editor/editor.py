@@ -8,8 +8,8 @@ the game.
 
 import pygame, sys
 
-from editor.scenes import Editor
-from breakout.constants import *
+from breakout.editor.scenes import Editor
+from breakout.util.constants import *
 
 def run():
     """Run the game.""" 
@@ -18,7 +18,7 @@ def run():
     pygame.display.set_caption(GAME_NAME + '-Editor')
     clock = pygame.time.Clock()
 
-    scene = LevelEditor()
+    scene = Editor()
 
     while scene != None:
         scene.handle_events()

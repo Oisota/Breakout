@@ -1,8 +1,7 @@
 import pygame, sys
 
-from breakout.resource import load_image
-from breakout.constants import *
-from breakout.scenes import LevelEditor
+from breakout.util.resource import load_image
+from breakout.util.constants import *
 
 class Cell(pygame.sprite.Sprite):
     """Grid Cell Class"""
