@@ -9,7 +9,7 @@ this but also handles exceptions if files are not found.
 import pygame, os, sys
 import lxml.etree as ET
 
-from breakout.constants import *
+from breakout.util.constants import *
 
 def load_image(file_name):
     """Load an image and return the image object and the image rect."""

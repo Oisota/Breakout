@@ -10,8 +10,8 @@ Menu is a container for the buttons and a title.
 
 import pygame
 
-from breakout.resource import load_image
-from breakout.constants import *
+from breakout.util.resource import load_image
+from breakout.util.constants import *
 
 class Button(pygame.sprite.Sprite):
     """Button Class"""    

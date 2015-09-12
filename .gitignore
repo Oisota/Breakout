@@ -1,8 +1,12 @@
-resources/GIMP_files/*
+breakout/resources/GIMP_files/*
 breakout/__pycache__/*
 breakout/*.pyc
-editor/__pycache__/*
-editor/*.pyc
+breakout/game/__pycache__/*
+breakout/game/*.pyc
+breakout/editor/__pycache__/*
+breakout/editor/*.pyc
+breakout/util/__pycache__/*
+breakout/util/*.pyc
 dist/*
 venv/*
 MANIFEST

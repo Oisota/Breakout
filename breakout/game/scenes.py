@@ -22,44 +22,18 @@ to press "P" again and once that happens it switches back to
 the scene it was called from.
 """
 
-from abc import ABCMeta, abstractmethod
 import pygame, sys
 from pygame.locals import *
 
-from breakout.ball import Ball
-from breakout.paddle import Paddle
-from breakout.score import Score
-from breakout.level import Level
-from breakout.brick import Brick
-from breakout.menu import Menu
-from breakout.resource import *
-from breakout.constants import *
-
-class Scene(metaclass=ABCMeta):
-    """Base class for game scenes."""
-    def __init__(self):
-        """Initialize the scene."""
-        self.next_scene = self
-
-    @abstractmethod
-    def render(self):
-        """Render the scene."""
-        pass
-
-    @abstractmethod
-    def update(self):
-        """Update the scene."""
-        pass
-
-    @abstractmethod
-    def handle_events(self):
-        """Handle user input events."""
-        pass
-
-    def goto(self, scene):
-        """Switch scenes."""
-        self.next_scene = scene
-
+from breakout.game.ball import Ball
+from breakout.game.paddle import Paddle
+from breakout.game.score import Score
+from breakout.game.level import Level
+from breakout.game.brick import Brick
+from breakout.game.menu import Menu
+from breakout.util.resource import *
+from breakout.util.constants import *
+from breakout.util.scene import Scene
 
 
 class GamePlay(Scene):

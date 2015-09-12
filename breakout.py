@@ -8,5 +8,5 @@ This module imports the game package and runs the game.
 """
 
 if __name__ == '__main__':
-    import breakout.game
-    breakout.game.run()
+    import breakout.game.game
+    breakout.game.game.run()

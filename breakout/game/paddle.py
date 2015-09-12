@@ -7,8 +7,8 @@ and animate the paddle controlled by the user.
 
 import pygame 
 
-from breakout.resource import load_image
-from breakout.constants import *
+from breakout.util.resource import load_image
+from breakout.util.constants import *
 
 class Paddle(pygame.sprite.Sprite):
     """Paddle Class"""
