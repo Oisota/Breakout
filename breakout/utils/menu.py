@@ -13,6 +13,7 @@ import pygame
 from breakout.utils.resource import load_image
 from breakout.utils.constants import *
 
+
 class Button(pygame.sprite.Sprite):
     """Button Class"""    
     def __init__(self, kwargs):
