@@ -8,5 +8,5 @@ This module imports the editor package and starts the level editor.
 """
 
 if __name__ == '__main__':
-    import editor.editor
-    editor.editor.run()
+    import breakout.editor.editor
+    breakout.editor.editor.run()

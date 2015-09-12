@@ -1,7 +1,8 @@
 import pygame
 from pygame.locals import *
 
-from breakout.scenes import Scene
+from breakout.util.scene import Scene
+from breakout.util.constants import *
 
 
 class LevelEditor(Scene):
@@ -11,8 +12,6 @@ class LevelEditor(Scene):
         self.mouse_pos = (0,0)
         self.pressed = ''
         self.background, self.bg_rect = load_image(BACKGROUND_IMAGE)
- 
-        self.grid = Grid()
  
         pygame.event.set_allowed([QUIT, MOUSEMOTION, MOUSEBUTTONUP, MOUSEBUTTONDOWN])
         pygame.mouse.set_visible(True)
