@@ -1,6 +1,8 @@
 resources/GIMP_files/*
 breakout/__pycache__/*
 breakout/*.pyc
+editor/__pycache__/*
+editor/*.pyc
 dist/*
 venv/*
 MANIFEST
