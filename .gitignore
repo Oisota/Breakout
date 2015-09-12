@@ -1,6 +1,6 @@
-breakout/resources/GIMP_files/*
-breakout/resources/levels/level_test.xml
+resources/GIMP_files/*
 breakout/__pycache__/*
+breakout/*.pyc
 dist/*
 venv/*
 MANIFEST

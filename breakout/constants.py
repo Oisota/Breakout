@@ -13,7 +13,7 @@ RESOLUTION = (800,600)
 
 
 # Images
-IMAGE_PATH = 'breakout/resources/images/'
+IMAGE_PATH = 'resources/images/'
 BACKGROUND_IMAGE = 'background.png'
 BALL_IMAGE = 'ball.png'
 PADDLE_IMAGE = 'paddle.png'
@@ -26,7 +26,8 @@ BRICK_IMAGES = {'red' : 'brick_red.png',
                 'tan' : 'brick_tan.png',
                 'white' : 'brick_white.png',
                 'grey' : 'brick_grey.png',
-                'black' : 'brick_black.png'}
+                'black' : 'brick_black.png',
+                'cell' : 'brick_cell.png'}
 
 # Menu Images
 BREAKOUT_IMAGE = 'breakout.png'
@@ -44,10 +45,10 @@ RETRY_PRESSED_IMAGE = 'retry_pressed.png'
 
 
 # Sounds
-SOUND_PATH = 'breakout/resources/sounds/'
+SOUND_PATH = 'resources/sounds/'
 BLIP = 'blip.wav'
 
 
 # Levels
-LEVEL_PATH = 'breakout/resources/levels/'
+LEVEL_PATH = 'resources/levels/'
 START_LEVEL = 'level_1.xml'
