@@ -1,3 +1,9 @@
+"""
+Cell Module
+
+This module defines the cell class which is used to
+display the empty brick cells for the level editor.
+"""
 import pygame, sys
 
 from breakout.utils.resource import load_image

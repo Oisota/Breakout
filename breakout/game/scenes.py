@@ -2,12 +2,7 @@
 Scenes Module
 
 This module contains all the game scenes. The scenes
-included are Scene, MenuScene, GamePlay, and Pause scenes.
-
-The Scene class is an abstract base class used as a base 
-class for all other game scenes. It can not be instantiated 
-itself. It must be subclassed instead. The subclasses must then provide
-implementations for every abstract method.
+included are GamePlay, MenuScene, and Pause scenes.
 
 The GamePlay scene is what handles the game logic behind the user
 playing the game. It creates all the necessary game objects and

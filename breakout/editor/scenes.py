@@ -1,3 +1,9 @@
+"""
+Editor Module
+
+This module defines the editor scene which is the
+main scene for running the level editor.
+"""
 import pygame
 from pygame.locals import *
 

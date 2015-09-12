@@ -1,6 +1,5 @@
 """
-Breakout Package.
+Game Package.
 
-This package contains all the modules needed to 
-run the game.
+This package contains modules used to run the game.
 """
