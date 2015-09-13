@@ -6,29 +6,78 @@ initializes pygame, sets some game variables and runs
 the game.
 """
 
-import pygame, sys
+import tkinter as tk
+from tkinter.filedialog import askopenfilename, asksaveasfilename
+import sys
 
-from breakout.editor.scenes import Editor
-from breakout.utils.constants import *
+class Editor(tk.Frame):
+    """Main level editor frame."""
+    def __init__(self, parent=None):
+        tk.Frame.__init__(self, parent)
+        self.parent = parent
+        self.level_filename = ''
+        self.level_name = tk.StringVar()
+        self.ball_speed = tk.StringVar()
+        self.next_level = tk.StringVar()
+        self.parent.geometry('800x600')
+        self.parent.title('Breakout Level Editor')
+        self.grid()
+        self.create_widgets()
+        self.pack_widgets()
+
+
+    def create_widgets(self):
+        """Create editor frame widgets."""
+        #create file menu
+        self.menu = tk.Menu(self.parent)
+        self.parent.config(menu=self.menu)
+
+        self.file_menu = tk.Menu(self.menu)
+        self.file_menu.add_command(label='Save', command=self.save_level)
+        self.file_menu.add_command(label='Open', command=self.open_level)
+        self.file_menu.add_command(label='Exit', command=self.quit)
+        self.menu.add_cascade(label='File', menu=self.file_menu)
+
+        self.lvl_nm_lbl = tk.Label(self, text='Level Name: ')
+        self.ball_spd_lbl = tk.Label(self, text='Ball Speed: ')
+        self.nxt_lvl_lbl = tk.Label(self, text='Next Level: ')
+
+
+        self.lvl_nm_tb = tk.Entry(self, textvariable=self.level_name)
+        self.ball_spd_tb = tk.Entry(self, textvariable=self.ball_speed)
+        self.nxt_lvl_tb = tk.Entry(self, textvariable=self.next_level)
+
+
+    def pack_widgets(self):
+        """Pack widgets into the frame."""
+        self.lvl_nm_lbl.grid(row=0, column=0, sticky='E')
+        self.ball_spd_lbl.grid(row=1, column=0, sticky='E')
+        self.nxt_lvl_lbl.grid(row=2, column=0, sticky='E')
+        
+        self.lvl_nm_tb.grid(row=0, column=1, sticky='W')
+        self.ball_spd_tb.grid(row=1, column=1, sticky='W')
+        self.nxt_lvl_tb.grid(row=2, column=1, sticky='W')
+
+
+    def save_level(self):
+        """Save the level file."""
+        self.level_filename = asksaveasfilename()
+        
+        
+    def open_level(self):
+        """Open the level file."""
+        self.level_filename = askopenfilename()
+
+
+    def quit(self):
+        """Exit the editor."""
+        sys.exit()
+
+
+
 
 def run():
-    """Run the game.""" 
-    pygame.init() 
-    screen = pygame.display.set_mode(RESOLUTION)
-    pygame.display.set_caption(GAME_NAME + '-Editor')
-    clock = pygame.time.Clock()
-
-    scene = Editor()
-
-    while scene != None:
-        scene.handle_events()
-        scene.update()
-        scene.render(screen)
-        scene = scene.next_scene
-
-        clock.tick(FRAMES_PER_SECOND)
-        pygame.time.wait(5)
-
-
-    pygame.quit()
-    sys.exit()
+    """Run the Editor.""" 
+    root = tk.Tk()
+    editor = Editor(root)
+    editor.mainloop()
