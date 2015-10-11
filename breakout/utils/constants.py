@@ -29,6 +29,18 @@ BRICK_IMAGES = {'red' : 'brick_red.png',
                 'black' : 'brick_black.png',
                 'cell' : 'brick_cell.png'}
 
+BRICK_IMAGES_GIF = {'red' : 'brick_red.gif',
+                    'orange' : 'brick_orange.gif',
+                    'yellow' : 'brick_yellow.gif',
+                    'green' : 'brick_green.gif',
+                    'blue' : 'brick_blue.gif',
+                    'purple' : 'brick_purple.gif',
+                    'tan' : 'brick_tan.gif',
+                    'white' : 'brick_white.gif',
+                    'grey' : 'brick_grey.gif',
+                    'black' : 'brick_black.gif',
+                    'cell' : 'brick_cell.gif'}
+
 # Menu Images
 BREAKOUT_IMAGE = 'breakout.png'
 WIN_IMAGE = 'win.png'
