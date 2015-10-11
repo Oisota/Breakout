@@ -81,3 +81,8 @@ def load_level(file_name):
     level.update({'brick_colors' : brick_colors}) # brick data
 
     return level
+
+
+def save_level(level, file_name):
+    """Write the given level to an xml file."""
+    pass 
