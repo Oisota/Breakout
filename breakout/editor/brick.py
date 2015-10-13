@@ -5,16 +5,17 @@ Brick Module
 import os
 import tkinter as tk
 
-from breakout.utils.constants import BRICK_IMAGES_GIF, IMAGE_PATH
+from breakout.utils.constants import BRICK_IMAGES, IMAGE_PATH
 
 
 class BrickFrame(tk.Frame):
     """Frame that contains grid of brick buttons"""
-    def __init__(self, parent, level):
+    def __init__(self, parent, bricks, brick_colors):
         """Initialze the button grid"""
         tk.Frame.__init__(self, parent)
         self.parent = parent
-        self.level = level
+        self.bricks = bricks
+        self.brick_colors = brick_colors
         self.buttons = []
         self.create_widgets()
         self.grid_widgets()
@@ -22,19 +23,17 @@ class BrickFrame(tk.Frame):
 
     def create_widgets(self):
         """create grid of buttons"""
-        bricks = self.level['bricks']
-        brick_colors = self.level['brick_colors']
-
-        for row, colors in zip(bricks, brick_colors):
+        for row, colors in zip(self.bricks, self.brick_colors):
             btn_row = []
             for col, color in zip(row, colors):
                 if col == '1':
-                    img_path = os.path.join(IMAGE_PATH, BRICK_IMAGES_GIF[color])
+                    img_path = os.path.join(IMAGE_PATH, BRICK_IMAGES[color])
                 else:
-                    img_path = os.path.join(IMAGE_PATH, BRICK_IMAGES_GIF['cell'])
+                    img_path = os.path.join(IMAGE_PATH, BRICK_IMAGESF['cell'])
 
                 brick_img = tk.PhotoImage(file=img_path)
                 button = tk.Button(self, image=brick_img, width=72, height=27)
+                button.image = brick_img
                 btn_row.append(button)
 
             self.buttons.append(btn_row)

@@ -15,15 +15,21 @@ from breakout.editor.brick import BrickFrame
 
 class Editor(tk.Frame):
     """Main level editor frame."""
-    def __init__(self, parent=None):
+    def __init__(self, parent):
         """Initialize the editor."""
         tk.Frame.__init__(self, parent)
         self.parent = parent
-        self.level_filename = 'level_9.xml'
+        self.level_filename = 'level_1.xml'
         self.level = load_level(self.level_filename)
+
         self.level_name = tk.StringVar()
         self.ball_speed = tk.StringVar()
         self.next_level = tk.StringVar() #should be dropdown of available level files
+
+        self.level_name.set(self.level['name'])
+        self.ball_speed.set(self.level['ball_speed'])
+        self.next_level.set(self.level['next'])
+
         self.grid()
         self.create_widgets()
         self.grid_widgets()
@@ -36,39 +42,40 @@ class Editor(tk.Frame):
         self.parent.config(menu=self.menu)
 
         self.file_menu = tk.Menu(self.menu)
+        self.file_menu.add_command(label='New', command=self.new_level)
         self.file_menu.add_command(label='Save', command=self.save_level)
         self.file_menu.add_command(label='Open', command=self.open_level)
         self.file_menu.add_command(label='Exit', command=self.quit)
         self.menu.add_cascade(label='File', menu=self.file_menu)
 
         #create input boxes
-        self.input_frm = tk.Frame(self)
-        self.lvl_nm_lbl = tk.Label(self.input_frm, text='Level Name: ')
-        self.ball_spd_lbl = tk.Label(self.input_frm, text='Ball Speed: ')
-        self.nxt_lvl_lbl = tk.Label(self.input_frm, text='Next Level: ')
+        self.input_frame = tk.Frame(self)
+        self.level_name_label = tk.Label(self.input_frame, text='Level Name: ')
+        self.ball_speed_label = tk.Label(self.input_frame, text='Ball Speed: ')
+        self.next_level_label = tk.Label(self.input_frame, text='Next Level: ')
 
-        self.lvl_nm_tb = tk.Entry(self.input_frm, textvariable=self.level_name)
-        self.ball_spd_tb = tk.Entry(self.input_frm, textvariable=self.ball_speed)
-        self.nxt_lvl_tb = tk.Entry(self.input_frm, textvariable=self.next_level)
+        self.level_name_entry = tk.Entry(self.input_frame, textvariable=self.level_name)
+        self.ball_speed_entry = tk.Entry(self.input_frame, textvariable=self.ball_speed)
+        self.next_level_entry = tk.Entry(self.input_frame, textvariable=self.next_level)
 
         #create brick button grid
-        self.brick_frm = BrickFrame(self, self.level)
+        self.brick_frame = BrickFrame(self, self.level['bricks'], self.level['brick_colors'])
 
 
     def grid_widgets(self):
         """position widgets in the frame."""
-        self.brick_frm.grid(row=0, column=0)
-        self.brick_frm['pady'] = 35
-        self.brick_frm['padx'] = 10
+        self.brick_frame.grid(row=0, column=0)
+        self.brick_frame['pady'] = 35
+        self.brick_frame['padx'] = 10
 
-        self.input_frm.grid(row=1, column=0)
-        self.lvl_nm_lbl.grid(row=0, column=0, sticky='E')
-        self.ball_spd_lbl.grid(row=1, column=0, sticky='E')
-        self.nxt_lvl_lbl.grid(row=2, column=0, sticky='E')
+        self.input_frame.grid(row=1, column=0)
+        self.level_name_label.grid(row=0, column=0, sticky='E')
+        self.ball_speed_label.grid(row=1, column=0, sticky='E')
+        self.next_level_label.grid(row=2, column=0, sticky='E')
         
-        self.lvl_nm_tb.grid(row=0, column=1, sticky='W')
-        self.ball_spd_tb.grid(row=1, column=1, sticky='W')
-        self.nxt_lvl_tb.grid(row=2, column=1, sticky='W')
+        self.level_name_entry.grid(row=0, column=1, sticky='W')
+        self.ball_speed_entry.grid(row=1, column=1, sticky='W')
+        self.next_level_entry.grid(row=2, column=1, sticky='W')
 
 
     def save_level(self):
@@ -82,6 +89,11 @@ class Editor(tk.Frame):
         self.level_filename = askopenfilename()
         if self.level_filename != '':
             self.level = load_level(os.path.basename(self.level_filename))
+
+
+    def new_level(self):
+        """Create a blank level."""
+        pass
 
 
     def quit(self):
