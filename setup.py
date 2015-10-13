@@ -20,7 +20,7 @@ setup(
          platforms = ['linux', 'windows'],
            scripts = ['breakout.py','breakout-editor.py'],
           packages = ['breakout','breakout.game','breakout.utils','breakout.editor'],
-      package_data = {'breakout':['resources/images/*.png',
+      package_data = {'breakout':['resources/images/*.gif',
                                   'resources/sounds/*.wav',
                                   'resources/levels/*.xml',
                                   'resources/levels/*.dtd']},

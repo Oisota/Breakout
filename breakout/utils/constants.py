@@ -17,29 +17,18 @@ IMAGE_PATH = 'breakout/resources/images/'
 BACKGROUND_IMAGE = 'background.png'
 BALL_IMAGE = 'ball.png'
 PADDLE_IMAGE = 'paddle.png'
-BRICK_IMAGES = {'red' : 'brick_red.png',
-                'orange' : 'brick_orange.png',
-                'yellow' : 'brick_yellow.png',
-                'green' : 'brick_green.png',
-                'blue' : 'brick_blue.png',
-                'purple' : 'brick_purple.png',
-                'tan' : 'brick_tan.png',
-                'white' : 'brick_white.png',
-                'grey' : 'brick_grey.png',
-                'black' : 'brick_black.png',
-                'cell' : 'brick_cell.png'}
 
-BRICK_IMAGES_GIF = {'red' : 'brick_red.gif',
-                    'orange' : 'brick_orange.gif',
-                    'yellow' : 'brick_yellow.gif',
-                    'green' : 'brick_green.gif',
-                    'blue' : 'brick_blue.gif',
-                    'purple' : 'brick_purple.gif',
-                    'tan' : 'brick_tan.gif',
-                    'white' : 'brick_white.gif',
-                    'grey' : 'brick_grey.gif',
-                    'black' : 'brick_black.gif',
-                    'cell' : 'brick_cell.gif'}
+BRICK_IMAGES = {'red' : 'brick_red.gif',
+                'orange' : 'brick_orange.gif',
+                'yellow' : 'brick_yellow.gif',
+                'green' : 'brick_green.gif',
+                'blue' : 'brick_blue.gif',
+                'purple' : 'brick_purple.gif',
+                'tan' : 'brick_tan.gif',
+                'white' : 'brick_white.gif',
+                'grey' : 'brick_grey.gif',
+                'black' : 'brick_black.gif',
+                'cell' : 'brick_cell.gif'}
 
 # Menu Images
 BREAKOUT_IMAGE = 'breakout.png'
