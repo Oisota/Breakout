@@ -102,5 +102,29 @@
             <column>orange</column>
             <column>orange</column>
         </row>
+        <row>
+            <column>none</column>
+            <column>none</column>
+            <column>none</column>
+            <column>none</column>
+            <column>none</column>
+            <column>none</column>
+            <column>none</column>
+            <column>none</column>
+            <column>none</column>
+            <column>none</column>
+        </row>
+        <row>
+            <column>none</column>
+            <column>none</column>
+            <column>none</column>
+            <column>none</column>
+            <column>none</column>
+            <column>none</column>
+            <column>none</column>
+            <column>none</column>
+            <column>none</column>
+            <column>none</column>
+        </row>
     </bricks>        
 </level>
