@@ -11,6 +11,7 @@ from tkinter.filedialog import askopenfilename, asksaveasfilename
 
 from breakout.utils.resource import load_level, save_level
 from breakout.editor.brick import BrickFrame
+from breakout.editor.entry import EntryFrame
 
 
 class Editor(tk.Frame):
@@ -21,14 +22,6 @@ class Editor(tk.Frame):
         self.parent = parent
         self.level_filename = 'level_1.xml'
         self.level = load_level(self.level_filename)
-
-        self.level_name = tk.StringVar()
-        self.ball_speed = tk.StringVar()
-        self.next_level = tk.StringVar() #should be dropdown of available level files
-
-        self.level_name.set(self.level['name'])
-        self.ball_speed.set(self.level['ball_speed'])
-        self.next_level.set(self.level['next'])
 
         self.grid()
         self.create_widgets()
@@ -50,14 +43,7 @@ class Editor(tk.Frame):
 
         #create input boxes
         #move to separate class/file
-        self.input_frame = tk.Frame(self)
-        self.level_name_label = tk.Label(self.input_frame, text='Level Name: ')
-        self.ball_speed_label = tk.Label(self.input_frame, text='Ball Speed: ')
-        self.next_level_label = tk.Label(self.input_frame, text='Next Level: ')
-
-        self.level_name_entry = tk.Entry(self.input_frame, textvariable=self.level_name)
-        self.ball_speed_entry = tk.Entry(self.input_frame, textvariable=self.ball_speed)
-        self.next_level_entry = tk.Entry(self.input_frame, textvariable=self.next_level)
+        self.entry_frame = EntryFrame(self, self.level)
 
         #create brick button grid
         self.brick_frame = BrickFrame(self, self.level['bricks'])
@@ -68,15 +54,7 @@ class Editor(tk.Frame):
         self.brick_frame.grid(row=0, column=0)
         self.brick_frame['pady'] = 35
         self.brick_frame['padx'] = 10
-
-        self.input_frame.grid(row=1, column=0)
-        self.level_name_label.grid(row=0, column=0, sticky='E')
-        self.ball_speed_label.grid(row=1, column=0, sticky='E')
-        self.next_level_label.grid(row=2, column=0, sticky='E')
-        
-        self.level_name_entry.grid(row=0, column=1, sticky='W')
-        self.ball_speed_entry.grid(row=1, column=1, sticky='W')
-        self.next_level_entry.grid(row=2, column=1, sticky='W')
+        self.entry_frame.grid(row=1, column=0)
 
 
     def save_level(self):
