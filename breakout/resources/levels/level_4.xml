@@ -7,100 +7,100 @@
     <next>level_5.xml</next>
     <bricks>
         <row>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
         </row>
         <row>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
         </row>
         <row>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
         </row>
         <row>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
         </row>
         <row>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
         </row>
         <row>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
         </row>
         <row>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
         </row>
         <row>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
-            <column color="orange">1</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
+            <column>orange</column>
         </row>
     </bricks>        
 </level>

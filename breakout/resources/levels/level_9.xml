@@ -7,124 +7,124 @@
     <next>level_1.xml</next>
     <bricks> 
         <row>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
         </row>
         <row>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
         </row>
         <row>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
         </row>
         <row>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
         </row>
         <row>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
         </row>
         <row>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
         </row>
         <row>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
         </row>
         <row>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
         </row>
         <row>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
         </row>
         <row>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
-            <column color="white">1</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
+            <column>white</column>
         </row>
     </bricks>        
 </level>

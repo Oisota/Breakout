@@ -10,12 +10,11 @@ from breakout.utils.constants import BRICK_IMAGES, IMAGE_PATH
 
 class BrickFrame(tk.Frame):
     """Frame that contains grid of brick buttons"""
-    def __init__(self, parent, bricks, brick_colors):
+    def __init__(self, parent, bricks):
         """Initialze the button grid"""
         tk.Frame.__init__(self, parent)
         self.parent = parent
         self.bricks = bricks
-        self.brick_colors = brick_colors
         self.buttons = []
         self.create_widgets()
         self.grid_widgets()
@@ -23,10 +22,10 @@ class BrickFrame(tk.Frame):
 
     def create_widgets(self):
         """create grid of buttons"""
-        for row, colors in zip(self.bricks, self.brick_colors):
+        for row in self.bricks:
             btn_row = []
-            for col, color in zip(row, colors):
-                if col == '1':
+            for color in row:
+                if color != 'none':
                     img_path = os.path.join(IMAGE_PATH, BRICK_IMAGES[color])
                 else:
                     img_path = os.path.join(IMAGE_PATH, BRICK_IMAGESF['cell'])

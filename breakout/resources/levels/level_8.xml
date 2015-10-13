@@ -7,124 +7,124 @@
     <next>level_9.xml</next>
     <bricks>
         <row>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
         </row>
         <row>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
         </row>
         <row>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
         </row>
         <row>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
         </row>
         <row>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
         </row>
         <row>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
         </row>
         <row>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
         </row>
         <row>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
         </row>
         <row>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
         </row>
         <row>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
-            <column color="yellow">1</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
+            <column>yellow</column>
         </row>
     </bricks>        
 </level>

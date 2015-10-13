@@ -46,7 +46,7 @@ class GamePlay(Scene):
                 on_lose=lambda: self.goto(MenuScene.lose()))
         self.sprites = pygame.sprite.Group(self.ball, self.paddle, self.score, self.level_num)
 
-        Brick.fill_display(self.sprites, level['bricks'], self.level['brick_colors']) #place bricks
+        Brick.fill_display(self.sprites, level['bricks']) #place bricks
         self.draw_rects = (self.ball.draw_rect, self.paddle.draw_rect, self.score.draw_rect, self.level_num.draw_rect) #list of rects to update
 
         pygame.event.set_allowed([QUIT, KEYDOWN, KEYUP])

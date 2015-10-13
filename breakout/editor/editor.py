@@ -49,6 +49,7 @@ class Editor(tk.Frame):
         self.menu.add_cascade(label='File', menu=self.file_menu)
 
         #create input boxes
+        #move to separate class/file
         self.input_frame = tk.Frame(self)
         self.level_name_label = tk.Label(self.input_frame, text='Level Name: ')
         self.ball_speed_label = tk.Label(self.input_frame, text='Ball Speed: ')
@@ -59,7 +60,7 @@ class Editor(tk.Frame):
         self.next_level_entry = tk.Entry(self.input_frame, textvariable=self.next_level)
 
         #create brick button grid
-        self.brick_frame = BrickFrame(self, self.level['bricks'], self.level['brick_colors'])
+        self.brick_frame = BrickFrame(self, self.level['bricks'])
 
 
     def grid_widgets(self):

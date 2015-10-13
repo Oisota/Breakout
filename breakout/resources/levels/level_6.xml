@@ -7,124 +7,124 @@
     <next>level_7.xml</next>
     <bricks>
         <row>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
         </row>
         <row>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
         </row>
         <row>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
         </row>
         <row>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
         </row>
         <row>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
         </row>
         <row>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
         </row>
         <row>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
         </row>
         <row>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
         </row>
         <row>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
         </row>
         <row>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
-            <column color="purple">1</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
+            <column>purple</column>
         </row>
     </bricks>        
 </level>

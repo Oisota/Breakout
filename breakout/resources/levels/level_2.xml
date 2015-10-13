@@ -7,52 +7,52 @@
     <next>level_3.xml</next>
     <bricks>
         <row>
-            <column color="blue">1</column>
-            <column color="blue">1</column>
-            <column color="blue">1</column>
-            <column color="blue">1</column>
-            <column color="blue">1</column>
-            <column color="blue">1</column>
-            <column color="blue">1</column>
-            <column color="blue">1</column>
-            <column color="blue">1</column>
-            <column color="blue">1</column>
+            <column>blue</column>
+            <column>blue</column>
+            <column>blue</column>
+            <column>blue</column>
+            <column>blue</column>
+            <column>blue</column>
+            <column>blue</column>
+            <column>blue</column>
+            <column>blue</column>
+            <column>blue</column>
         </row>
         <row>
-            <column color="blue">1</column>
-            <column color="blue">1</column>
-            <column color="blue">1</column>
-            <column color="blue">1</column>
-            <column color="blue">1</column>
-            <column color="blue">1</column>
-            <column color="blue">1</column>
-            <column color="blue">1</column>
-            <column color="blue">1</column>
-            <column color="blue">1</column>
+            <column>blue</column>
+            <column>blue</column>
+            <column>blue</column>
+            <column>blue</column>
+            <column>blue</column>
+            <column>blue</column>
+            <column>blue</column>
+            <column>blue</column>
+            <column>blue</column>
+            <column>blue</column>
         </row>
         <row>
-            <column color="blue">1</column>
-            <column color="blue">1</column>
-            <column color="blue">1</column>
-            <column color="blue">1</column>
-            <column color="blue">1</column>
-            <column color="blue">1</column>
-            <column color="blue">1</column>
-            <column color="blue">1</column>
-            <column color="blue">1</column>
-            <column color="blue">1</column>
+            <column>blue</column>
+            <column>blue</column>
+            <column>blue</column>
+            <column>blue</column>
+            <column>blue</column>
+            <column>blue</column>
+            <column>blue</column>
+            <column>blue</column>
+            <column>blue</column>
+            <column>blue</column>
         </row>
         <row>
-            <column color="blue">1</column>
-            <column color="blue">1</column>
-            <column color="blue">1</column>
-            <column color="blue">1</column>
-            <column color="blue">1</column>
-            <column color="blue">1</column>
-            <column color="blue">1</column>
-            <column color="blue">1</column>
-            <column color="blue">1</column>
-            <column color="blue">1</column>
+            <column>blue</column>
+            <column>blue</column>
+            <column>blue</column>
+            <column>blue</column>
+            <column>blue</column>
+            <column>blue</column>
+            <column>blue</column>
+            <column>blue</column>
+            <column>blue</column>
+            <column>blue</column>
         </row>
     </bricks>        
 </level>

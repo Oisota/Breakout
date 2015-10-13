@@ -7,124 +7,124 @@
     <next>level_6.xml</next>
     <bricks>
         <row>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
         </row>
         <row>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
         </row>
         <row>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
         </row>
         <row>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
         </row>
         <row>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
         </row>
         <row>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
         </row>
         <row>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
         </row>
         <row>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
         </row>
         <row>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
         </row>
         <row>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
-            <column color="black">1</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
+            <column>black</column>
         </row>
     </bricks>        
 </level>

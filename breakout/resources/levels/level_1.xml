@@ -7,28 +7,28 @@
     <next>level_2.xml</next>
     <bricks>
         <row>
-            <column color="red">1</column>
-            <column color="red">1</column>
-            <column color="red">1</column>
-            <column color="red">1</column>
-            <column color="red">1</column>
-            <column color="red">1</column>
-            <column color="red">1</column>
-            <column color="red">1</column>
-            <column color="red">1</column>
-            <column color="red">1</column>
+            <column>red</column>
+            <column>red</column>
+            <column>red</column>
+            <column>red</column>
+            <column>red</column>
+            <column>red</column>
+            <column>red</column>
+            <column>red</column>
+            <column>red</column>
+            <column>red</column>
         </row>
         <row>
-            <column color="red">1</column>
-            <column color="red">1</column>
-            <column color="red">1</column>
-            <column color="red">1</column>
-            <column color="red">1</column>
-            <column color="red">1</column>
-            <column color="red">1</column>
-            <column color="red">1</column>
-            <column color="red">1</column>
-            <column color="red">1</column>
+            <column>red</column>
+            <column>red</column>
+            <column>red</column>
+            <column>red</column>
+            <column>red</column>
+            <column>red</column>
+            <column>red</column>
+            <column>red</column>
+            <column>red</column>
+            <column>red</column>
         </row>
     </bricks>        
 </level>
