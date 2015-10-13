@@ -1,5 +1,5 @@
 """
-Game Module
+Editor Module
 
 This module defines the Editor class. This module runs
 the game's level editor.
@@ -10,6 +10,7 @@ import tkinter as tk
 from tkinter.filedialog import askopenfilename, asksaveasfilename
 
 from breakout.utils.resource import load_level, save_level
+from breakout.editor.brick import BrickFrame
 
 
 class Editor(tk.Frame):
@@ -18,11 +19,11 @@ class Editor(tk.Frame):
         """Initialize the editor."""
         tk.Frame.__init__(self, parent)
         self.parent = parent
-        self.level_filename = ''
-        self.brick_img = tk.PhotoImage(file='breakout/resources/images/brick_red.gif')
+        self.level_filename = 'level_9.xml'
+        self.level = load_level(self.level_filename)
         self.level_name = tk.StringVar()
         self.ball_speed = tk.StringVar()
-        self.next_level = tk.StringVar()
+        self.next_level = tk.StringVar() #should be dropdown of available level files
         self.grid()
         self.create_widgets()
         self.grid_widgets()
@@ -50,29 +51,15 @@ class Editor(tk.Frame):
         self.ball_spd_tb = tk.Entry(self.input_frm, textvariable=self.ball_speed)
         self.nxt_lvl_tb = tk.Entry(self.input_frm, textvariable=self.next_level)
 
-        #create button grid
-        #TODO put button frame in separate class
-        self.button_frm = tk.Frame(self)
-        self.buttons = []
-        for i in range(10):
-            btn_row = []
-            for j in range(10):
-                button = tk.Button(self.button_frm, image=self.brick_img, width=72, height=27)
-                btn_row.append(button)
-
-            self.buttons.append(btn_row)
-
+        #create brick button grid
+        self.brick_frm = BrickFrame(self, self.level)
 
 
     def grid_widgets(self):
         """position widgets in the frame."""
-        #place buttons
-        self.button_frm.grid(row=0, column=0)
-        self.button_frm['pady'] = 35
-        self.button_frm['padx'] = 10
-        for i, row in enumerate(self.buttons):
-            for j, btn in enumerate(row):
-                btn.grid(row=i, column=j)
+        self.brick_frm.grid(row=0, column=0)
+        self.brick_frm['pady'] = 35
+        self.brick_frm['padx'] = 10
 
         self.input_frm.grid(row=1, column=0)
         self.lvl_nm_lbl.grid(row=0, column=0, sticky='E')
@@ -100,28 +87,6 @@ class Editor(tk.Frame):
     def quit(self):
         """Exit the editor."""
         sys.exit()
-
-
-
-class ButtonGrid(tk.Frame):
-    """Frame that contains grid of brick buttons"""
-    def __init__(self, parent=None):
-        """Initialze the button grid"""
-        tk.Frame.__init__(self, parent)
-        self.parent = parent
-        self.create_widgets()
-        self.grid_widgets()
-
-
-    def create_widgets(self):
-        """create grid of buttons"""
-        pass
-
-
-    def grid_widgets(self):
-        """Position buttons."""
-        pass
-        
 
 
 
