@@ -49,9 +49,9 @@ def load_level(file_name):
     """Load the given xml level file into a dict and return the dict."""
     path = os.path.join(LEVEL_PATH, file_name)
     path = os.path.abspath(path)
-    level = dict()
-    bricks = list()
-    brick_colors = list()
+    level = {}
+    bricks = []
+    brick_colors = []
 
     try:
         tree = ET.parse(path)

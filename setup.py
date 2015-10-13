@@ -24,7 +24,7 @@ setup(
                                   'resources/sounds/*.wav',
                                   'resources/levels/*.xml',
                                   'resources/levels/*.dtd']},
-          requires = ['sys', 'os', 'random', 'pygame', 'lxml'],
+          requires = ['sys', 'os', 'random', 'tkinter', 'pygame', 'lxml'],
        classifiers = ['Programming Language :: Python',
                       'Programming Language :: Python :: 3',
                       'Development Status :: 4 - Beta',
