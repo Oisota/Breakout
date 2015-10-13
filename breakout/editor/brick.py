@@ -28,7 +28,7 @@ class BrickFrame(tk.Frame):
                 if color != 'none':
                     img_path = os.path.join(IMAGE_PATH, BRICK_IMAGES[color])
                 else:
-                    img_path = os.path.join(IMAGE_PATH, BRICK_IMAGES['cell'])
+                    img_path = os.path.join(IMAGE_PATH, BRICK_IMAGES['none'])
 
                 brick_img = tk.PhotoImage(file=img_path)
                 button = tk.Button(self, image=brick_img, width=72, height=27)

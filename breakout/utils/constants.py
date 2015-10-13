@@ -11,13 +11,11 @@ GAME_NAME = 'Breakout'
 FRAMES_PER_SECOND = 40 
 RESOLUTION = (800,600) 
 
-
 # Images
 IMAGE_PATH = 'breakout/resources/images/'
 BACKGROUND_IMAGE = 'background.png'
 BALL_IMAGE = 'ball.png'
 PADDLE_IMAGE = 'paddle.png'
-
 BRICK_IMAGES = {'red' : 'brick_red.gif',
                 'orange' : 'brick_orange.gif',
                 'yellow' : 'brick_yellow.gif',
@@ -28,7 +26,7 @@ BRICK_IMAGES = {'red' : 'brick_red.gif',
                 'white' : 'brick_white.gif',
                 'grey' : 'brick_grey.gif',
                 'black' : 'brick_black.gif',
-                'cell' : 'brick_cell.gif'}
+                'none' : 'brick_cell.gif'}
 
 # Menu Images
 BREAKOUT_IMAGE = 'breakout.png'
@@ -44,11 +42,9 @@ QUIT_PRESSED_IMAGE = 'quit_pressed.png'
 RETRY_IMAGE = 'retry.png'
 RETRY_PRESSED_IMAGE = 'retry_pressed.png' 
 
-
 # Sounds
 SOUND_PATH = 'breakout/resources/sounds/'
 BLIP = 'blip.wav'
-
 
 # Levels
 LEVEL_PATH = 'breakout/resources/levels/'
