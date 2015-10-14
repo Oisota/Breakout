@@ -31,7 +31,7 @@ class BrickFrame(tk.Frame):
                 brick_img = self.images[color]
                 button = tk.Button(self, image=brick_img, width=72, height=27)
                 button.image = brick_img
-                button.config(command=lambda x=i, y=j: self.update(x, y))
+                button.config(command=lambda x=i, y=j: self.change_color(x, y))
                 btn_row.append(button)
 
             self.buttons.append(btn_row)
@@ -44,7 +44,7 @@ class BrickFrame(tk.Frame):
                 button.grid(row=y, column=x)
 
 
-    def update(self, i, j):
+    def change_color(self, i, j):
         """Change the color of the brick when clicked."""
         brick_img = self.images[self.color_option.get()]
         self.buttons[i][j].configure(image=brick_img) 
@@ -61,3 +61,10 @@ class BrickFrame(tk.Frame):
         for color in BRICK_IMAGES.keys():
             img_path = os.path.join(IMAGE_PATH, BRICK_IMAGES[color])
             self.images.update({color: tk.PhotoImage(file=img_path)})
+
+
+    def update(self, bricks):
+        """Update frame with new level info."""
+        for row1, row2 in zip(self.buttons, bricks):
+            for button, color in zip(row1, row2):
+                button.config(image=self.images[color])

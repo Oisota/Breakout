@@ -75,16 +75,12 @@ class Editor(tk.Frame):
         """Open the level file."""
         self.level_filename = askopenfilename()
         self.level = resource.load_level(os.path.basename(self.level_filename))
-        self.update()
+        self.brick_frame.update(self.level['bricks'])
+        self.entry_frame.update(self.level)
 
 
     def new_level(self):
         """Create a blank level."""
-        pass
-
-
-    def update(self):
-        """Update the editor to display new level data."""
         pass
 
 

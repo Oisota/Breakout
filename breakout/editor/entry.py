@@ -50,3 +50,11 @@ class EntryFrame(tk.Frame):
         self.level_name_entry.grid(row=0, column=2, sticky='W')
         self.ball_speed_entry.grid(row=1, column=2, sticky='W')
         self.next_level_entry.grid(row=2, column=2, sticky='W')
+
+
+    def update(self, level):
+        """Update the frame with new level info."""
+        self.level = level
+        self.level_name.set(self.level['name'])
+        self.ball_speed.set(self.level['ball_speed'])
+        self.next_level.set(self.level['next'])
