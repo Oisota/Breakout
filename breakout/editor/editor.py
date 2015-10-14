@@ -9,7 +9,8 @@ import sys, os
 import tkinter as tk
 from tkinter.filedialog import askopenfilename, asksaveasfilename
 
-from breakout.utils.resource import load_level, save_level
+import breakout.utils.resource as resource
+from breakout.utils.constants import START_LEVEL
 from breakout.editor.brick import BrickFrame
 from breakout.editor.entry import EntryFrame
 
@@ -20,8 +21,8 @@ class Editor(tk.Frame):
         """Initialize the editor."""
         tk.Frame.__init__(self, parent)
         self.parent = parent
-        self.level_filename = 'level_1.xml'
-        self.level = load_level(self.level_filename)
+        self.level_filename = START_LEVEL
+        self.level = resource.load_level(self.level_filename)
 
         self.grid()
         self.create_widgets()
@@ -46,7 +47,7 @@ class Editor(tk.Frame):
         self.entry_frame = EntryFrame(self, self.level)
 
         #create brick button grid
-        self.brick_frame = BrickFrame(self, self.level['bricks'])
+        self.brick_frame = BrickFrame(self, self.level['bricks'], self.entry_frame.color_option)
 
 
     def grid_widgets(self):
@@ -60,18 +61,30 @@ class Editor(tk.Frame):
     def save_level(self):
         """Save the level file."""
         self.level_filename = asksaveasfilename()
-        resource.save_level(self.level_filename)
+
+        level = {}
+        level.update({'name': self.entry_frame.level_name.get()})
+        level.update({'ball_speed': self.entry_frame.ball_speed.get()})
+        level.update({'next': self.entry_frame.next_level.get()})
+        level.update({'bricks': self.brick_frame.get_layout()})
+
+        resource.save_level(level, self.level_filename)
         
         
     def open_level(self):
         """Open the level file."""
         self.level_filename = askopenfilename()
-        if self.level_filename != '':
-            self.level = load_level(os.path.basename(self.level_filename))
+        self.level = resource.load_level(os.path.basename(self.level_filename))
+        self.update()
 
 
     def new_level(self):
         """Create a blank level."""
+        pass
+
+
+    def update(self):
+        """Update the editor to display new level data."""
         pass
 
 

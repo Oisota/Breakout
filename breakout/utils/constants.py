@@ -24,7 +24,7 @@ BRICK_IMAGES = {'red' : 'brick_red.gif',
                 'purple' : 'brick_purple.gif',
                 'tan' : 'brick_tan.gif',
                 'white' : 'brick_white.gif',
-                'grey' : 'brick_grey.gif',
+                'grey' : 'brick_gray.gif',
                 'black' : 'brick_black.gif',
                 'none' : 'brick_cell.gif'}
 
