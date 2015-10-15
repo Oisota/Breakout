@@ -2,7 +2,6 @@
 <!DOCTYPE level SYSTEM "level.dtd">
 <level>
     <name>Level Eight</name>
-    <difficulty>hard</difficulty>
     <ball_speed>12</ball_speed>
     <next>level_9.xml</next>
     <bricks>
