@@ -7,7 +7,7 @@ this but also handles exceptions if files are not found.
 """
 
 import pygame, os, sys
-import lxml.etree as ET
+import lxml.etree as etree
 
 from breakout.utils.constants import *
 
@@ -53,7 +53,7 @@ def load_level(file_name):
     bricks = []
 
     try:
-        tree = ET.parse(path)
+        tree = etree.parse(path)
     except FileNotFoundError as e:
         print('Could not load level: ', path)
         print(e)
@@ -62,22 +62,38 @@ def load_level(file_name):
     root = tree.getroot()
 
     level.update({root[0].tag : root[0].text}) # name
-    level.update({root[1].tag : root[1].text}) # difficulty
-    level.update({root[2].tag : root[2].text}) # ball speed
-    level.update({root[3].tag : root[3].text}) # filename of next level
+    level.update({root[1].tag : root[1].text}) # ball speed
+    level.update({root[2].tag : root[2].text}) # filename of next level
 
-    for row in root[4]: # load brick data into list of lists
+    for row in root[3]: # load brick data into list of lists
         temp = list()
         for column in row:
             temp.append(column.text)
 
         bricks.append(temp)
 
-    level.update({root[4].tag : bricks}) # brick data
+    level.update({root[3].tag : bricks}) # brick data
 
     return level
 
 
 def save_level(level, file_name):
     """Write the given level to an xml file."""
-    pass 
+    root = etree.Element('level')
+    etree.SubElement(root, 'name')
+    etree.SubElement(root, 'ball_speed')
+    etree.SubElement(root, 'next')
+    bricks = etree.SubElement(root, 'bricks')
+
+    root[0].text = level['name']
+    root[1].text = level['ball_speed']
+    root[2].text = level['next']
+
+    for row in level['bricks']:
+        r = etree.SubElement(bricks, 'row')
+        for color in row:
+            c = etree.SubElement(r, 'column')
+            c.text = color
+
+    tree = etree.ElementTree(root)
+    tree.write(file_name, pretty_print=True, encoding='UTF-8', xml_declaration=True)

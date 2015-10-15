@@ -10,7 +10,7 @@ import tkinter as tk
 from tkinter.filedialog import askopenfilename, asksaveasfilename
 
 import breakout.utils.resource as resource
-from breakout.utils.constants import START_LEVEL
+from breakout.utils.constants import START_LEVEL, LEVEL_PATH
 from breakout.editor.brick import BrickFrame
 from breakout.editor.entry import EntryFrame
 
@@ -41,7 +41,7 @@ class Editor(tk.Frame):
         self.file_menu.add_command(label='Open', command=self.open_level)
         self.file_menu.add_separator()
         self.file_menu.add_command(label='Save', command=self.save_level)
-        self.file_menu.add_command(label='Save as', command=self.save_level)
+        self.file_menu.add_command(label='Save as', command=self.save_level_as)
         self.file_menu.add_separator()
         self.file_menu.add_command(label='Exit', command=self.quit)
         self.menu.add_cascade(label='File', menu=self.file_menu)
@@ -62,6 +62,20 @@ class Editor(tk.Frame):
 
 
     def save_level(self):
+        """Save the level under the current level name."""
+        if self.level_filename == 'untitled.xml':
+            self.level_filename = asksaveasfilename()
+
+        level = {}
+        level.update({'name': self.entry_frame.level_name.get()})
+        level.update({'ball_speed': self.entry_frame.ball_speed.get()})
+        level.update({'next': self.entry_frame.next_level.get()})
+        level.update({'bricks': self.brick_frame.bricks})
+
+        resource.save_level(level, os.path.join(LEVEL_PATH, self.level_filename))
+ 
+
+    def save_level_as(self):
         """Save the level file."""
         self.level_filename = asksaveasfilename()
 
