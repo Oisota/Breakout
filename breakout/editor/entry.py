@@ -8,7 +8,7 @@ class EntryFrame(tk.Frame):
         tk.Frame.__init__(self, parent)
         self.parent = parent
         self.level = level
-        self.colors = tuple(BRICK_IMAGES.keys())
+        self.colors = sorted(BRICK_IMAGES.keys())
 
         self.level_name = tk.StringVar()
         self.ball_speed = tk.StringVar()

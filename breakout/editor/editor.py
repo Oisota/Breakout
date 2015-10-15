@@ -38,13 +38,15 @@ class Editor(tk.Frame):
 
         self.file_menu = tk.Menu(self.menu)
         self.file_menu.add_command(label='New', command=self.new_level)
-        self.file_menu.add_command(label='Save', command=self.save_level)
         self.file_menu.add_command(label='Open', command=self.open_level)
+        self.file_menu.add_separator()
+        self.file_menu.add_command(label='Save', command=self.save_level)
+        self.file_menu.add_command(label='Save as', command=self.save_level)
+        self.file_menu.add_separator()
         self.file_menu.add_command(label='Exit', command=self.quit)
         self.menu.add_cascade(label='File', menu=self.file_menu)
 
         #create input boxes
-        #move to separate class/file
         self.entry_frame = EntryFrame(self, self.level)
 
         #create brick button grid
