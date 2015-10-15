@@ -22,6 +22,7 @@ class Editor(tk.Frame):
         tk.Frame.__init__(self, parent)
         self.parent = parent
         self.level_filename = START_LEVEL
+        self.parent.title('Breakout Editor - ' + self.level_filename)
         self.level = resource.load_level(self.level_filename)
 
         self.grid()
@@ -74,6 +75,7 @@ class Editor(tk.Frame):
     def open_level(self):
         """Open the level file."""
         self.level_filename = askopenfilename()
+        self.parent.title('Breakout Editor - ' + os.path.basename(self.level_filename))
         self.level = resource.load_level(os.path.basename(self.level_filename))
         self.brick_frame.update(self.level['bricks'])
         self.entry_frame.update(self.level)
@@ -94,6 +96,6 @@ def run():
     """Run the Editor.""" 
     root = tk.Tk()
     root.geometry('800x600')
-    root.title('Breakout Level Editor')
+    #root.title('Breakout Level Editor')
     editor = Editor(root)
     editor.mainloop()
