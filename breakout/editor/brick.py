@@ -46,14 +46,11 @@ class BrickFrame(tk.Frame):
 
     def change_color(self, i, j):
         """Change the color of the brick when clicked."""
-        brick_img = self.images[self.color_option.get()]
+        color = self.color_option.get()
+        brick_img = self.images[color]
         self.buttons[i][j].configure(image=brick_img) 
         self.buttons[i][j].image = brick_img
-
-
-    def get_layout(self):
-        """Return a list of lists representing the current brick layout."""
-        pass
+        self.bricks[i][j] = color
 
 
     def init_images(self):

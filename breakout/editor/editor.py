@@ -66,7 +66,7 @@ class Editor(tk.Frame):
         level.update({'name': self.entry_frame.level_name.get()})
         level.update({'ball_speed': self.entry_frame.ball_speed.get()})
         level.update({'next': self.entry_frame.next_level.get()})
-        level.update({'bricks': self.brick_frame.get_layout()})
+        level.update({'bricks': self.brick_frame.bricks})
 
         resource.save_level(level, self.level_filename)
         
