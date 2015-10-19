@@ -8,7 +8,7 @@ display and animate balls that bounce around the screen.
 import pygame, random
 
 from breakout.utils.resource import load_image
-from breakout.utils.constants import *
+from breakout.utils.constants import RESOLUTION, BALL_IMAGE
 
 class Ball(pygame.sprite.Sprite):
     """Ball Class"""
