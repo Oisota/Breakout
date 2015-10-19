@@ -28,6 +28,6 @@ inside the editor.
 #### Start Screen
 ![Start](screenshots/start.png "Start")
 #### Gameplay
-![Game](screenshots/breakout.png "Breakout")
+![Game](screenshots/game.png "Breakout")
 #### Level Editor
 ![Editor](screenshots/editor.png "Breakout")
