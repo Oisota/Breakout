@@ -26,6 +26,8 @@ inside the editor.
 
 ### Screenshots
 #### Start Screen
-![Start](screenshots/start_scrot.png "Start")
+![Start](screenshots/start.png "Start")
 #### Gameplay
-![Breakout](screenshots/breakout_scrot.png "Breakout")
+![Game](screenshots/breakout.png "Breakout")
+#### Level Editor
+![Editor](screenshots/editor.png "Breakout")
