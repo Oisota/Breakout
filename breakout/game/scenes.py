@@ -25,10 +25,10 @@ from breakout.game.paddle import Paddle
 from breakout.game.score import Score
 from breakout.game.level import Level
 from breakout.game.brick import Brick
-from breakout.utils.menu import Menu
+from breakout.game.menu import Menu
+from breakout.game.scene import Scene
 from breakout.utils.resource import *
 from breakout.utils.constants import *
-from breakout.utils.scene import Scene
 
 
 class GamePlay(Scene):
