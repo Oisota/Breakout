@@ -1,4 +1,6 @@
 {
+    "next": "level_2.json",
+    "name": "Level One",
     "bricks": [
         [
             "red",
@@ -25,19 +27,18 @@
             "red"
         ],
         [
-            "green",
             "none",
             "none",
-            "orange",
             "none",
             "none",
-            "orange",
             "none",
             "none",
-            "green"
+            "none",
+            "none",
+            "none",
+            "none"
         ],
         [
-            "green",
             "none",
             "none",
             "none",
@@ -46,19 +47,20 @@
             "none",
             "none",
             "none",
-            "green"
+            "none",
+            "none"
         ],
         [
-            "green",
-            "green",
-            "green",
             "none",
-            "orange",
-            "orange",
             "none",
-            "green",
-            "green",
-            "green"
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none"
         ],
         [
             "none",
@@ -121,7 +123,5 @@
             "none"
         ]
     ],
-    "next": "level_2.json",
-    "ball_speed": "5",
-    "name": "Level One"
+    "ball_speed": "5"
 }
