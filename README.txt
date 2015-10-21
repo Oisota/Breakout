@@ -14,8 +14,8 @@ Installation
 ------------
 Download the zip file and extract the contents. From the game
 directory, execute breakout.py on the command line to run the
-game. Note that this game requires python 3, pygame, and lxml
-to be installed
+game. Note that this game requires python 3 and pygame to be 
+installed
 
 Level Editor
 ------------

@@ -1,0 +1,15 @@
+{
+    "name": "Level Six",
+    "ball_speed": "10",
+    "next": "level_7.json",
+    "bricks": [["purple","purple","purple","purple","purple","purple","purple","purple","purple","purple"],
+               ["purple","purple","purple","purple","purple","purple","purple","purple","purple","purple"],
+               ["purple","purple","purple","purple","purple","purple","purple","purple","purple","purple"],
+               ["purple","purple","purple","purple","purple","purple","purple","purple","purple","purple"],
+               ["purple","purple","purple","purple","purple","purple","purple","purple","purple","purple"],
+               ["purple","purple","purple","purple","purple","purple","purple","purple","purple","purple"],
+               ["purple","purple","purple","purple","purple","purple","purple","purple","purple","purple"],
+               ["purple","purple","purple","purple","purple","purple","purple","purple","purple","purple"],
+               ["purple","purple","purple","purple","purple","purple","purple","purple","purple","purple"],
+               ["purple","purple","purple","purple","purple","purple","purple","purple","purple","purple"]]
+}

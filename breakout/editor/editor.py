@@ -63,8 +63,8 @@ class Editor(tk.Frame):
 
     def save_level(self):
         """Save the level under the current level name."""
-        if self.level_filename == 'untitled.xml':
-            self.level_filename = asksaveasfilename()
+        if self.level_filename == 'untitled.json':
+            self.level_filename = asksaveasfilename(initialdir=LEVEL_PATH, initialfile=self.level_filename)
 
         level = {}
         level.update({'name': self.entry_frame.level_name.get()})
@@ -77,24 +77,25 @@ class Editor(tk.Frame):
 
     def save_level_as(self):
         """Save the level file."""
-        self.level_filename = asksaveasfilename()
+        self.level_filename = asksaveasfilename(initialdir=LEVEL_PATH, initialfile=self.level_filename)
+        if self.level_filename != '':
+            level = {}
+            level.update({'name': self.entry_frame.level_name.get()})
+            level.update({'ball_speed': self.entry_frame.ball_speed.get()})
+            level.update({'next': self.entry_frame.next_level.get()})
+            level.update({'bricks': self.brick_frame.bricks})
 
-        level = {}
-        level.update({'name': self.entry_frame.level_name.get()})
-        level.update({'ball_speed': self.entry_frame.ball_speed.get()})
-        level.update({'next': self.entry_frame.next_level.get()})
-        level.update({'bricks': self.brick_frame.bricks})
-
-        resource.save_level(level, self.level_filename)
+            resource.save_level(level, self.level_filename)
         
         
     def open_level(self):
         """Open the level file."""
-        self.level_filename = askopenfilename()
-        self.parent.title('Breakout Editor - ' + os.path.basename(self.level_filename))
-        self.level = resource.load_level(os.path.basename(self.level_filename))
-        self.brick_frame.update(self.level['bricks'])
-        self.entry_frame.update(self.level)
+        self.level_filename = askopenfilename(initialdir=LEVEL_PATH, initialfile=self.level_filename)
+        if self.level_filename != '':
+            self.parent.title('Breakout Editor - ' + os.path.basename(self.level_filename))
+            self.level = resource.load_level(os.path.basename(self.level_filename))
+            self.brick_frame.update(self.level['bricks'])
+            self.entry_frame.update(self.level)
 
 
     def new_level(self):
@@ -112,6 +113,5 @@ def run():
     """Run the Editor.""" 
     root = tk.Tk()
     root.geometry('800x600')
-    #root.title('Breakout Level Editor')
     editor = Editor(root)
     editor.mainloop()

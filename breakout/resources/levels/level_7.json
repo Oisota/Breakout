@@ -1,0 +1,15 @@
+{
+    "name": "Level Seven",
+    "ball_speed": "11",
+    "next": "level_8.json",
+    "bricks": [["tan","tan","tan","tan","tan","tan","tan","tan","tan","tan"],
+               ["tan","tan","tan","tan","tan","tan","tan","tan","tan","tan"],
+               ["tan","tan","tan","tan","tan","tan","tan","tan","tan","tan"],
+               ["tan","tan","tan","tan","tan","tan","tan","tan","tan","tan"],
+               ["tan","tan","tan","tan","tan","tan","tan","tan","tan","tan"],
+               ["tan","tan","tan","tan","tan","tan","tan","tan","tan","tan"],
+               ["tan","tan","tan","tan","tan","tan","tan","tan","tan","tan"],
+               ["tan","tan","tan","tan","tan","tan","tan","tan","tan","tan"],
+               ["tan","tan","tan","tan","tan","tan","tan","tan","tan","tan"],
+               ["tan","tan","tan","tan","tan","tan","tan","tan","tan","tan"]]
+}

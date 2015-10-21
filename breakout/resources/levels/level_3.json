@@ -1,0 +1,15 @@
+{
+    "name": "Level Three",
+    "ball_speed": "7",
+    "next": "level_4.json",
+    "bricks": [["green","green","green","green","green","green","green","green","green","green"],
+               ["green","green","green","green","green","green","green","green","green","green"],
+               ["green","green","green","green","green","green","green","green","green","green"],
+               ["green","green","green","green","green","green","green","green","green","green"],
+               ["green","green","green","green","green","green","green","green","green","green"],
+               ["green","green","green","green","green","green","green","green","green","green"],
+               ["none","none","none","none","none","none","none","none","none","none"],
+               ["none","none","none","none","none","none","none","none","none","none"],
+               ["none","none","none","none","none","none","none","none","none","none"],
+               ["none","none","none","none","none","none","none","none","none","none"]]
+}

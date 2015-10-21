@@ -1,0 +1,15 @@
+{
+    "name": "Level Eight",
+    "ball_speed": "12",
+    "next": "level_9.json",
+    "bricks": [["yellow","yellow","yellow","yellow","yellow","yellow","yellow","yellow","yellow","yellow"],
+               ["yellow","yellow","yellow","yellow","yellow","yellow","yellow","yellow","yellow","yellow"],
+               ["yellow","yellow","yellow","yellow","yellow","yellow","yellow","yellow","yellow","yellow"],
+               ["yellow","yellow","yellow","yellow","yellow","yellow","yellow","yellow","yellow","yellow"],
+               ["yellow","yellow","yellow","yellow","yellow","yellow","yellow","yellow","yellow","yellow"],
+               ["yellow","yellow","yellow","yellow","yellow","yellow","yellow","yellow","yellow","yellow"],
+               ["yellow","yellow","yellow","yellow","yellow","yellow","yellow","yellow","yellow","yellow"],
+               ["yellow","yellow","yellow","yellow","yellow","yellow","yellow","yellow","yellow","yellow"],
+               ["yellow","yellow","yellow","yellow","yellow","yellow","yellow","yellow","yellow","yellow"],
+               ["yellow","yellow","yellow","yellow","yellow","yellow","yellow","yellow","yellow","yellow"]]
+}

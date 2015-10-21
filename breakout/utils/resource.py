@@ -5,8 +5,7 @@ This module defines functions for loading resource files for use
 with the game and the level editor.
 """
 
-import pygame, os, sys
-import lxml.etree as etree
+import pygame, os, sys, json
 
 from breakout.utils.constants import IMAGE_PATH, SOUND_PATH, LEVEL_PATH
 
@@ -45,54 +44,17 @@ def load_sound(file_name):
 
 
 def load_level(file_name):
-    """Load the given xml level file into a dict and return the dict."""
+    """Load the given json level file into a dict and return the dict."""
     path = os.path.join(LEVEL_PATH, file_name)
     path = os.path.abspath(path)
-    level = {}
-    bricks = []
 
-    try:
-        tree = etree.parse(path)
-    except FileNotFoundError as e:
-        print('Could not load level: ', path)
-        print(e)
-        raise SystemExit
-
-    root = tree.getroot()
-
-    level.update({root[0].tag : root[0].text}) # name
-    level.update({root[1].tag : root[1].text}) # ball speed
-    level.update({root[2].tag : root[2].text}) # filename of next level
-
-    for row in root[3]: # load brick data into list of lists
-        temp = list()
-        for column in row:
-            temp.append(column.text)
-
-        bricks.append(temp)
-
-    level.update({root[3].tag : bricks}) # brick data
+    with open(path, 'r') as f:
+        level = json.load(f)
 
     return level
 
 
 def save_level(level, file_name):
-    """Write the given level to an xml file."""
-    root = etree.Element('level')
-    etree.SubElement(root, 'name')
-    etree.SubElement(root, 'ball_speed')
-    etree.SubElement(root, 'next')
-    bricks = etree.SubElement(root, 'bricks')
-
-    root[0].text = level['name']
-    root[1].text = level['ball_speed']
-    root[2].text = level['next']
-
-    for row in level['bricks']:
-        r = etree.SubElement(bricks, 'row')
-        for color in row:
-            c = etree.SubElement(r, 'column')
-            c.text = color
-
-    tree = etree.ElementTree(root)
-    tree.write(file_name, pretty_print=True, encoding='UTF-8', xml_declaration=True)
+    """Write the given level to the given json file."""
+    with open(file_name, 'w') as f:
+        json.dump(level, f, indent=4)

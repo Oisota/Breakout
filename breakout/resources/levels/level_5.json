@@ -1,0 +1,15 @@
+{
+    "name": "Level Five",
+    "ball_speed": "9",
+    "next": "level_6.json",
+    "bricks": [["black","black","black","black","black","black","black","black","black","black"],
+               ["black","black","black","black","black","black","black","black","black","black"],
+               ["black","black","black","black","black","black","black","black","black","black"],
+               ["black","black","black","black","black","black","black","black","black","black"],
+               ["black","black","black","black","black","black","black","black","black","black"],
+               ["black","black","black","black","black","black","black","black","black","black"],
+               ["black","black","black","black","black","black","black","black","black","black"],
+               ["black","black","black","black","black","black","black","black","black","black"],
+               ["black","black","black","black","black","black","black","black","black","black"],
+               ["black","black","black","black","black","black","black","black","black","black"]]
+}

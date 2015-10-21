@@ -48,4 +48,4 @@ BLIP = 'blip.wav'
 
 # Levels
 LEVEL_PATH = 'breakout/resources/levels/'
-START_LEVEL = 'level_1.xml'
+START_LEVEL = 'level_1.json'
