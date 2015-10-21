@@ -21,6 +21,7 @@ setup(
            scripts = ['breakout.py','breakout-editor.py'],
           packages = ['breakout','breakout.game','breakout.utils','breakout.editor'],
       package_data = {'breakout':['resources/images/*.gif',
+                                  'resources/images/*.png',
                                   'resources/sounds/*.wav',
                                   'resources/levels/*.json']},
           requires = ['sys', 'os', 'random', 'tkinter', 'pygame', 'json'],
