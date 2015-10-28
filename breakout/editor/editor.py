@@ -64,34 +64,36 @@ class Editor(tk.Frame):
     def save_level(self):
         """Save the level under the current level name."""
         if self.level_filename == 'untitled.json':
-            self.level_filename = asksaveasfilename(initialdir=LEVEL_PATH, initialfile=self.level_filename)
-
-        level = {}
-        level.update({'name': self.entry_frame.level_name.get()})
-        level.update({'ball_speed': self.entry_frame.ball_speed.get()})
-        level.update({'next': self.entry_frame.next_level.get()})
-        level.update({'bricks': self.brick_frame.bricks})
-
-        resource.save_level(level, os.path.join(LEVEL_PATH, self.level_filename))
+            self.save_level_as();
+        else:
+            level = {
+                'name': self.entry_frame.level_name.get(),
+                'ball_speed': self.entry_frame.ball_speed.get(),
+                'next': self.entry_frame.next_level.get(),
+                'bricks': self.brick_frame.bricks
+            }
+            resource.save_level(level, os.path.join(LEVEL_PATH, self.level_filename))
  
 
     def save_level_as(self):
         """Save the level file."""
-        self.level_filename = asksaveasfilename(initialdir=LEVEL_PATH, initialfile=self.level_filename)
-        if self.level_filename != '':
-            level = {}
-            level.update({'name': self.entry_frame.level_name.get()})
-            level.update({'ball_speed': self.entry_frame.ball_speed.get()})
-            level.update({'next': self.entry_frame.next_level.get()})
-            level.update({'bricks': self.brick_frame.bricks})
-
+        filename = asksaveasfilename(initialdir=LEVEL_PATH, initialfile=self.level_filename)
+        if filename != '':
+            self.level_filename = filename
+            level = {
+                'name': self.entry_frame.level_name.get(),
+                'ball_speed': self.entry_frame.ball_speed.get(),
+                'next': self.entry_frame.next_level.get(),
+                'bricks': self.brick_frame.bricks
+            }
             resource.save_level(level, self.level_filename)
         
         
     def open_level(self):
         """Open the level file."""
-        self.level_filename = askopenfilename(initialdir=LEVEL_PATH, initialfile=self.level_filename)
-        if self.level_filename != '':
+        filename = askopenfilename(initialdir=LEVEL_PATH, initialfile=self.level_filename)
+        if filename != '':
+            self.level_filename = filename
             self.parent.title('Breakout Editor - ' + os.path.basename(self.level_filename))
             self.level = resource.load_level(os.path.basename(self.level_filename))
             self.brick_frame.update(self.level['bricks'])
