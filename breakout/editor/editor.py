@@ -9,7 +9,7 @@ import sys, os
 import tkinter as tk
 from tkinter.filedialog import askopenfilename, asksaveasfilename
 
-import breakout.utils.resource as resource
+import breakout.utils.asset as asset
 from breakout.utils.constants import START_LEVEL, LEVEL_PATH
 from breakout.editor.brick import BrickFrame
 from breakout.editor.entry import EntryFrame
@@ -23,7 +23,7 @@ class Editor(tk.Frame):
         self.parent = parent
         self.level_filename = START_LEVEL
         self.parent.title('Breakout Editor - ' + self.level_filename)
-        self.level = resource.load_level(self.level_filename)
+        self.level = asset.load_level(self.level_filename)
 
         self.grid()
         self.create_widgets()
@@ -72,7 +72,7 @@ class Editor(tk.Frame):
                 'next': self.entry_frame.next_level.get(),
                 'bricks': self.brick_frame.bricks
             }
-            resource.save_level(level, os.path.join(LEVEL_PATH, self.level_filename))
+            asset.save_level(level, os.path.join(LEVEL_PATH, self.level_filename))
  
 
     def save_level_as(self):
@@ -86,7 +86,7 @@ class Editor(tk.Frame):
                 'next': self.entry_frame.next_level.get(),
                 'bricks': self.brick_frame.bricks
             }
-            resource.save_level(level, self.level_filename)
+            asset.save_level(level, self.level_filename)
         
         
     def open_level(self):
@@ -95,7 +95,7 @@ class Editor(tk.Frame):
         if filename != '':
             self.level_filename = filename
             self.parent.title('Breakout Editor - ' + os.path.basename(self.level_filename))
-            self.level = resource.load_level(os.path.basename(self.level_filename))
+            self.level = asset.load_level(os.path.basename(self.level_filename))
             self.brick_frame.update(self.level['bricks'])
             self.entry_frame.update(self.level)
 

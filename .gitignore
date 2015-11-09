@@ -1,4 +1,4 @@
-breakout/resources/GIMP_files/*
+breakout/assets/GIMP_files/*
 breakout/__pycache__/*
 breakout/*.pyc
 breakout/game/__pycache__/*

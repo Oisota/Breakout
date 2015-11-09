@@ -1,7 +1,7 @@
 import unittest
 
 from breakout.utils.constants import BRICK_IMAGES, START_LEVEL
-from breakout.utils.resource import load_level
+from breakout.utils.asset import load_level
 
 class TestLoadLevel(unittest.TestCase):
 

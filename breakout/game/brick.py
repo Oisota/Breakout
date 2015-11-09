@@ -12,7 +12,7 @@ GamePlay scene.
 
 import pygame
 
-from breakout.utils.resource import load_image
+from breakout.utils.asset import load_image
 from breakout.utils.constants import RESOLUTION, BRICK_IMAGES
 
 class Brick(pygame.sprite.Sprite):

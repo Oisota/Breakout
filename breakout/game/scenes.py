@@ -27,7 +27,7 @@ from breakout.game.level import Level
 from breakout.game.brick import Brick
 from breakout.game.menu import Menu
 from breakout.game.scene import Scene
-from breakout.utils.resource import *
+from breakout.utils.asset import *
 from breakout.utils.constants import *
 
 
