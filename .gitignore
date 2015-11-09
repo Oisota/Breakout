@@ -7,6 +7,7 @@ breakout/editor/__pycache__/*
 breakout/editor/*.pyc
 breakout/utils/__pycache__/*
 breakout/utils/*.pyc
+tests/__pycache__/*
 dist/*
 venv/*
 MANIFEST
