@@ -17,7 +17,9 @@ to press "P" again and once that happens it switches back to
 the scene it was called from.
 """
 
-import pygame, sys
+import sys
+
+import pygame
 from pygame.locals import *
 
 from breakout.game.ball import Ball

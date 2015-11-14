@@ -15,6 +15,7 @@ import pygame
 from breakout.utils.asset import load_image
 from breakout.utils.constants import RESOLUTION, BRICK_IMAGES
 
+
 class Brick(pygame.sprite.Sprite):
     """Brick Class"""
     def __init__(self, x, y, color):

@@ -5,9 +5,12 @@ This module defines functions for loading resource files for use
 with the game and the level editor.
 """
 
-import pygame, os, sys, json
+import os, sys, json
+
+import pygame
 
 from breakout.utils.constants import IMAGE_PATH, SOUND_PATH, LEVEL_PATH
+
 
 def load_image(file_name):
     """Load an image and return the image object and the image rect."""

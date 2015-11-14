@@ -10,6 +10,7 @@ import pygame
 from breakout.utils.asset import load_image
 from breakout.utils.constants import RESOLUTION, PADDLE_IMAGE
 
+
 class Paddle(pygame.sprite.Sprite):
     """Paddle Class"""
     def __init__(self):

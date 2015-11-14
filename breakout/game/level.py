@@ -9,6 +9,7 @@ import pygame
 
 from breakout.utils.constants import RESOLUTION
 
+
 class Level(pygame.sprite.Sprite):
     """Level Class"""
     def __init__(self, level):

@@ -9,6 +9,7 @@ import pygame
 
 from breakout.utils.constants import RESOLUTION
 
+
 class Score(pygame.sprite.Sprite):
     """Score Class"""
     def __init__(self, score=0):

@@ -1,6 +1,11 @@
+"""
+Entry Module
+"""
+
 import tkinter as tk
 
 from breakout.utils.constants import BRICK_IMAGES
+
 
 class EntryFrame(tk.Frame):
     """Frame containing level attribute entry boxes"""

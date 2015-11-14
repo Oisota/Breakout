@@ -11,6 +11,7 @@ will function properly in the main game loop.
 
 from abc import ABCMeta, abstractmethod
 
+
 class Scene(metaclass=ABCMeta):
     """Base class for game scenes."""
     def __init__(self):

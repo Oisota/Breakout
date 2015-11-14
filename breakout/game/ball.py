@@ -5,10 +5,13 @@ This module defines the ball class. It is used to
 display and animate balls that bounce around the screen.
 """
 
-import pygame, random
+import random
+
+import pygame
 
 from breakout.utils.asset import load_image
 from breakout.utils.constants import RESOLUTION, BALL_IMAGE
+
 
 class Ball(pygame.sprite.Sprite):
     """Ball Class"""

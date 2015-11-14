@@ -6,10 +6,13 @@ initializes pygame, sets some game variables and runs
 the game.
 """
 
-import pygame, sys
+import sys
+
+import pygame
 
 from breakout.game.scenes import MenuScene
 from breakout.utils.constants import GAME_NAME, RESOLUTION, FRAMES_PER_SECOND
+
 
 def run():
     """Run the game.""" 
