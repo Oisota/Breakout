@@ -1,5 +1,5 @@
 """
-Resource Module
+Asset Module
 
 This module defines functions for loading resource files for use
 with the game and the level editor.
