@@ -1,9 +1,15 @@
 import unittest
 
+import pygame
+
 from breakout.utils.constants import BRICK_IMAGES, START_LEVEL
 from breakout.utils.asset import load_level
 
 class TestLoadLevel(unittest.TestCase):
+
+    def setUp(self):
+        self.level = load_level(START_LEVEL)
+
 
     def test_level_contains_correct_keys(self):
         self.assertIn('name', self.level.keys())
@@ -24,10 +30,6 @@ class TestLoadLevel(unittest.TestCase):
                 self.assertIn(color, BRICK_IMAGES.keys())
 
 
-    def setUp(self):
-        self.level = load_level(START_LEVEL)
-
-
     def tearDown(self):
         self.level = None
 
@@ -36,11 +38,30 @@ class TestLoadLevel(unittest.TestCase):
 class TestLoadImage(unittest.TestCase):
 
     def setUp(self):
-        pass
+        pygame.init()
+
+
+    def test_image_properties(self):
+        self.assertEqual(1, 0)
 
 
     def tearDown(self):
-        pass
+        pygame.quit()
+
+
+
+class TestLoadSound(unittest.TestCase):
+
+    def setUp(self):
+        pygame.init()
+
+
+    def test_sound_loaded(self):
+        self.assertEqual(1, 0)
+
+
+    def tearDown(self):
+        pygame.quit()
 
 
 
