@@ -17,7 +17,7 @@ class Button(pygame.sprite.Sprite):
     """Button Class"""    
     def __init__(self, kwargs):
         """Initialize button."""
-        pygame.sprite.Sprite.__init__(self)
+        super().__init__()
         self.x = kwargs['x']
         self.y = kwargs['y']
         self.text = kwargs['text']
@@ -51,7 +51,7 @@ class Title(pygame.sprite.Sprite):
     """Title Class"""
     def __init__(self, kwargs):
         """Initialzie title."""
-        pygame.sprite.Sprite.__init__(self)
+        super().__init__()
         self.x = kwargs['x']
         self.y = kwargs['y']
         self.text = kwargs['text']
@@ -69,7 +69,7 @@ class Menu(pygame.sprite.Group):
     """Menu Class"""
     def __init__(self):
         """Initialize menu."""
-        pygame.sprite.Group.__init__(self)
+        super().__init__()
         self.rects = []
 
 

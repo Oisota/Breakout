@@ -13,7 +13,7 @@ from breakout.utils.constants import RESOLUTION
 class Level(pygame.sprite.Sprite):
     """Level Class"""
     def __init__(self, level):
-        pygame.sprite.Sprite.__init__(self)
+        super().__init__()
         self.level = level
         self.color = (200,200,200) 
         self.font = pygame.font.Font(None, 30)

@@ -20,7 +20,7 @@ class Brick(pygame.sprite.Sprite):
     """Brick Class"""
     def __init__(self, x, y, color):
         """Initialize the brick."""
-        pygame.sprite.Sprite.__init__(self)
+        super().__init__()
         self.image, self.rect = load_image(BRICK_IMAGES[color])
         self.rect.center = (x,y)
         

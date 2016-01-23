@@ -17,7 +17,7 @@ class Ball(pygame.sprite.Sprite):
     """Ball Class"""
     def __init__(self, *args, **kwargs):
         """Initialize ball object."""
-        pygame.sprite.Sprite.__init__(self)
+        super().__init__()
         self.paddle = kwargs['paddle']
         self.on_lose = kwargs['on_lose']
         self.image, self.rect = load_image(BALL_IMAGE)

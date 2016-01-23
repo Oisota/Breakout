@@ -14,7 +14,7 @@ class Score(pygame.sprite.Sprite):
     """Score Class"""
     def __init__(self, score=0):
         """Initialize player score."""
-        pygame.sprite.Sprite.__init__(self)
+        super().__init__()
         self.score = score
         self.color = (200,200,200) 
         self.font = pygame.font.Font(None, 40)

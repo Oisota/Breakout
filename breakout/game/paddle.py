@@ -15,7 +15,7 @@ class Paddle(pygame.sprite.Sprite):
     """Paddle Class"""
     def __init__(self):
         """Initialize paddle"""
-        pygame.sprite.Sprite.__init__(self)
+        super().__init__()
         self.image, self.rect = load_image(PADDLE_IMAGE)
         self.draw_rect = self.rect.inflate(120, 40)
         self.rect.center = (RESOLUTION[0]/2, RESOLUTION[1] - 75)
