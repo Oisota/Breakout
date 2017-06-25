@@ -4,7 +4,7 @@ Entry Module
 
 import tkinter as tk
 
-from breakout.utils.constants import BRICK_IMAGES
+from ..config import BRICK_IMAGES
 
 
 class EntryFrame(tk.Frame):

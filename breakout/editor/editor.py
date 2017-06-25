@@ -9,10 +9,10 @@ import sys, os
 import tkinter as tk
 from tkinter.filedialog import askopenfilename, asksaveasfilename
 
-import breakout.utils.asset as asset
-from breakout.utils.constants import START_LEVEL, LEVEL_PATH
-from breakout.editor.brick import BrickFrame
-from breakout.editor.entry import EntryFrame
+from .. import asset 
+from ..config import START_LEVEL, LEVEL_PATH
+from .brick import BrickFrame
+from .entry import EntryFrame
 
 
 class Editor(tk.Frame):

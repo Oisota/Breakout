@@ -22,15 +22,15 @@ import sys
 import pygame
 from pygame.locals import *
 
-from breakout.game.ball import Ball
-from breakout.game.paddle import Paddle
-from breakout.game.score import Score
-from breakout.game.level import Level
-from breakout.game.brick import Brick
-from breakout.game.menu import Menu
-from breakout.game.scene import Scene
-from breakout.utils.asset import *
-from breakout.utils.constants import *
+from .ball import Ball
+from .paddle import Paddle
+from .score import Score
+from .level import Level
+from .brick import Brick
+from .menu import Menu
+from .scene import Scene
+from ..asset import *
+from ..config import *
 
 
 class GamePlay(Scene):

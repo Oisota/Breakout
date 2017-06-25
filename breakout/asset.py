@@ -9,7 +9,7 @@ import os, sys, json
 
 import pygame
 
-from breakout.utils.constants import IMAGE_PATH, SOUND_PATH, LEVEL_PATH
+from .config import IMAGE_PATH, SOUND_PATH, LEVEL_PATH
 
 
 def load_image(file_name):

@@ -5,7 +5,7 @@ Brick Module
 import os
 import tkinter as tk
 
-from breakout.utils.constants import BRICK_IMAGES, IMAGE_PATH
+from ..config import BRICK_IMAGES, IMAGE_PATH
 
 
 class BrickFrame(tk.Frame):
