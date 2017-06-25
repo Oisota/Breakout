@@ -72,7 +72,7 @@ class Editor(tk.Frame):
                 'next': self.entry_frame.next_level.get(),
                 'bricks': self.brick_frame.bricks
             }
-            asset.save_level(level, os.path.join(LEVEL_PATH, self.level_filename))
+            asset.save_level(level, self.level_filename)
  
 
     def save_level_as(self):

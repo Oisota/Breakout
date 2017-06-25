@@ -55,8 +55,7 @@ class BrickFrame(tk.Frame):
 
     def init_images(self):
         """save tk.PhotoImages into dictionary."""
-        for color in BRICK_IMAGES.keys():
-            img_path = os.path.join(IMAGE_PATH, BRICK_IMAGES[color])
+        for color, img_path in BRICK_IMAGES.items():
             self.images.update({color: tk.PhotoImage(file=img_path)})
 
 

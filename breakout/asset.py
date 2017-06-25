@@ -50,7 +50,7 @@ def load_level(path):
     return level
 
 
-def save_level(level, file_name):
+def save_level(level, path):
     """Write the given level to the given json file."""
-    with open(file_name, 'w') as f:
+    with open(path, 'w') as f:
         json.dump(level, f, indent=4)
