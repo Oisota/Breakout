@@ -5,18 +5,17 @@ This module defines functions for loading resource files for use
 with the game and the level editor.
 """
 
-import os, sys, json
+import os
+import sys
+import json
 
 import pygame
 
 from .config import IMAGE_PATH, SOUND_PATH, LEVEL_PATH
 
 
-def load_image(file_name):
+def load_image(path):
     """Load an image and return the image object and the image rect."""
-    path = os.path.join(IMAGE_PATH, file_name)
-    path = os.path.abspath(path)
-
     try:
         image = pygame.image.load(path)
         if image.get_alpha() is None:
@@ -31,11 +30,8 @@ def load_image(file_name):
     return image, image.get_rect()
 
 
-def load_sound(file_name):
+def load_sound(path):
     """Load a sound and return the sound object."""
-    path = os.path.join(SOUND_PATH, file_name)
-    path = os.path.abspath(path)
-
     try:
         sound = pygame.mixer.Sound(path)
     except pygame.error as e:
@@ -46,11 +42,8 @@ def load_sound(file_name):
     return sound
 
 
-def load_level(file_name):
+def load_level(path):
     """Load the given json level file into a dict and return the dict."""
-    path = os.path.join(LEVEL_PATH, file_name)
-    path = os.path.abspath(path)
-
     with open(path, 'r') as f:
         level = json.load(f)
 

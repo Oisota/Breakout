@@ -38,7 +38,6 @@ class GamePlay(Scene):
     def __init__(self, level):
         """Initialize the scene."""
         self.level = level
-        self.next_level = load_level(self.level['next'])
         self.next_scene = self
         self.background, self.bg_rect = load_image(BACKGROUND_IMAGE)
         self.score = Score(0) 
@@ -66,7 +65,8 @@ class GamePlay(Scene):
         self.sprites.update(self.sprites, self.ball, lambda: self.score.incr()) #update sprites
             
         if len(self.sprites.sprites()) == 4: #check if all bricks are destroyed
-            self.goto(GamePlay(self.next_level))
+            next_level = load_level(os.path.join(LEVEL_PATH, self.level['next']))
+            self.goto(GamePlay(next_level))
             pygame.time.wait(300)
 
         #pygame.display.update(self.draw_rects)
