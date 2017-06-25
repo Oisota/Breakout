@@ -7,6 +7,7 @@ Run Module
 This module imports the game package and runs the game.
 """
 
+from breakout.game import run
+
 if __name__ == '__main__':
-    import breakout.game.game
-    breakout.game.game.run()
+    run()
