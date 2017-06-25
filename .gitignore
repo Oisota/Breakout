@@ -1,14 +1,6 @@
 breakout/assets/GIMP_files/*
-breakout/__pycache__/*
-breakout/*.pyc
-breakout/game/__pycache__/*
-breakout/game/*.pyc
-breakout/editor/__pycache__/*
-breakout/editor/*.pyc
-breakout/utils/__pycache__/*
-breakout/utils/*.pyc
-tests/__pycache__/*
+__pycache__/*
+*.pyc
 dist/*
 venv/*
 MANIFEST
-breakout.desktop
