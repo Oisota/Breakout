@@ -47,6 +47,11 @@ class BrickFrame(tk.Frame):
     def change_color(self, i, j):
         """Change the color of the brick when clicked."""
         color = self.color_option.get()
+
+        # if brick is already that color, just toggle it empty
+        if self.bricks[i][j] == color:
+            color = 'none'
+
         brick_img = self.images[color]
         self.buttons[i][j].configure(image=brick_img) 
         self.buttons[i][j].image = brick_img
