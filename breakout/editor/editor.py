@@ -9,10 +9,10 @@ import sys, os
 import tkinter as tk
 from tkinter.filedialog import askopenfilename, asksaveasfilename
 
-import breakout.utils.asset as asset
-from breakout.utils.constants import START_LEVEL, LEVEL_PATH
-from breakout.editor.brick import BrickFrame
-from breakout.editor.entry import EntryFrame
+from .. import asset 
+from ..config import START_LEVEL, LEVEL_PATH
+from .brick import BrickFrame
+from .entry import EntryFrame
 
 
 class Editor(tk.Frame):
@@ -72,7 +72,7 @@ class Editor(tk.Frame):
                 'next': self.entry_frame.next_level.get(),
                 'bricks': self.brick_frame.bricks
             }
-            asset.save_level(level, os.path.join(LEVEL_PATH, self.level_filename))
+            asset.save_level(level, self.level_filename)
  
 
     def save_level_as(self):

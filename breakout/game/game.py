@@ -10,8 +10,8 @@ import sys
 
 import pygame
 
-from breakout.game.scenes import MenuScene
-from breakout.utils.constants import GAME_NAME, RESOLUTION, FRAMES_PER_SECOND
+from .scenes import MenuScene
+from ..config import GAME_NAME, RESOLUTION, FRAMES_PER_SECOND
 
 
 def run():

@@ -9,8 +9,8 @@ import random
 
 import pygame
 
-from breakout.utils.asset import load_image
-from breakout.utils.constants import RESOLUTION, BALL_IMAGE
+from ..asset import load_image
+from ..config import RESOLUTION, BALL_IMAGE
 
 
 class Ball(pygame.sprite.Sprite):

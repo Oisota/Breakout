@@ -22,15 +22,15 @@ import sys
 import pygame
 from pygame.locals import *
 
-from breakout.game.ball import Ball
-from breakout.game.paddle import Paddle
-from breakout.game.score import Score
-from breakout.game.level import Level
-from breakout.game.brick import Brick
-from breakout.game.menu import Menu
-from breakout.game.scene import Scene
-from breakout.utils.asset import *
-from breakout.utils.constants import *
+from .ball import Ball
+from .paddle import Paddle
+from .score import Score
+from .level import Level
+from .brick import Brick
+from .menu import Menu
+from .scene import Scene
+from ..asset import *
+from ..config import *
 
 
 class GamePlay(Scene):
@@ -38,7 +38,6 @@ class GamePlay(Scene):
     def __init__(self, level):
         """Initialize the scene."""
         self.level = level
-        self.next_level = load_level(self.level['next'])
         self.next_scene = self
         self.background, self.bg_rect = load_image(BACKGROUND_IMAGE)
         self.score = Score(0) 
@@ -66,7 +65,8 @@ class GamePlay(Scene):
         self.sprites.update(self.sprites, self.ball, lambda: self.score.incr()) #update sprites
             
         if len(self.sprites.sprites()) == 4: #check if all bricks are destroyed
-            self.goto(GamePlay(self.next_level))
+            next_level = load_level(os.path.join(LEVEL_PATH, self.level['next']))
+            self.goto(GamePlay(next_level))
             pygame.time.wait(300)
 
         #pygame.display.update(self.draw_rects)
