@@ -17,8 +17,6 @@ to press "P" again and once that happens it switches back to
 the scene it was called from.
 """
 
-import sys
-
 import pygame
 from pygame.locals import *
 
@@ -141,21 +139,24 @@ class MenuScene(Scene):
     @classmethod
     def start(cls):
         """Return a menu scene object for the start screen."""
-        level = load_level(START_LEVEL)
+        level_filename = os.path.join(LEVEL_PATH, os.path.basename(START_LEVEL))
+        level = load_level(level_filename)
         return cls('Breakout','Start', 'Quit', GamePlay(level), None)
     
     
     @classmethod
     def win(cls):
         """Return a menu scene object for the win screen."""
-        level = load_level(START_LEVEL)
+        level_filename = os.path.join(LEVEL_PATH, os.path.basename(START_LEVEL))
+        level = load_level(level_filename)
         return cls('You Won','Retry', 'Quit', GamePlay(level), None)
     
     
     @classmethod
     def lose(cls):
         """Return a menu scene object for the lose screen."""
-        level = load_level(START_LEVEL)
+        level_filename = os.path.join(LEVEL_PATH, os.path.basename(START_LEVEL))
+        level = load_level(level_filename)
         return cls('You Lose','Retry', 'Quit', GamePlay(level), None)
 
 

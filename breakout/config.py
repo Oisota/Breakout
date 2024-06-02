@@ -52,4 +52,4 @@ BLIP = os.path.join(IMAGE_PATH, 'blip.wav')
 
 # Levels
 LEVEL_PATH = os.path.join('breakout', 'assets', 'levels')
-START_LEVEL = os.path.join(LEVEL_PATH, 'level_1.json')
+START_LEVEL = 'level_1.json'

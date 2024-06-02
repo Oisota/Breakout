@@ -21,7 +21,7 @@ class Editor(tk.Frame):
         """Initialize the editor."""
         tk.Frame.__init__(self, parent)
         self.parent = parent
-        self.level_filename = START_LEVEL
+        self.level_filename = os.path.join(LEVEL_PATH, START_LEVEL)
         self.parent.title('Breakout Editor - ' + self.level_filename)
         self.level = asset.load_level(self.level_filename)
 
@@ -93,9 +93,9 @@ class Editor(tk.Frame):
         """Open the level file."""
         filename = askopenfilename(initialdir=LEVEL_PATH, initialfile=self.level_filename)
         if filename != '':
-            self.level_filename = filename
+            self.level_filename = os.path.join(LEVEL_PATH, os.path.basename(filename))
             self.parent.title('Breakout Editor - ' + os.path.basename(self.level_filename))
-            self.level = asset.load_level(os.path.basename(self.level_filename))
+            self.level = asset.load_level(self.level_filename)
             self.brick_frame.update(self.level['bricks'])
             self.entry_frame.update(self.level)
 
